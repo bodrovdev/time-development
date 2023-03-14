@@ -17,7 +17,6 @@
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
     "babel-loader": "^8.2.5",
-    "body-scroll-lock": "^4.0.0-beta.0",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gh-pages": "^4.0.0",
@@ -37,8 +36,11 @@
     "postcss-preset-env": "^7.2.3",
     "require-dir": "^1.2.0",
     "sass": "^1.45.0",
-    "webpack-stream": "^7.0.0",
-    "when-in-viewport": "^2.0.4"
+    "webpack-stream": "^7.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "gsap": "^3.11.4",
+    "swiper": "^9.1.0"
+  }
 }

@@ -18,46 +18,51 @@
 
   <header class="page-header">
     <nav class="main-nav">
-      <div class="main-nav__nav-wrapper">
-        <div class="main-nav__container base-container">
+      <div class="main-nav__container base-container">
+        <a class="main-nav__logo-link base-link" href="index.html">
+          <figure class="main-nav__logo-image base-figure">
+            <img class="main-nav__logo-img" src="img/image/logo.png" width="124" height="50" alt="Логотип">
+          </figure>
+        </a>
 
-          <a class="main-nav__logo-link base-link" href="index.html">
-            <svg class="main-nav__logo-icon" width="138" height="61" alt="#">
-              <use href="img/icon/sprite.svg#logo-icon"></use>
-            </svg>
+        <div class="main-nav__nav-menu main-nav__nav-menu--mobile" id="mobile_menu">
+
+          <a class="main-nav__logo-link main-nav__logo-link--mobile base-link" href="index.html">
+            <figure class="main-nav__logo-image base-figure">
+              <img class="main-nav__logo-img" src="img/image/logo.png" width="124" height="50" alt="Логотип">
+            </figure>
           </a>
 
-          <div class="main-nav__nav-menu main-nav__nav-menu--mobile" id="mobile_menu">
+          <ul class="main-nav__nav-list base-list">
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link base-link" href="projects.html">Проект</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link base-link" href="press.html">Пресс-центр</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link base-link" href="about.html">О компании</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link base-link" href="people.html">Команда</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link base-link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
 
-            <a class="main-nav__logo-link main-nav__logo-link--mobile base-link" href="index.html">
-              <svg class="main-nav__logo-icon" width="138" height="61" alt="#">
-                <use href="img/icon/sprite.svg#logo-icon"></use>
-              </svg>
-            </a>
-
-            <ul class="main-nav__nav-list base-list">
-              <li class="main-nav__nav-item">
-                <a class="main-nav__nav-link base-link" href="#">Проект</a>
-              </li>
-              <li class="main-nav__nav-item">
-                <a class="main-nav__nav-link base-link" href="#">Пресс-центр</a>
-              </li>
-              <li class="main-nav__nav-item">
-                <a class="main-nav__nav-link base-link" href="#">О компании</a>
-              </li>
-              <li class="main-nav__nav-item">
-                <a class="main-nav__nav-link base-link" href="#">Команда</a>
-              </li>
-              <li class="main-nav__nav-item">
-                <a class="main-nav__nav-link base-link" href="#">Контакты</a>
-              </li>
-            </ul>
-
+          <div class="main-nav__search-bar">
+            <svg class="main-nav__search-icon" width="16" height="16" alt="Иконка поиска" id="search_icon">
+              <use href="img/icon/sprite.svg#search-icon"></use>
+            </svg>
           </div>
-          <button class="main-nav__burger base-button" id="burger">
-            <span class="main-nav__burger-line"></span>
-          </button>
+
         </div>
+
+        <button class="main-nav__burger base-button" id="burger">
+          <span class="main-nav__burger-line"></span>
+        </button>
+
       </div>
     </nav>
   </header>
