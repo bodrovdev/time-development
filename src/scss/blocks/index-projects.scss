@@ -1,0 +1,66 @@
+@use "../mixins";
+
+.index-projects {
+  position: relative;
+
+  margin: 74px 0 0 0;
+
+  &__graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    max-width: 100%;
+    height: 588px;
+    overflow: hidden;
+    background-color: var(--color-aqua-deep);
+
+    z-index: -1;
+
+    & p {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 41px;
+      border: 0.5px solid;
+      white-space: nowrap;
+
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgba(255, 255, 255, 0.26);
+
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__container {
+    width: inherit;
+    max-width: calc(100% - ((100% - var(--container-width)) / 2));
+
+    padding: 67px 0 0 0;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 731px;
+    height: 257px;
+    background-color: var(--color-golden-fizz);
+
+    padding: 35px 28px 38px 59px;
+
+    &-title {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+      text-transform: uppercase;
+      color: var(--color-aqua-deep);
+    }
+  }
+}

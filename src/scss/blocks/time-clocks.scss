@@ -1,0 +1,29 @@
+@use "../mixins";
+
+@keyframes clocks {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.time-clocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__number {
+    margin: 0 0 10px 0
+  }
+
+  &__clocks {
+    animation: clocks;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
