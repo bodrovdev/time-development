@@ -21,7 +21,13 @@
       flex-direction: column;
       justify-content: flex-end;
 
-      padding: 85px 0 0 0;
+      @include mixins.respond-to(desktopS) {
+        padding: 85px 0 0 5%;
+      }
+
+      @include mixins.respond-to(desktopD) {
+        padding: 85px 0 0 0;
+      }
     }
 
     &--right {
@@ -76,16 +82,27 @@
 
   &__graphic {
     position: absolute;
-    top: 0;
-    left: -183px;
 
     max-width: 670px;
 
-    font-size: 20px;
     line-height: 23px;
     color: var(--color-aqua-deep);
 
     z-index: -1;
+
+    @include mixins.respond-to(desktopS) {
+      top: -40px;
+      left: -40px;
+
+      font-size: 18px;
+    }
+
+    @include mixins.respond-to(desktopD) {
+      top: 0;
+      left: -183px;
+
+      font-size: 20px;
+    }
   }
 
   &__wrapper {
@@ -95,11 +112,18 @@
     align-items: flex-end;
     justify-content: flex-start;
 
-    width: 801px;
     height: 350px;
     background: rgba(255, 248, 52, 0.95);
 
     padding: 0 0 46px 38px;
+
+    @include mixins.respond-to(desktopS) {
+      width: 650px;
+    }
+
+    @include mixins.respond-to(desktopD) {
+      width: 801px;
+    }
 
     &-text {
       display: inline-block;
@@ -115,9 +139,26 @@
     &-image {
       position: absolute;
       top: 50%;
-      right: 71px;
 
       transform: translateY(-50%);
+
+      @include mixins.respond-to(desktopS) {
+        right: 5%;
+
+        & .index-contacts__wrapper-img {
+          width: 300px;
+          height: auto;
+        }
+      }
+
+      @include mixins.respond-to(desktopD) {
+        right: 71px;
+
+        & .index-contacts__wrapper-img {
+          width: 433px;
+          height: 433px;
+        }
+      }
     }
   }
 }
