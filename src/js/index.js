@@ -9,6 +9,7 @@ let nav_list = document.querySelector('.main-nav__nav-list');
 burger.addEventListener('click', () => {
   burger.classList.toggle('main-nav__burger--active');
   mobile_menu.classList.toggle('main-nav__nav-menu--mobile--active');
+  document.body.classList.toggle('body-hidden');
 
   if (burger.classList.contains('main-nav__burger--active')) {
     disableBodyScroll(mobile_menu);
