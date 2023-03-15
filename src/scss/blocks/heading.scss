@@ -137,31 +137,32 @@
     margin: 0 37px 0 0;
   }
 
-  &__projects-link {
-    position: relative;
+  &__projects {
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-transform: lowercase;
-    color: var(--color-black);
-
-    padding: 0 0 0 45px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
+    &-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       width: 30px;
       height: 30px;
-      background: url('../img/image/arrow.svg') var(--color-aqua-deep) no-repeat;
-      background-size: 14px 14px;
-      background-position: center;
+      background-color: var(--color-aqua-deep);
       border-radius: 50%;
 
-      transform: translateY(-50%);
+      margin: 0 15px 0 0;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: lowercase;
+      color: var(--color-black);
     }
   }
 
