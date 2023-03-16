@@ -301,15 +301,32 @@
 
   &__more-button {
     display: none;
+    align-items: center;
+    justify-content: center;
 
+    width: 90%;
+    height: 82px;
+    background: var(--color-golden-fizz);
+    border-radius: 61px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--color-aqua-deep);
+
+    padding: 30px 80px;
     margin: 122px auto 0 auto;
 
+    @include mixins.respond-to(notDesktop) {
+      padding: 30px 44px;
+    }
+
     @include mixins.respond-to(mobileOnly) {
-      display: block;
+      display: flex;
     }
 
     @include mixins.respond-to(tabletOnly) {
-      display: block;
+      display: flex;
     }
   }
 }
