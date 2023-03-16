@@ -8,6 +8,14 @@
   padding: 0 0 60px 0;
   margin: 74px 0 0 0;
 
+  @include mixins.respond-to(mobileOnly) {
+    margin: 40px 0 0 0;
+  }
+
+  @include mixins.respond-to(tabletOnly) {
+    margin: 40px 0 0 0;
+  }
+
   &__graphic {
     position: absolute;
     top: 0;
@@ -19,8 +27,23 @@
     overflow: hidden;
     background-color: var(--color-aqua-deep);
 
-
     z-index: -1;
+
+    @include mixins.respond-to(mobileOnly) {
+      position: relative;
+
+      height: 278px;
+
+      padding: 91px 5% 0 5%;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      position: relative;
+
+      height: 278px;
+
+      padding: 91px 5% 0 5%;
+    }
 
     & p {
       font-weight: 600;
@@ -35,6 +58,52 @@
 
       padding: 0;
       margin: 0;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: none;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        display: none;
+      }
+    }
+  }
+
+  &__sign-icon {
+    display: none;
+
+    @include mixins.respond-to(mobileOnly) {
+      position: absolute;
+      top: 3px;
+      right: 24px;
+
+      display: block;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      position: absolute;
+      top: 3px;
+      right: 24px;
+
+      display: block;
+    }
+  }
+
+  &__projects-icon {
+    display: none;
+
+    @include mixins.respond-to(mobileOnly) {
+      display: block;
+
+      width: 235px;
+      height: 37px;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: block;
+
+      width: 235px;
+      height: 37px;
     }
   }
 
@@ -58,6 +127,14 @@
     background-color: var(--color-golden-fizz);
 
     padding: 35px 28px 38px 59px;
+
+    @include mixins.respond-to(mobileOnly) {
+      display: none;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: none;
+    }
 
     &-title {
       font-weight: 700;
@@ -93,6 +170,26 @@
       position: relative;
 
       width: 415px;
+
+      @include mixins.respond-to(mobileOnly) {
+        width: 238px;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        width: 238px;
+      }
+    }
+
+    &-img {
+      width: 415px;
+
+      @include mixins.respond-to(mobileOnly) {
+        width: 238px;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        width: 238px;
+      }
     }
 
     &-caption {

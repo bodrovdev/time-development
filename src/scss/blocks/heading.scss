@@ -6,6 +6,14 @@
 
   padding: 50px 0 0 0;
 
+  @include mixins.respond-to(notDesktop) {
+    height: auto;
+    min-height: auto;
+    overflow: hidden;
+
+    padding: 90px 0 0 0;
+  }
+
   &__container {
     position: relative;
 
@@ -14,6 +22,16 @@
     justify-content: space-between;
 
     height: 100%;
+
+    @include mixins.respond-to(mobileOnly) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__graphic-text {
@@ -23,12 +41,19 @@
 
     z-index: -1;
 
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+      height: auto;
+    }
+
     @include mixins.respond-to(desktopS) {
       width: 500px;
+      height: auto;
     }
 
     @include mixins.respond-to(desktopM) {
       width: 706px;
+      height: auto;
     }
   }
 
@@ -85,6 +110,10 @@
       flex-direction: column;
 
       padding: 0 0 100px 0;
+
+      @include mixins.respond-to(notDesktop) {
+        padding: 0 0 41px 0;
+      }
     }
 
     &--right {
@@ -99,6 +128,16 @@
       @include mixins.respond-to(notDesktop) {
         display: flex;
         flex-direction: column;
+
+        width: 100%;
+      }
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+      &--mobile {
+        align-items: center;
+
+        width: 100%;
       }
     }
   }
@@ -108,6 +147,10 @@
       display: flex;
 
       width: 100%;
+
+      @include mixins.respond-to(notDesktop) {
+        justify-content: center;
+      }
 
       &--top {
         position: relative;
@@ -135,6 +178,14 @@
           }
         }
 
+        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+          & .heading__design-image:first-child {
+            align-self: flex-start;
+
+            margin: 0;
+          }
+        }
+
         & .heading__design-image:last-child {
           position: relative;
 
@@ -152,6 +203,14 @@
             border-radius: 50%;
           }
         }
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+          & .heading__design-image:last-child {
+            align-self: flex-end;
+
+            margin: 0;
+          }
+        }
       }
 
       &--bottom {
@@ -161,14 +220,37 @@
           margin: 0 22px 0 0;
         }
 
+        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+          & .heading__design-image:first-child {
+            align-self: flex-start;
+
+            margin: 0;
+          }
+        }
+
         & .heading__design-image:nth-child(2) {
           padding: 8px 0 0 0;
         }
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+          & .heading__design-image:last-child {
+            align-self: flex-end;
+
+            margin: 0;
+          }
+        }
       }
     }
-
-    &-img {}
   }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+    &__design-block {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
 
   &__caption {
     display: flex;
@@ -189,6 +271,14 @@
 
     padding: 13px 14px 15px 14px;
     margin: 0 0 30px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      display: none;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: none;
+    }
   }
 
   &__title {
@@ -197,17 +287,69 @@
     max-width: 305px;
 
     font-weight: 800;
-    font-size: 36px;
     line-height: 42px;
     color: var(--color-aqua-deep);
 
     margin: 0 0 77px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      max-width: 100%;
+
+      padding: 32px 0 0 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      max-width: 100%;
+
+      padding: 32px 0 0 0;
+    }
+
+    @include mixins.respond-to(desktopS) {
+      font-size: 36px;
+    }
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+    &__title {
+      font-size: 34px;
+    }
+  }
+
+  @media only screen and (min-device-width: 390px) and (max-device-width: 1023px) {
+    &__title {
+      font-size: 40px;
+    }
   }
 
   &__links {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+    &__links {
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-device-width: 390px) {
+    &__links {
+      flex-direction: row;
+    }
   }
 
   &__about-link {
@@ -227,13 +369,71 @@
 
     padding: 30px 80px;
     margin: 0 37px 0 0;
+
+    @include mixins.respond-to(notDesktop) {
+      padding: 30px 44px;
+    }
   }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+    &__about-link {
+      width: 100%;
+
+      margin: 0 0 20px 0;
+    }
+  }
+
+  @media only screen and (min-device-width: 390px) and (max-device-width: 1279px) {
+    &__about-link {
+      width: 227px;
+
+      margin: 0 22px 0 0;
+    }
+  }
+
 
   &__projects {
     &-link {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include mixins.respond-to(notDesktop) {
+        display: none;
+      }
+    }
+
+    &-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 30px;
+      height: 30px;
+      background-color: var(--color-aqua-deep);
+      border-radius: 50%;
+
+      margin: 0 15px 0 0;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: lowercase;
+      color: var(--color-black);
+    }
+  }
+
+  &__video {
+    &-link {
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      @include mixins.respond-to(notDesktop) {
+        display: flex;
+      }
     }
 
     &-circle {

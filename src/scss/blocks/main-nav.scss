@@ -236,7 +236,6 @@
       flex-direction: column;
       align-items: flex-start;
 
-      width: 40vw;
       height: calc(100vh);
       background-color: var(--color-aqua-deep);
       overflow: auto;
@@ -249,6 +248,18 @@
       padding: 26px 5%;
 
       z-index: 15;
+    }
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 80vw;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      width: 80vw;
+    }
+
+    @include mixins.respond-to(desktopSOnly) {
+      width: 40vw;
     }
   }
 

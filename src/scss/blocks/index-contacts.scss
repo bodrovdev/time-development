@@ -1,6 +1,11 @@
 @use "../mixins";
 
 .index-contacts {
+
+  //dev
+  display: none;
+  //dev
+
   &__container {
     display: flex;
     align-items: stretch;
