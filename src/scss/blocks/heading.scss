@@ -178,7 +178,7 @@
           }
         }
 
-        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
           & .heading__design-image:first-child {
             align-self: flex-start;
 
@@ -204,7 +204,7 @@
           }
         }
 
-        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
           & .heading__design-image:last-child {
             align-self: flex-end;
 
@@ -220,7 +220,7 @@
           margin: 0 22px 0 0;
         }
 
-        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
           & .heading__design-image:first-child {
             align-self: flex-start;
 
@@ -232,7 +232,7 @@
           padding: 8px 0 0 0;
         }
 
-        @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
           & .heading__design-image:last-child {
             align-self: flex-end;
 
@@ -243,7 +243,7 @@
     }
   }
 
-  @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
     &__design-block {
       flex-direction: column;
       align-items: center;
@@ -367,7 +367,7 @@
     }
   }
 
-  @media only screen and (min-device-width: 390px) {
+  @media only screen and (min-device-width: 375px) {
     &__links {
       flex-direction: row;
     }
@@ -396,7 +396,7 @@
     }
   }
 
-  @media only screen and (min-device-width: 320px) and (max-device-width: 389px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
     &__links .heading__about-link {
       width: 100%;
 
@@ -404,7 +404,7 @@
     }
   }
 
-  @media only screen and (min-device-width: 390px) and (max-device-width: 1279px) {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 1279px) {
     &__links .heading__about-link {
       width: 227px;
 
