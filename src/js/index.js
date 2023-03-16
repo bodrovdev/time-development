@@ -51,6 +51,7 @@ nav_list.onclick = function (event) {
 
   burger.classList.toggle('main-nav__burger--active');
   mobile_menu.classList.toggle('main-nav__nav-menu--mobile--active');
+  page_cover.classList.remove('cover-default--active');
   enableBodyScroll(mobile_menu);
 };
 

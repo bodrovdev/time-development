@@ -9,10 +9,12 @@
   margin: 74px 0 0 0;
 
   @include mixins.respond-to(mobileOnly) {
+    padding: 0;
     margin: 40px 0 0 0;
   }
 
   @include mixins.respond-to(tabletOnly) {
+    padding: 0;
     margin: 40px 0 0 0;
   }
 
@@ -114,6 +116,14 @@
     padding: 67px 0 0 0;
     margin: 0;
     margin-left: auto;
+
+    @include mixins.respond-to(mobileOnly) {
+      padding: 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      padding: 0;
+    }
   }
 
   &__caption {
@@ -159,9 +169,25 @@
 
     z-index: 1;
 
+    @include mixins.respond-to(mobileOnly) {
+      margin: -149px 0 0 5%;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      margin: -149px 0 0 5%;
+    }
+
     &-slide {
       width: fit-content;
       box-sizing: border-box;
+
+      @include mixins.respond-to(mobileOnly) {
+        width: 238px;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        width: 238px;
+      }
     }
   }
 
@@ -211,6 +237,14 @@
       color: var(--color-white);
 
       padding: 18px 10px;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: none;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        display: none;
+      }
     }
 
     &-info {
@@ -224,6 +258,20 @@
       background: #F9F9F9;
 
       padding: 0 13px;
+
+      @include mixins.respond-to(mobileOnly) {
+        height: fit-content;
+        background: transparent;
+
+        padding: 17px 0;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        height: fit-content;
+        background: transparent;
+
+        padding: 17px 0;
+      }
     }
 
     &-title {
@@ -233,6 +281,14 @@
       color: var(--color-aqua-deep);
 
       margin: 0 0 3px 0;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: none;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        display: none;
+      }
     }
 
     &-subtite {
@@ -240,6 +296,20 @@
       font-size: 16px;
       line-height: 19px;
       color: var(--color-black);
+    }
+  }
+
+  &__more-button {
+    display: none;
+
+    margin: 122px auto 0 auto;
+
+    @include mixins.respond-to(mobileOnly) {
+      display: block;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: block;
     }
   }
 }

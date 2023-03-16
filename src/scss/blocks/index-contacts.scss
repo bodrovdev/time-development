@@ -2,9 +2,13 @@
 
 .index-contacts {
 
-  //dev
-  display: none;
-  //dev
+  @include mixins.respond-to(mobileOnly) {
+    margin: 122px 0 0 0;
+  }
+
+  @include mixins.respond-to(tabletOnly) {
+    margin: 122px 0 0 0;
+  }
 
   &__container {
     display: flex;
@@ -17,6 +21,24 @@
     padding: 56px 0 0 0;
     margin: 0;
     margin-left: auto;
+
+    @include mixins.respond-to(mobileOnly) {
+      flex-direction: column;
+
+      width: 90%;
+      max-width: auto;
+
+      margin: 0 auto;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      flex-direction: column;
+
+      width: 90%;
+      max-width: auto;
+
+      margin: 0 auto;
+    }
   }
 
   &__column {
@@ -43,6 +65,16 @@
       justify-content: flex-end;
 
       padding: 48px 0 0 0;
+
+      @include mixins.respond-to(mobileOnly) {
+        padding: 0;
+        margin: 89px 0 0 0;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        padding: 0;
+        margin: 89px 0 0 0;
+      }
     }
   }
 
@@ -53,6 +85,20 @@
     color: var(--color-aqua-deep);
 
     margin: 0 0 75px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      font-size: 30px;
+      line-height: 35px;
+
+      margin: 0 0 44px 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      font-size: 30px;
+      line-height: 35px;
+
+      margin: 0 0 44px 0;
+    }
   }
 
   &__list {
@@ -95,6 +141,14 @@
 
     z-index: -1;
 
+    @include mixins.respond-to(mobileOnly) {
+      display: none;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: none;
+    }
+
     @include mixins.respond-to(desktopS) {
       top: -40px;
       left: -40px;
@@ -122,6 +176,14 @@
 
     padding: 0 0 46px 38px;
 
+    @include mixins.respond-to(mobileOnly) {
+      background: var(--color-aqua-deep);
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      background: var(--color-aqua-deep);
+    }
+
     @include mixins.respond-to(desktopS) {
       width: 650px;
     }
@@ -146,6 +208,30 @@
       top: 50%;
 
       transform: translateY(-50%);
+
+      @include mixins.respond-to(mobileOnly) {
+        top: -123px;
+        right: 11px;
+
+        transform: none;
+
+        & .index-contacts__wrapper-img {
+          width: 208px;
+          height: 208px;
+        }
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        top: -123px;
+        right: 11px;
+
+        transform: none;
+
+        & .index-contacts__wrapper-img {
+          width: 208px;
+          height: 208px;
+        }
+      }
 
       @include mixins.respond-to(desktopS) {
         right: 5%;
