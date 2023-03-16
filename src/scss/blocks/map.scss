@@ -6,6 +6,16 @@
 
   margin: 112px 0 0 0;
 
+  @include mixins.respond-to(mobileOnly) {
+    width: 90%;
+
+    margin: 37px auto 0 auto;
+  }
+
+  @include mixins.respond-to(tabletOnly) {
+    margin: 37px 0 0 0;
+  }
+
   &__image {
     width: 100%;
   }

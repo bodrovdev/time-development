@@ -1,0 +1,11 @@
+@use "../mixins";
+
+.page-title {
+  font-weight: 800;
+  font-size: 128px;
+  line-height: 150px;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-aqua-deep);
+  text-transform: uppercase;
+}
