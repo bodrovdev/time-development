@@ -17,7 +17,16 @@
   justify-content: center;
 
   &__number {
-    margin: 0 0 10px 0
+    display: inline-block;
+
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 38px;
+    color: transparent;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: var(--color-white);
+
+    margin: 0 0 10px 0;
   }
 
   &__clocks {

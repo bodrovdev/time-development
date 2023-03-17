@@ -1,0 +1,137 @@
+@use "../mixins";
+
+.about-heading {
+  margin: 120px 0 70px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &-image {
+      position: relative;
+
+      display: block;
+
+      margin: 0 160px 0 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -21px;
+        right: -40px;
+
+        width: 140px;
+        height: 140px;
+        border: 1px solid var(--color-aqua-deep);
+        border-radius: 50%;
+
+        z-index: -1;
+      }
+
+      @include mixins.respond-to(mobileOnly) {
+        display: none;
+      }
+    }
+
+    &-image--mobile {
+      display: none;
+
+      &::after {
+        top: -27px;
+        right: -50px;
+      }
+
+      @include mixins.respond-to(mobileOnly) {
+        display: block;
+      }
+    }
+
+    &-title {
+      margin: 0 0 40px 0;
+    }
+
+    &-text {
+      display: block;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: none;
+      }
+    }
+
+    &-text--mobile {
+      display: none;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: block;
+      }
+    }
+
+    &-text p {
+      display: inline-block;
+
+      max-width: 605px;
+
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+      color: var(--color-black);
+
+      padding: 0;
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &-text p {
+      display: inline-block;
+
+      max-width: 555px;
+
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+      color: var(--color-black);
+
+      padding: 0;
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &-image {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -84px;
+
+        width: 140px;
+        height: 140px;
+        border: 1px solid var(--color-aqua-deep);
+        border-radius: 50%;
+
+        z-index: -1;
+      }
+    }
+  }
+}
