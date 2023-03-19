@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+
+  <link href="css/style.min.css?v=1.0" rel="stylesheet">
+  <title></title>
+</head>
+
+<body class="cover-default">
+
+  <header class="page-header">
+    <nav class="main-nav">
+      <div class="main-nav__container base-container">
+        <a class="main-nav__logo-link base-link" href="index.html">
+          <figure class="main-nav__logo-image base-figure">
+            <img class="main-nav__logo-img" src="img/image/logo.png" width="124" height="50" alt="Логотип">
+          </figure>
+        </a>
+
+        <div class="main-nav__nav-menu main-nav__nav-menu--mobile" id="mobile_menu">
+
+          <a class="main-nav__logo-link main-nav__logo-link--mobile base-link" href="index.html">
+            <figure class="main-nav__logo-image base-figure">
+              <img class="main-nav__logo-img" src="img/image/logo-mobile-menu.png" width="66" height="26" alt="Логотип">
+            </figure>
+          </a>
+
+          <ul class="main-nav__nav-list base-list">
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-projects base-link" href="projects.html">Проект</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-archive base-link" href="press.html">Пресс-центр</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-about base-link" href="about.html">О компании</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link nav-team--active base-link" href="team.html">Команда</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-contacts base-link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+
+          <div class="main-nav__search-bar" id="search_bar">
+            <svg class="main-nav__search-icon" width="16" height="16" alt="Иконка поиска" id="search_icon">
+              <use href="img/icon/sprite.svg#search-icon"></use>
+            </svg>
+          </div>
+
+        </div>
+
+        <button class="main-nav__burger base-button" id="burger">
+          <span class="main-nav__burger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+
+<main class="page-content">
+  <section class="contacts">
+  <div class="contacts__container base-container">
+    <div class="contacts__column contacts__column--left">
+      <h2 class="contacts__title base-title">Контакты</h2>
+      <ul class="contacts__list base-list">
+        <li class="contacts__item">
+          <svg class="contacts__item-icon" width="24" height="24" alt="Иконка телефона">
+            <use href="img/icon/sprite.svg#phone-icon"></use>
+          </svg>
+          <a class="contacts__item-link base-link" href="tel:+ 477 123 4567">+ 477 123 4567</a>
+        </li>
+        <li class="contacts__item">
+          <svg class="contacts__item-icon" width="24" height="24" alt="Иконка электронной почты">
+            <use href="img/icon/sprite.svg#email-icon"></use>
+          </svg>
+          <a class="contacts__item-link base-link" href="mailto:timedevelopment.com">timedevelopment.com</a>
+        </li>
+        <li class="contacts__item">
+          <svg class="contacts__item-icon" width="24" height="24" alt="Иконка часов">
+            <use href="img/icon/sprite.svg#time-icon"></use>
+          </svg>
+          <span class="contacts__item-text">c 9:00 до 19:00</span>
+        </li>
+        <li class="contacts__item">
+          <svg class="contacts__item-icon" width="24" height="24" alt="Иконка карты">
+            <use href="img/icon/sprite.svg#map-icon"></use>
+          </svg>
+          <span class="contacts__item-text">г.Москва</span>
+        </li>
+      </ul>
+    </div>
+    <div class="contacts__column contacts__column--right">
+      <div class="contacts__wrapper">
+        <p class="contacts__wrapper-text base-par">
+          В сегменте жилой и многофункциональной недвижимости в самых знаковых локациях Москвы.
+        </p>
+        <figure class="contacts__wrapper-image base-figure">
+          <img class="contacts__wrapper-img" src="img/image/contacts-image.png" width="433" height="433" alt="Декоративное изображение круга с фото дома внутри">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="map">
+  <figure class="map__image base-figure">
+    <img class="map__img" src="img/image/map.png" alt="Заглушка для карты">
+  </figure>
+</section>
+</main>
+
+<footer class="page-footer">
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="js/index.min.js?v=1.0"></script>
+</body>
+
+</html>
