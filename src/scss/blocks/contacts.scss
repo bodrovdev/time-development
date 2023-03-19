@@ -1,0 +1,239 @@
+@use "../mixins";
+
+.contacts {
+
+  @include mixins.respond-to(mobileOnly) {
+    margin: 122px 0 0 0;
+  }
+
+  @include mixins.respond-to(tabletOnly) {
+    margin: 122px 0 0 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    width: inherit;
+    max-width: calc(100% - ((100% - var(--container-width)) / 2));
+
+    margin: 0;
+    margin-left: auto;
+
+    @include mixins.respond-to(mobileOnly) {
+      flex-direction: column;
+
+      width: 100%;
+      max-width: auto;
+
+      margin: 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      flex-direction: column;
+
+      width: 90%;
+      max-width: auto;
+
+      margin: 0 auto;
+    }
+  }
+
+  &__column {
+
+    &--left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      @include mixins.respond-to(mobileOnly) {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      @include mixins.respond-to(desktopS) {
+        padding: 85px 0 0 5%;
+      }
+
+      @include mixins.respond-to(desktopD) {
+        padding: 85px 0 0 50px;
+      }
+    }
+
+    &--right {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding: 48px 0 0 0;
+
+      @include mixins.respond-to(mobileOnly) {
+        padding: 0;
+        margin: 89px 0 0 0;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        padding: 0;
+        margin: 89px 0 0 0;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    color: var(--color-aqua-deep);
+
+    margin: 0 0 75px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      font-size: 30px;
+      line-height: 35px;
+
+      margin: 0 0 44px 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      font-size: 30px;
+      line-height: 35px;
+
+      margin: 0 0 44px 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 30px 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &-icon {
+      margin: 0 38px 0 0;
+    }
+
+    &-link,
+    .contacts__item-text {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      color: var(--color-aqua-deep);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    height: 350px;
+    background-color: var(--color-aqua-deep);
+
+    padding: 0 0 30px 28px;
+
+    @include mixins.respond-to(mobileOnly) {
+      height: 186px;
+      background: var(--color-aqua-deep);
+
+      padding: 0 0 29px 26px;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      height: 186px;
+      background: var(--color-aqua-deep);
+
+      padding: 0 0 29px 26px;
+    }
+
+    @include mixins.respond-to(desktopS) {
+      width: 650px;
+    }
+
+    @include mixins.respond-to(desktopD) {
+      width: 870px;
+    }
+
+    &-text {
+      display: inline-block;
+
+      max-width: 190px;
+
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-white);
+    }
+
+    &-image {
+      position: absolute;
+      top: 47%;
+
+      transform: translateY(-50%);
+
+      @include mixins.respond-to(mobileOnly) {
+        top: -123px;
+        right: 11px;
+
+        transform: none;
+
+        & .contacts__wrapper-img {
+          width: 208px;
+          height: 208px;
+        }
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        top: -123px;
+        right: 11px;
+
+        transform: none;
+
+        & .contacts__wrapper-img {
+          width: 208px;
+          height: 208px;
+        }
+      }
+
+      @include mixins.respond-to(desktopS) {
+        right: 5%;
+
+        & .contacts__wrapper-img {
+          width: 300px;
+          height: auto;
+        }
+      }
+
+      @include mixins.respond-to(desktopD) {
+        right: auto;
+        left: 210px;
+
+        & .contacts__wrapper-img {
+          width: 433px;
+          width: auto;
+          height: 446px;
+        }
+      }
+    }
+  }
+}

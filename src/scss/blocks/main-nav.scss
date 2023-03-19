@@ -94,7 +94,7 @@
   z-index: 10;
 
   @include mixins.respond-to(notDesktop) {
-    margin: 23px 0 0 0;
+    margin: 33px 0 0 0;
   }
 
   &__container {
@@ -106,6 +106,8 @@
 
     @include mixins.respond-to(notDesktop) {
       justify-content: space-between;
+
+      padding: 0 5px;
     }
   }
 
@@ -145,6 +147,13 @@
     min-width: 124px;
     height: 50px;
     min-height: 50px;
+
+    @include mixins.respond-to(notDesktop) {
+      width: 66px;
+      min-width: auto;
+      height: 26px;
+      min-height: auto;
+    }
   }
 
   &__nav-menu {
@@ -245,7 +254,7 @@
       transform: translateX(-100%);
       transition: transform 0.4s cubic-bezier(0.37, 0, 0.63, 1);
 
-      padding: 26px 5%;
+      padding: 48px calc(5% + 5px);
 
       z-index: 15;
     }
@@ -383,5 +392,36 @@
 
     transition-delay: 0.4s;
     transition: background-color 0.1s
+  }
+}
+
+.nav-projects--active,
+.nav-archive--active,
+.nav-about--active,
+.nav-team--active,
+.nav-contacts--active {
+  position: relative;
+
+  color: var(--color-aqua-deep);
+
+  @include mixins.respond-to(notDesktop) {
+    color: var(--color-golden-fizz);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+
+    width: 41px;
+    height: 1px;
+    background-color: var(--color-aqua-deep);
+
+    transform: translateX(-50%);
+
+    @include mixins.respond-to(notDesktop) {
+      display: none;
+    }
   }
 }

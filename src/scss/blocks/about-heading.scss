@@ -1,7 +1,11 @@
 @use "../mixins";
 
 .about-heading {
-  margin: 120px 0 70px 0;
+  margin: 139px 0 70px 0;
+
+  @include mixins.respond-to(mobileOnly) {
+    margin: 54px 0 100px 0;
+  }
 
   &__container {
     display: flex;
@@ -11,7 +15,12 @@
   &__top {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+
+    @include mixins.respond-to(mobileOnly) {
+      flex-direction: column;
+
+      margin: 0 0 63px 0;
+    }
 
     &-image {
       position: relative;
@@ -37,23 +46,32 @@
       @include mixins.respond-to(mobileOnly) {
         display: none;
       }
-    }
 
-    &-image--mobile {
-      display: none;
+      &--mobile {
+        display: none;
 
-      &::after {
-        top: -27px;
-        right: -50px;
-      }
+        margin: 0 0 41px 0;
 
-      @include mixins.respond-to(mobileOnly) {
-        display: block;
+        &::after {
+          top: -27px;
+          right: -50px;
+
+          width: 78px;
+          height: 77px;
+        }
+
+        @include mixins.respond-to(mobileOnly) {
+          display: block;
+        }
       }
     }
 
     &-title {
-      margin: 0 0 40px 0;
+      margin: 0 0 30px 0;
+
+      @include mixins.respond-to(mobileOnly) {
+        margin: 0 0 27px 0;
+      }
     }
 
     &-text {
@@ -61,14 +79,6 @@
 
       @include mixins.respond-to(mobileOnly) {
         display: none;
-      }
-    }
-
-    &-text--mobile {
-      display: none;
-
-      @include mixins.respond-to(mobileOnly) {
-        display: block;
       }
     }
 
@@ -90,12 +100,36 @@
         margin: 0;
       }
     }
+
+    &-text--mobile {
+      display: none;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: block;
+      }
+    }
+
+    &-text--mobile p {
+      text-transform: none;
+    }
   }
 
   &__bottom {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    @include mixins.respond-to(mobileOnly) {
+      justify-content: flex-end;
+    }
+
+    &-text {
+      padding: 0 0 17px 0;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: none;
+      }
+    }
 
     &-text p {
       display: inline-block;
@@ -119,6 +153,12 @@
     &-image {
       position: relative;
 
+      padding: 0 88px 0 0;
+
+      @include mixins.respond-to(mobileOnly) {
+        padding: 0;
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -130,7 +170,19 @@
         border: 1px solid var(--color-aqua-deep);
         border-radius: 50%;
 
-        z-index: -1;
+        @include mixins.respond-to(mobileOnly) {
+          left: -53px;
+
+          width: 82px;
+          height: 82px;
+        }
+      }
+    }
+
+    &-img {
+      @include mixins.respond-to(mobileOnly) {
+        width: 147px;
+        height: 147px;
       }
     }
   }
