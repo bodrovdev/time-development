@@ -1,0 +1,130 @@
+@use "../mixins";
+
+.contacts-page {
+  margin: 141px 0 141px 0;
+
+  @include mixins.respond-to(notDesktop) {
+    margin: 38px 0 44px 0;
+  }
+
+  &__container {
+    display: flex;
+
+    @include mixins.respond-to(notDesktop) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    display: block;
+
+    padding: 0 0 0 58px;
+    margin: 0 78px 0 0;
+
+    @include mixins.respond-to(notDesktop) {
+      display: none;
+    }
+
+    & .time-clocks {
+      position: absolute;
+      top: -99px;
+      right: -49px;
+
+      filter: brightness(0) saturate(100%) invert(27%) sepia(14%) saturate(3256%) hue-rotate(128deg) brightness(87%) contrast(104%);
+    }
+
+    & .time-clocks__clocks {
+      width: 190px;
+      height: 190px;
+    }
+  }
+
+  &__image--mobile {
+    position: relative;
+
+    display: none;
+
+    padding: 0;
+    margin: 0 0 55px 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -44px;
+      right: -48px;
+
+      width: 96px;
+      height: 102px;
+      border: 1px solid var(--color-aqua-deep);
+      border-radius: 50%;
+
+      z-index: -1;
+    }
+
+    @include mixins.respond-to(notDesktop) {
+      display: block;
+    }
+  }
+
+  &__sign-icon {
+    position: absolute;
+    top: -23px;
+    right: -39px;
+
+    width: 24px;
+    height: 109px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 105px 0 0 0;
+
+    @include mixins.respond-to(notDesktop) {
+      padding: 0;
+    }
+  }
+
+  &__input {
+    width: 605px;
+    height: 68px;
+
+    border: 1px solid var(--color-aqua-deep);
+    border-radius: 19px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-black);
+
+    padding: 25px;
+    margin: 0 0 9px 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include mixins.respond-to(notDesktop) {
+      width: 100%;
+    }
+  }
+
+  &__input--textarea {
+    width: 605px;
+    height: 132px;
+    border-radius: 32px;
+    resize: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-black);
+
+    @include mixins.respond-to(notDesktop) {
+      width: 100%;
+    }
+  }
+}

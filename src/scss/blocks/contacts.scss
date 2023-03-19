@@ -2,13 +2,13 @@
 
 .contacts {
 
-  @include mixins.respond-to(mobileOnly) {
-    margin: 122px 0 0 0;
-  }
+  // @include mixins.respond-to(mobileOnly) {
+  //   margin: 122px 0 0 0;
+  // }
 
-  @include mixins.respond-to(tabletOnly) {
-    margin: 122px 0 0 0;
-  }
+  // @include mixins.respond-to(tabletOnly) {
+  //   margin: 122px 0 0 0;
+  // }
 
   &__container {
     display: flex;
@@ -41,7 +41,6 @@
   }
 
   &__column {
-
     &--left {
       display: flex;
       flex-direction: column;
@@ -233,6 +232,17 @@
           width: auto;
           height: 446px;
         }
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 392px) {
+      &-image {
+        top: -70px;
+      }
+
+      & .contacts__wrapper-img {
+        width: 150px;
+        height: auto;
       }
     }
   }
