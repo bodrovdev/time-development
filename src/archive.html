@@ -1,0 +1,28 @@
+@@include('components/_base/_base-header.html', {
+"isActive-archive": "nav-archive--active",
+})
+
+<main class="page-content">
+
+  <section class="press-heading">
+    <div class="press-heading__container base-container">
+      <h1 class="press-heading__title base-title"></h1>
+      <div class="press-heading__wrapper">
+        <div class="press-heading__column press-heading__column--left">
+          <figure class="press-heading__image base-figure">
+            <img class="press-heading__img" src="" width="" height="" alt="#">
+          </figure>
+          <figure class="press-heading__image press-heading__image--mobile base-figure">
+            <img class="press-heading__img" src="" width="" height="" alt="#">
+          </figure>
+        </div>
+        <div class="press-heading__column press-heading__column--right"></div>
+      </div>
+    </div>
+  </section>
+
+  @@include('components/_bem/_contacts.html')
+  @@include('components/_bem/_map.html')
+</main>
+
+@@include('components/_base/_base-footer.html')

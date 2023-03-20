@@ -1,0 +1,106 @@
+@use "../mixins";
+
+.team-heading {
+  position: relative;
+
+  overflow: hidden;
+
+  margin: 88px 0 0 0;
+
+  @include mixins.respond-to(notDesktopFr) {
+    margin: 54px 0 96px
+  }
+
+  &__container {
+    display: flex;
+
+    padding: 0 0 232px 0;
+
+    @include mixins.respond-to(notDesktopFr) {
+      padding: 0 0 60px 0;
+    }
+  }
+
+  &__column {
+    &--left {
+      margin: 0 263px 0 0;
+
+      @include mixins.respond-to(notDesktopFr) {
+        margin: 0;
+      }
+    }
+
+    &--right {
+      position: relative;
+
+      & .time-clocks {
+        filter: brightness(0) saturate(100%) invert(21%) sepia(65%) saturate(1523%) hue-rotate(144deg) brightness(88%) contrast(103%);
+
+        @include mixins.respond-to(notDesktopFr) {
+          display: none;
+        }
+      }
+
+      & .time-clocks__clocks {
+        width: 190px;
+        height: 190px;
+      }
+    }
+  }
+
+  &__title {
+    line-height: 150px;
+    text-transform: none;
+
+    padding: 55px 0 0 0;
+
+    @include mixins.respond-to(notDesktopFr) {
+      font-size: 50px;
+      line-height: 59px;
+
+      padding: 0;
+    }
+  }
+
+  &__column-text {
+    & p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+
+      color: var(--color-black);
+    }
+  }
+
+  &__running-text {
+    position: absolute;
+    right: 0;
+    bottom: 183px;
+
+    display: inline-block;
+
+    width: 550px;
+    height: 69px;
+    background-color: var(--color-aqua-deep);
+
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+    color: var(--color-golden-fizz);
+    white-space: nowrap;
+
+    padding: 15px 24px;
+    margin: 0;
+
+    @include mixins.respond-to(notDesktopFr) {
+      position: relative;
+      right: auto;
+      bottom: auto;
+
+      width: 100vw;
+
+      padding: 10px 10px;
+    }
+  }
+}
