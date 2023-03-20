@@ -1,0 +1,155 @@
+@use "../mixins";
+
+.news {
+  background: url(../img/image/archive-background.png);
+  background-position: top;
+  background-repeat: no-repeat;
+
+  margin: 128px 0 159px 0;
+
+  @include mixins.respond-to(notDesktop) {
+    background: none;
+
+    margin: 45px 0 99px 0;
+  }
+
+  &__top {
+
+
+    &-container {
+      position: relative;
+
+      display: flex;
+      align-items: flex-start;
+
+      width: 100%;
+
+      padding: 0 0 0 50px;
+      margin: 0 0 102px 0;
+    }
+
+    &-image {
+      position: relative;
+
+      margin: 0 93px 0 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -39px;
+        right: 18px;
+
+        width: 140px;
+        height: 140px;
+        border: 1px solid var(--color-aqua-deep);
+        border-radius: 50%;
+
+        z-index: -1;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+
+      max-width: 415px;
+
+      padding: 66px 0 0 0;
+    }
+
+    & .time-clocks {
+      position: absolute;
+      top: -95px;
+      right: 33px;
+
+      filter: brightness(0) saturate(100%) invert(24%) sepia(52%) saturate(917%) hue-rotate(127deg) brightness(92%) contrast(102%);
+    }
+
+    & .time-clocks__clocks {
+      width: 190px;
+      height: 190px;
+    }
+  }
+
+  &__info {
+    &-title {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38px;
+      text-transform: uppercase;
+      color: var(--color-aqua-deep);
+
+      margin: 0 0 76px 0;
+    }
+
+    &-text {
+      & p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: lowercase;
+
+        padding: 0;
+        margin: 0 0 20px 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__main {
+
+    &-container {
+      padding: 0 0 0 45px;
+      margin: 0 0 128px 0;
+    }
+
+    & p {
+      display: inline-block;
+
+      max-width: 1070px;
+
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      font-variant: small-caps;
+      color: var(--color-black);
+
+      padding: 0;
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    position: relative;
+
+    &-container {
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      padding: 0 0 0 45px;
+    }
+  }
+
+  &__running-text {
+    position: absolute;
+    right: -800px;
+    bottom: 0;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 43px;
+    text-align: justify;
+    color: var(--color-aqua-deep);
+  }
+
+
+}

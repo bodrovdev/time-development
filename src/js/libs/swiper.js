@@ -17,7 +17,7 @@ let project_slider = new Swiper('.index-projects__slider', {
 var init = false;
 
 function archiveSlider() {
-  if (window.innerWidth <= 1023) {
+  if (window.innerWidth <= 1279) {
     if (!init) {
       init = true;
       var archiveSlider = new Swiper(".press-body__slider", {
