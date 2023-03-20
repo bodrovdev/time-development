@@ -38,7 +38,7 @@
               <a class="main-nav__nav-link @@isActive-project base-link" href="project.html">Проект</a>
             </li>
             <li class="main-nav__nav-item">
-              <a class="main-nav__nav-link @@isActive-archive base-link" href="archive.html">Пресс-центр</a>
+              <a class="main-nav__nav-link nav-archive--active base-link" href="archive.html">Пресс-центр</a>
             </li>
             <li class="main-nav__nav-item">
               <a class="main-nav__nav-link @@isActive-about base-link" href="about.html">О компании</a>
@@ -47,7 +47,7 @@
               <a class="main-nav__nav-link @@isActive-team base-link" href="team.html">Команда</a>
             </li>
             <li class="main-nav__nav-item">
-              <a class="main-nav__nav-link nav-contacts--active base-link" href="contacts.html">Контакты</a>
+              <a class="main-nav__nav-link @@isActive-contacts base-link" href="contacts.html">Контакты</a>
             </li>
           </ul>
 
@@ -68,27 +68,69 @@
   </header>
 
 <main class="page-content">
-  <section class="contacts-page">
-    <div class="contacts-page__container base-container">
-      <figure class="contacts-page__image base-figure">
+
+  <section class="news">
+    <div class="news__container base-container">
+      <div class="news__top">
+        <figure class="news__top-image base-figure">
+          <img class="news__top-img" src="img/image/archive-image.png" width="450" height="450" alt="#">
+        </figure>
+        <figure class="news__top-image news__top-image--mobile base-figure">
+          <img class="news__top-img" src="img/image/archive-image-mobile.png" width="321" height="322" alt="#">
+        </figure>
+        <div class="news__top-info">
+          <h1 class="news__info-title base-title">
+            ЖК «Новая<br> Щербинка» –<br> победитель премии<br> Urban Awards
+          </h1>
+          <div class="news__info-text">
+            <p>Проект компании Time Development стал<br> победителем 14-й Московской премии Urban Awards<br> в номинации «Жилой комплекс года комфорт-класса<br> Московской области».</p>
+          </div>
+        </div>
         <div class="time-clocks">
   <span class="time-clocks__number">12</span>
   <svg class="time-clocks__clocks" width="@@width" height="@@height" alt="Циферблат">
     <use href="img/icon/sprite.svg#time-clock-icon"></use>
   </svg>
 </div>
-        <img class="contacts-page__img" src="img/image/contacts-page-image.png" width="391" height="391" alt="Декоративное изображение здания с множеством окон">
-      </figure>
-      <figure class="contacts-page__image contacts-page__image--mobile base-figure">
-        <svg class="contacts-page__sign-icon" width="16" height="68" alt="#" aria-hidden="true">
-          <use href="img/icon/sprite.svg#sign-fill-icon"></use>
-        </svg>
-        <img class="contacts-page__img" src="img/image/contacts-page-image-mobile.png" width="178" height="264" alt="Декоративное изображение здания с множеством окон">
-      </figure>
-      <form class="contacts-page__form" action="#">
-        <input class="contacts-page__input" type="tel" name="phone" id="phone" placeholder="Ваш телефон">
-        <textarea class="contacts-page__input contacts-page__input--textarea" name="text" id="text" placeholder="Ваше сообщение..."></textarea>
-      </form>
+        <div class="scroll-help">
+  <span class="scroll-help__text">Листать</span>
+  <div class="scroll-help__circle">
+    <svg class="scroll-help__icon" width="15" height="23" aria-hidden="true" alt="#">
+      <use href="img/icon/sprite.svg#mouse-icon"></use>
+    </svg>
+  </div>
+</div>
+      </div>
+
+      <div class="news__main">
+        <p>
+          Жилой комплекс «Новая Щербинка», где реализуются квартиры в малоэтажных домах от 3-х до 8-ми этажей, расположенный на Юге московского региона, в Подольском районе получил высшую оценку жюри премии Urban Awards. В этом году эксперты оценивали 83
+          объекта в 20 номинациях по сотне параметров, предварительно изучив всю предоставленную информацию и документацию.
+          Для молодой компании Time Development ЖК «Новая Щербинка» – флагманский проект, который она впервые заявила на премию Urban Awards. «Безусловно, вся наша команда очень рада, что проект заслужил высокую оценку авторитетного жюри и получил своего рода
+          знак качества, – комментирует Юрий Раловец, коммерческий директор Time Development. – Сегодня, когда рынок недвижимости переживает очередной стресс-тест, крайне важно всем участникам отрасли налаживать конструктивный диалог, делиться полезным опытом,
+          поддерживать и наращивать необходимые компетенции. И мы видим важную роль премии Urban Awards в формировании профессионального комьюнити».
+          Помимо важности создания профессиональной коалиции, Юрий Раловец на церемонии вручения премии напомнил также о социальной ответственности застройщиков в контексте формирования комфортной городской среды: «Мы все работаем для людей. В «Новой Щербинке»
+          комфорт городской среды обеспечивают не только дворы и спортивные площадки, но и школы, детские сады, медицинские учреждения. Без этого в наше время невозможно представить себе ни один современный проект. Именно социальная ответственность застройщика
+          формирует положительный эффект и для города, и для горожан, и для отрасли в целом».
+          Напомним, что проект реализуется в три этапа. Первая очередь ЖК уже завершилась, началась выдача ключей. Благодаря компании Time Development жилищный фонд в окружающей локации к 2028 году пополнится на 3,3 тыс. квартир.
+        </p>
+      </div>
+
+      <div class="news__bottom">
+        <figure class="news__bottom-image base-figure">
+          <img class="news__bottom-img" src="img/image/archive-image-mobile.png" width="482" height="483" alt="#">
+        </figure>
+      </div>
+    </div>
+    <div class="news__text-container">
+      <div class="news__running-text">
+        <p> -?время–деньги! ] вногусовременем>}―:)пришлонашевр время перемен : ) · - время действовать ! . . · -? время – деньги ! ]</p>
+        <p> временем>}―:)·-?время– нашевремя―]·времяперемен:)· действовать–деньги! ] вногусовременем>}―:)·-?время–ден</p>
+        <p>ногу со временем > } ― : ) пришло наше время ― ] · время перемен : ) действовать!.. ·-?время–деньги! ] вногусовременем>}―:)·-?</p>
+        <p>наше время ― ] · время перемен : ) · - время действовать – деньги ! ] временем>}―:)·-?время–деньги! ] вногусовременем>}―:)</p>
+        <p>наше время ― ] · время перемен : ) · - время действовать ! . . · -? время! ] вногусовременем>}―:)·-?время– нашевремя―]·времяпе -времядействовать–деньги! ] вногусовременем>}―:)·-?время! ] вногусовременем>}―:)пришлонашевремя―]·времяперевремя</p>
+        <p>действовать ! . . · -? время – деньги ! ] в ногу со временем ></p>
+      </div>
     </div>
   </section>
 

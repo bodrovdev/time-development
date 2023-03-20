@@ -35,7 +35,7 @@
 
           <ul class="main-nav__nav-list base-list">
             <li class="main-nav__nav-item">
-              <a class="main-nav__nav-link @@isActive-projects base-link" href="projects.html">Проект</a>
+              <a class="main-nav__nav-link @@isActive-project base-link" href="project.html">Проект</a>
             </li>
             <li class="main-nav__nav-item">
               <a class="main-nav__nav-link @@isActive-archive base-link" href="archive.html">Пресс-центр</a>
@@ -91,6 +91,14 @@
   </svg>
 </div>
       </div>
+      <div class="scroll-help">
+  <span class="scroll-help__text">Листать</span>
+  <div class="scroll-help__circle">
+    <svg class="scroll-help__icon" width="15" height="23" aria-hidden="true" alt="#">
+      <use href="img/icon/sprite.svg#mouse-icon"></use>
+    </svg>
+  </div>
+</div>
     </div>
     <div class="team-heading__running-text">-?время–деньги! ] вногусовременем>}―:)пришлонашевр время</div>
   </section>
@@ -198,11 +206,45 @@
     </div>
   </div>
 </section>
-  <section class="map">
-  <figure class="map__image base-figure">
+  <section class="map" id="map">
+  <!-- <figure class="map__image base-figure">
     <img class="map__img" src="img/image/map.png" alt="Заглушка для карты">
-  </figure>
+  </figure> -->
 </section>
+
+<style>
+  /*окрашивание карты: vladislav-land.ru/yandexmap*/
+  .ymaps-2-1-79-ground-pane {
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+  }
+
+  /*режим наложения на шейп и отключение реакции курсора: vladislav-land.ru/yandexmap*/
+  .tn-elem__4346096441649723484272 {
+    mix-blend-mode: difference;
+    display: flex !important;
+    pointer-events: none;
+  }
+</style>
+
+
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<style>
+  /*Тёмная Яндекс карта в Zero-блоке на Tilda: vladislav-land.ru/yandexmap*/
+  /* #map {
+    width: 100%;
+    height: 800px;
+    padding: 0;
+    margin: 0;
+  } */
+</style>
+<script> ymaps.ready(function () { var myMap = new ymaps.Map('map', { center: [53.902284, 27.561831], zoom: 11 }, { searchControlProvider: 'yandex#search' }), MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: medium;">$[properties.iconContent]</div>'), myPlacemarkWithContent = new ymaps.Placemark([53.902284, 27.561831], { hintContent: 'город Минск' }, { iconLayout: 'default#imageWithContent', iconImageHref: 'https://files.catbox.moe/sw6ezc.png', iconImageSize: [55, 55], iconImageOffset: [0, 0], iconContentOffset: [15, 15], iconContentLayout: MyIconContentLayout }); myMap.geoObjects.add(myPlacemarkWithContent); }); </script>
+
+<!-- https://files.catbox.moe/sw6ezc.png -->
 </main>
 
 <footer class="page-footer">
