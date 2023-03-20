@@ -1,0 +1,128 @@
+@use "../mixins";
+
+.project-slider {
+
+  margin: 0 0 231px 0;
+
+  @include mixins.respond-to(notDesktop) {
+    margin: 0 0 91px 0;
+  }
+
+  &__container {
+    max-width: calc(100% - (100% - var(--container-width))/ 2);
+    overflow: hidden;
+
+    padding: 0 0 0 184px;
+    margin: 0 0 0 auto;
+
+    @include mixins.respond-to(notDesktop) {
+      width: 90%;
+      max-width: inherit;
+
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__slider {
+    margin: 0 0 71px 0;
+
+    @include mixins.respond-to(notDesktop) {
+      margin: 0 0 96px 0;
+    }
+  }
+
+  &__slider-slide {
+    width: 733px;
+
+    @include mixins.respond-to(notDesktop) {
+      width: 359px;
+    }
+  }
+
+  &__slide {
+    &-img {
+      @include mixins.respond-to(notDesktop) {
+        width: 359px;
+        height: 222px;
+      }
+    }
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+
+      padding: 35px 0 0 0;
+    }
+
+    &-year {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+
+      color: #BDB4B4;
+    }
+
+    &-name {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+
+      color: #000000;
+
+      @include mixins.respond-to(notDesktop) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  &__more-container {
+    @include mixins.respond-to(notDesktop) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__more {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 298px;
+    height: 82px;
+    background: var(--color-golden-fizz);
+    border-radius: 61px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--color-aqua-deep);
+
+    padding: 30px 0;
+    margin: 0 0 0 96px;
+
+    @include mixins.respond-to(notDesktop) {
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -170px;
+      left: -136px;
+
+      width: 140px;
+      height: 140px;
+      border: 1px solid var(--color-aqua-deep);
+      border-radius: 50%;
+
+      @include mixins.respond-to(notDesktop) {
+        display: none;
+      }
+    }
+  }
+}

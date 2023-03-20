@@ -1,0 +1,165 @@
+@use "../mixins";
+
+.project-header {
+  margin: 134px 0 230px 0;
+
+  @include mixins.respond-to(notDesktop) {
+    margin: 55px 0 111px 0;
+  }
+
+  &__container {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    @include mixins.respond-to(notDesktop) {
+      flex-direction: column;
+    }
+
+    & .time-clocks {
+      position: absolute;
+      bottom: -155px;
+      left: 233px;
+
+      filter: brightness(0) saturate(100%) invert(24%) sepia(52%) saturate(917%) hue-rotate(127deg) brightness(92%) contrast(102%);
+
+      @include mixins.respond-to(notDesktop) {
+        display: none;
+      }
+    }
+
+    & .scroll-help {
+      position: absolute;
+
+      right: -30px;
+    }
+  }
+
+  // &__graphic {
+  //   position: absolute;
+  //   top: 75px;
+  //   right: 0;
+
+  //   display: none;
+  //   justify-content: center;
+
+  //   width: 87px;
+  //   height: 117px;
+
+  //   @include mixins.respond-to(notDesktop) {
+  //     display: flex;
+  //   }
+  // }
+
+  // &__sign-icon {
+  //   position: relative;
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     top: -50px;
+  //     right: -89px;
+
+  //     width: 87px;
+  //     height: 88px;
+  //     border: 1px solid var(--color-aqua-deep);
+  //     border-radius: 50%;
+  //   }
+  // }
+
+  &__image {
+    position: relative;
+
+    margin: 0 151px 0 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -89px;
+
+      width: 140px;
+      height: 140px;
+      border: 1px solid var(--color-aqua-deep);
+      border-radius: 50%;
+
+      @include mixins.respond-to(notDesktop) {
+        top: -19px;
+        right: -31px;
+
+        width: 52px;
+        height: 54px;
+      }
+    }
+
+    @include mixins.respond-to(notDesktop) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mixins.respond-to(notDesktop) {
+        display: block;
+
+        margin: 0 0 29px 0;
+      }
+    }
+  }
+
+  &__info {
+    max-width: 610px;
+  }
+
+  &__title {
+    line-height: 87px;
+
+    margin: 0 0 67px 0;
+
+    @include mixins.respond-to(notDesktop) {
+      font-size: 50px;
+      line-height: 45px;
+
+      margin: 0 0 35px 0;
+    }
+  }
+
+  &__text {
+    @include mixins.respond-to(notDesktop) {
+      display: none;
+    }
+
+    & p {
+      display: inline-block;
+
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+
+      padding: 0;
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__text--mobile {
+    display: none;
+
+    @include mixins.respond-to(notDesktop) {
+      display: block;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: lowercase;
+      color: #000000;
+    }
+  }
+}

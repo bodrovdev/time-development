@@ -1,0 +1,84 @@
+@@include('components/_base/_base-header.html', {
+"isActive-project": "nav-project--active",
+})
+
+<main class="page-content">
+
+  <section class="project-header">
+    <div class="project-header__container base-container">
+
+      <!-- <div class="project-header__graphic">
+        <svg class="project-header__sign-icon" width="11" height="48" aria-hidden="false" alt="#">
+          <use href="img/icon/sprite.svg#sign-fill-icon"></use>
+        </svg>
+      </div> -->
+
+      <figure class="project-header__image base-figure">
+        <img class="project-header__img" src="img/image/project-image.png" width="391" height="391" alt="#">
+      </figure>
+      <figure class="project-header__image project-header__image--mobile base-figure">
+        <img class="project-header__img" src="img/image/project-image-mobile.png" width="146" height="198" alt="#">
+      </figure>
+      <div class="project-header__info">
+        <h1 class="project-header__title page-title base-title">ПРОЕКТ</h1>
+        <div class="project-header__text">
+          <p>
+            «Новая Щербинка. Пригородные кварталы» – комфортабельные камерные дома 3 - 8 этажей на границе с Москвой. Городской образ жизни сливается здесь с атмосферой тихого размеренного загорода, способствуя формированию сообщества единомышленников и
+            друзей. Функциональные планировочные решения жилых пространств отвечают разнообразным потребностям и сценариям жизни: это и традиционные квартиры с кухней или кухней-гостиной, так и нестандартные форматы – двухуровневые квартиры с патио,
+            урбан-виллы, квартиры с отдельным входом и палисадником.
+            Уютные дворы с зонами для игр на разные возрастные группы и отдыха без автомобилей, сквозные входные группы, продуманная бытовая инфраструктура, включающая келлеры, помещения для колясок и консьержей, обеспечивают комфорт высокого уровня.
+            Окружающий кварталы зеленый массив – не только источник чистого воздуха и приятных глазу видов из окон, но и место для тихого и активного досуга: пикника в обустроенном для этого месте, похода за грибами или прогулки на лыжах.<br>
+            В 2022 году проект признан лучшим жилым комплексом комфорт-класса Московской области по версии федеральной премии Urban Awards.
+          </p>
+        </div>
+        <div class="project-header__text project-header__text--mobile">
+          <p>
+            создает уникальные проекты в сегменте жилой и многофункциональной недвижимости в самых знаковых локациях Москвы. Коллекция Vos’hod – это сочетание звездной команды, новейших технологий, благоприятного окружения и гармонии пространств, которые не
+            хочется покидать.
+          </p>
+        </div>
+      </div>
+      @@include('components/_bem/_time-clocks.html', {
+      "width": "190",
+      "height": "190",
+      })
+
+
+      @@include('components/_bem/_scroll-help.html')
+    </div>
+  </section>
+  <section class="project-slider">
+    <div class="project-slider__container base-container">
+      <div class="project-slider__slider swiper">
+        <div class="project-slider__slider-wrapper swiper-wrapper">
+          <div class="project-slider__slider-slide swiper-slide">
+            <figure class="project-slider__slide-image base-figure">
+              <img class="project-slider__slide-img" src="img/image/project-slide-1.png" width="733" height="352" alt="#">
+            </figure>
+            <div class="project-slider__slide-info">
+              <span class="project-slider__slide-year">2022</span>
+              <span class="project-slider__slide-name">ЖК «Новая Щербинка»</span>
+            </div>
+          </div>
+          <div class="project-slider__slider-slide swiper-slide">
+            <figure class="project-slider__slide-image base-figure">
+              <img class="project-slider__slide-img" src="img/image/project-slide-2.png" width="733" height="352" alt="#">
+            </figure>
+            <div class="project-slider__slide-info">
+              <span class="project-slider__slide-year">2022</span>
+              <span class="project-slider__slide-name">ЖК «Новая Щербинка»</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project-slider__more-container base-container">
+      <a class="project-slider__more base-link" href="#">Все проекты</a>
+    </div>
+  </section>
+
+  @@include('components/_bem/_contacts.html')
+  @@include('components/_bem/_map.html')
+</main>
+
+@@include('components/_base/_base-footer.html')

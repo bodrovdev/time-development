@@ -1,37 +1,42 @@
 @use "../mixins";
 
 .news {
+  position: relative;
+
   background: url(../img/image/archive-background.png);
   background-position: top;
   background-repeat: no-repeat;
 
   margin: 128px 0 159px 0;
 
-  @include mixins.respond-to(notDesktop) {
+  @include mixins.respond-to(notDesktopFr) {
     background: none;
 
     margin: 45px 0 99px 0;
   }
 
   &__top {
+    position: relative;
 
+    display: flex;
+    align-items: flex-start;
 
-    &-container {
-      position: relative;
+    width: 100%;
 
-      display: flex;
-      align-items: flex-start;
+    margin: 0 0 102px 0;
 
-      width: 100%;
-
-      padding: 0 0 0 50px;
-      margin: 0 0 102px 0;
+    @include mixins.respond-to(notDesktopFr) {
+      flex-direction: column;
     }
 
     &-image {
       position: relative;
 
       margin: 0 93px 0 0;
+
+      @include mixins.respond-to(notDesktopFr) {
+        display: none;
+      }
 
       &::after {
         content: "";
@@ -45,6 +50,18 @@
         border-radius: 50%;
 
         z-index: -1;
+
+        @include mixins.respond-to(notDesktopFr) {
+          display: none;
+        }
+      }
+
+      &--mobile {
+        display: none;
+
+        @include mixins.respond-to(notDesktopFr) {
+          display: block;
+        }
       }
     }
 
@@ -55,6 +72,10 @@
       max-width: 415px;
 
       padding: 66px 0 0 0;
+
+      @include mixins.respond-to(notDesktopFr) {
+        padding: 33px 0 0 0;
+      }
     }
 
     & .time-clocks {
@@ -63,6 +84,10 @@
       right: 33px;
 
       filter: brightness(0) saturate(100%) invert(24%) sepia(52%) saturate(917%) hue-rotate(127deg) brightness(92%) contrast(102%);
+
+      @include mixins.respond-to(notDesktopFr) {
+        display: none;
+      }
     }
 
     & .time-clocks__clocks {
@@ -80,6 +105,15 @@
       color: var(--color-aqua-deep);
 
       margin: 0 0 76px 0;
+
+      @include mixins.respond-to(notDesktopFr) {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+
+        margin: 0 0 33px 0;
+      }
     }
 
     &-text {
@@ -100,10 +134,12 @@
   }
 
   &__main {
+    padding: 0 0 0 45px;
+    margin: 0 0 128px 0;
 
-    &-container {
-      padding: 0 0 0 45px;
-      margin: 0 0 128px 0;
+    @include mixins.respond-to(notDesktopFr) {
+      padding: 0;
+      margin: 0 0 64px 0;
     }
 
     & p {
@@ -127,29 +163,49 @@
   }
 
   &__bottom {
-    position: relative;
+    display: flex;
+    align-items: flex-end;
 
-    &-container {
-      display: flex;
-      align-items: flex-end;
+    padding: 0 0 0 45px;
 
-      overflow: hidden;
+    @include mixins.respond-to(notDesktopFr) {
+      padding: 0;
+    }
 
-      padding: 0 0 0 45px;
+    &-img {
+      @include mixins.respond-to(notDesktopFr) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__text-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    overflow: hidden;
+
+    @include mixins.respond-to(notDesktopFr) {
+      display: none;
     }
   }
 
   &__running-text {
-    position: absolute;
-    right: -800px;
-    bottom: 0;
+    width: 733px;
+    height: 204px;
 
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 43px;
-    text-align: justify;
-    color: var(--color-aqua-deep);
+    & p {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 34px;
+      text-align: justify;
+      color: var(--color-aqua-deep);
+      white-space: nowrap;
+
+      padding: 0;
+      margin: 0;
+    }
   }
-
-
 }

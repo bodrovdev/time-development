@@ -39,3 +39,9 @@ function archiveSlider() {
 }
 archiveSlider();
 window.addEventListener("resize", archiveSlider);
+
+let project_page_slider = new Swiper('.project-slider__slider', {
+  speed: 500,
+  slidesPerView: "auto",
+  spaceBetween: 82,
+});
