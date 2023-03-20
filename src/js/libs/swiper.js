@@ -24,7 +24,7 @@ function archiveSlider() {
         direction: "horizontal",
         slidesPerView: "auto",
         spaceBetween: 31,
-        centeredSlides: true,
+        // centeredSlides: true,
 
         pagination: {
           el: ".press-body__slider-pagination",
