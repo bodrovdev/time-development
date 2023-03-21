@@ -1,3 +1,11 @@
 @use "../mixins";
 
-// @include mixins.font-face('Inter', normal, 300);
+@include mixins.font-face('Raleway', normal, 100);
+@include mixins.font-face('Raleway', normal, 200);
+@include mixins.font-face('Raleway', normal, 300);
+@include mixins.font-face('Raleway', normal, 400);
+@include mixins.font-face('Raleway', normal, 500);
+@include mixins.font-face('Raleway', normal, 600);
+@include mixins.font-face('Raleway', normal, 700);
+@include mixins.font-face('Raleway', normal, 800);
+@include mixins.font-face('Raleway', normal, 900);
