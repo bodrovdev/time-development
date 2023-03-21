@@ -9,8 +9,9 @@
   }
 
   &__container {
+    position: relative;
+
     max-width: calc(100% - (100% - var(--container-width))/ 2);
-    overflow: hidden;
 
     padding: 0 0 0 184px;
     margin: 0 0 0 auto;
@@ -21,6 +22,35 @@
 
       padding: 0;
       margin: 0 auto;
+    }
+  }
+
+  &__graphic {
+    position: absolute;
+    top: -143px;
+    right: 0;
+
+    width: 315px;
+    height: 650px;
+    overflow: hidden;
+
+    @include mixins.respond-to(notDesktop) {
+      top: -71px;
+
+      width: 196px;
+      height: 380px;
+    }
+  }
+
+  &__circle {
+    width: 650px;
+    height: 650px;
+    border: 1px solid #005147;
+    border-radius: 50%;
+
+    @include mixins.respond-to(notDesktop) {
+      width: 380px;
+      height: 380px;
     }
   }
 

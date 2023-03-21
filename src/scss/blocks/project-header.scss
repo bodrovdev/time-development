@@ -36,37 +36,49 @@
     }
   }
 
-  // &__graphic {
-  //   position: absolute;
-  //   top: 75px;
-  //   right: 0;
+  &__graphic {
+    position: absolute;
+    top: 105px;
+    right: 0;
 
-  //   display: none;
-  //   justify-content: center;
+    display: none;
+    justify-content: center;
 
-  //   width: 87px;
-  //   height: 117px;
+    width: 87px;
+    height: 117px;
 
-  //   @include mixins.respond-to(notDesktop) {
-  //     display: flex;
-  //   }
-  // }
+    @include mixins.respond-to(notDesktop) {
+      display: flex;
+    }
 
-  // &__sign-icon {
-  //   position: relative;
+    &-container {
+      position: relative;
 
-  //   &::after {
-  //     content: "";
-  //     position: absolute;
-  //     top: -50px;
-  //     right: -89px;
+      width: 87px;
+      height: 117px;
+    }
+  }
 
-  //     width: 87px;
-  //     height: 88px;
-  //     border: 1px solid var(--color-aqua-deep);
-  //     border-radius: 50%;
-  //   }
-  // }
+  &__sign-icon {
+    position: absolute;
+    top: -29px;
+    left: 50%;
+
+    width: 11px;
+    height: 48px;
+
+    transform: translateX(-50%);
+  }
+
+  &__circle {
+    position: absolute;
+    display: block;
+
+    width: 87px;
+    height: 88px;
+    border: 1px solid #005147;
+    border-radius: 50%;
+  }
 
   &__image {
     position: relative;
