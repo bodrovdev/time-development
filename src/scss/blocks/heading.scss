@@ -240,7 +240,9 @@
   &__title {
     display: inline-block;
 
+    min-width: 298px;
     max-width: 305px;
+    min-height: 132px;
 
     font-weight: 800;
     line-height: 42px;

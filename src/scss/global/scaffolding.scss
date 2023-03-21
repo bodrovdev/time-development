@@ -97,3 +97,30 @@ input[type=number] {
 		}
 	}
 }
+
+.circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	width: 80px;
+	height: 80px;
+	background-color: transparent;
+	border: 2px solid var(--color-aqua-deep);
+	border-radius: 50%;
+	backface-visibility: hidden;
+	pointer-events: none;
+
+	transform: translateY(-50%) translateX(-50%);
+	transition: width 0.3s, height 0.3s, background-color 0.3s;
+
+	z-index: 1000;
+
+	&--active {
+		width: 30px;
+		height: 30px;
+		background-color: var(--color-aqua-deep);
+
+		transition: width 0.3s, height 0.3s, background-color 0.3s;
+	}
+}

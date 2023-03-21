@@ -55,6 +55,41 @@ nav_list.onclick = function (event) {
   enableBodyScroll(mobile_menu);
 };
 
+// --- Добавление интерактивного класса для всех ссылок на странице
+window.addEventListener('load', () => {
+  if (document.querySelector('a') === null) {
+    return;
+  }
+  else {
+    document.querySelectorAll('a').forEach((link) => {
+      link.classList.add('follow-change');
+    })
+  }
+})
+
+// --- Анимация печатающегося текста на главной странице
+window.addEventListener('load', () => {
+  if (document.getElementById('index_typing_text') === null) {
+    return;
+  }
+  else {
+    let i = 0;
+    let txt = 'ДЕВЕЛОПЕР БЕЗУПРЕЧНОГО ОБРАЗА ЖИЗНИ';
+    let speed = 100;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById('index_typing_text').innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+  }
+})
+
+
 // --- Плавный скроллинг до якорных ссылок
 // $('a[href^="#"]').on('click', function (e) {
 //   e.preventDefault();

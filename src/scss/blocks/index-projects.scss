@@ -134,6 +134,8 @@
   }
 
   &__caption {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -141,9 +143,21 @@
 
     width: 731px;
     height: 257px;
-    background-color: var(--color-golden-fizz);
+    background-color: transparent;
 
     padding: 35px 28px 38px 59px;
+
+    &-layout {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 731px;
+      height: 257px;
+      background-color: var(--color-golden-fizz);
+
+      z-index: 1;
+    }
 
     @include mixins.respond-to(mobileOnly) {
       display: none;
@@ -159,12 +173,14 @@
       line-height: 42px;
       text-transform: uppercase;
       color: var(--color-aqua-deep);
+
+      z-index: 3;
     }
 
     &-subtitle {
       margin: 0 0 0 -20px;
 
-      z-index: 2;
+      z-index: 3;
     }
   }
 
