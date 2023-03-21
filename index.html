@@ -16,6 +16,8 @@
 
 <body class="cover-default">
 
+  <div class="circle" id="circle_follow"></div>
+
   <header class="page-header">
     <nav class="main-nav">
       <div class="main-nav__container base-container">
@@ -75,7 +77,7 @@
         <use href="img/icon/sprite.svg#time-text-icon"></use>
       </svg>
 
-      <div class="scroll-help">
+      <div class="scroll-help" id="scroll_help">
   <span class="scroll-help__text">Листать</span>
   <div class="scroll-help__circle">
     <svg class="scroll-help__icon" width="15" height="23" aria-hidden="true" alt="#">
@@ -86,7 +88,7 @@
 
       <div class="heading__column heading__column--left">
         <span class="heading__caption">Создаём уникальные проекты</span>
-        <h1 class="heading__title base-title">ДЕВЕЛОПЕР БЕЗУПРЕЧНОГО ОБРАЗА ЖИЗНИ</h1>
+        <h1 class="heading__title base-title" id="index_typing_text"></h1>
         <p class="heading__mobile-motto base-par">
           В сегменте жилой и<br> многофункциональной недвижимости в<br> самых знаковых локациях Москвы.
         </p>
@@ -94,7 +96,7 @@
           <a class="heading__about-link main-button base-link" href="about.html">О компании</a>
           <a class="heading__projects-link base-link" href="#">
             <span class="heading__projects-circle">
-              <svg class="heading__projects-icon" width="14" height="14" alt="Иконка стрелки">
+              <svg class="heading__projects-icon" width="14" height="14" alt="#" aria-hidden="true">
                 <use href="img/icon/sprite.svg#arrow-icon"></use>
               </svg>
             </span>
@@ -102,7 +104,7 @@
           </a>
           <a class="heading__video-link base-link" href="#">
             <span class="heading__video-circle">
-              <svg class="heading__video-icon" width="14" height="14" alt="Иконка стрелки">
+              <svg class="heading__video-icon" width="14" height="14" alt="#" aria-hidden="true">
                 <use href="img/icon/sprite.svg#arrow-icon"></use>
               </svg>
             </span>
@@ -110,14 +112,14 @@
           </a>
         </div>
       </div>
-      <div class="heading__column heading__column--right">
+      <div class="heading__column heading__column--right" id="puzzle">
         <div class="heading__puzzle-part heading__puzzle-part--left">
-          <figure class="heading__puzzle-image base-figure">
+          <figure class="heading__puzzle-image base-figure" id="puzzle_left">
             <img class="heading__puzzle-img" src="img/image/puzzle-left.png" width="232" height="440" alt="Левая часть изображения-круга">
           </figure>
         </div>
         <div class="heading__puzzle-part heading__puzzle-part--middle">
-          <figure class="heading__puzzle-image base-figure">
+          <figure class="heading__puzzle-image base-figure" id="puzzle_middle">
             <div class="time-clocks">
   <span class="time-clocks__number">12</span>
   <svg class="time-clocks__clocks" width="190" height="190" alt="Циферблат">
@@ -126,21 +128,20 @@
 </div>
             <img class="heading__puzzle-img" src="img/image/puzzle-middle.png" width="433" height="446" alt="Средняя часть изображения-круга">
           </figure>
-          <div class="heading__puzzle-info heading__puzzle-info--middle">
+          <div class="heading__puzzle-info heading__puzzle-info--middle" id="puzzle_middle_text">
             <span class="heading__puzzle-title">Гармония и<br> эстетика —</span>
             <span class="heading__puzzle-text">Крафтовые решения от Time Development</span>
           </div>
         </div>
         <div class="heading__puzzle-part heading__puzzle-part--right">
-          <div class="heading__puzzle-info heading__puzzle-info--right">
+          <div class="heading__puzzle-info heading__puzzle-info--right" id="puzzle_right_text">
             <span class="heading__puzzle-title">Истинные<br> ценности —</span>
             <span class="heading__puzzle-text">Комфортная среда для жизни тем, кто стремится к переменам и движению вперед</span>
           </div>
-          <figure class="heading__puzzle-image base-figure">
+          <figure class="heading__puzzle-image base-figure" id="puzzle_right">
             <img class="heading__puzzle-img" src="img/image/puzzle-right.png" width="111" height="286" alt="Правая часть изображения-круга">
           </figure>
         </div>
-
       </div>
       <div class="heading__column heading__column--mobile">
         <div class="heading__design-block heading__design-block--top">
@@ -184,6 +185,7 @@
 
     <div class="index-projects__container base-container">
       <div class="index-projects__caption">
+        <div class="index-projects__caption-layout" data-aos="fade-right" data-aos-duration="1000"></div>
         <h2 class="index-projects__caption-title base-title">Пригородные кварталы</h2>
         <svg class="index-projects__caption-subtitle" width="644" height="150" alt="Надпись PROJECTS">
           <use href="img/icon/sprite.svg#projects-text-icon"></use>
@@ -192,7 +194,7 @@
 
       <div class="index-projects__slider swiper">
         <div class="index-projects__slider-wrapper swiper-wrapper">
-          <div class="index-projects__slider-slide swiper-slide">
+          <div class="index-projects__slider-slide swiper-slide" data-aos="fade-left" data-aos-duration="1000">
             <figure class="index-projects__slide-image base-figure">
               <img class="index-projects__slide-img" src="img/image/index-slide-1.png" width="415" height="520" alt="Слайд 1 в блоке проектов">
               <div class="index-projects__slide-caption">Реализован</div>
@@ -202,7 +204,7 @@
               <span class="index-projects__slide-subtitle">ЖК «Новая Щербинка»</span>
             </div>
           </div>
-          <div class="index-projects__slider-slide swiper-slide">
+          <div class="index-projects__slider-slide swiper-slide" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
             <figure class="index-projects__slide-image base-figure">
               <img class="index-projects__slide-img" src="img/image/index-slide-2.png" width="415" height="520" alt="Слайд 2 в блоке проектов">
               <div class="index-projects__slide-caption">В стадии реализации</div>
@@ -212,7 +214,7 @@
               <span class="index-projects__slide-subtitle">ЖК «Новая Щербинка»</span>
             </div>
           </div>
-          <div class="index-projects__slider-slide swiper-slide">
+          <div class="index-projects__slider-slide swiper-slide" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
             <figure class="index-projects__slide-image base-figure">
               <img class="index-projects__slide-img" src="img/image/index-slide-3.png" width="415" height="520" alt="Слайд 3 в блоке проектов">
               <div class="index-projects__slide-caption">В стадии проектирования</div>
@@ -260,6 +262,7 @@
           </li>
         </ul>
       </div>
+
       <div class="index-contacts__column index-contacts__column--right">
         <div class="index-contacts__graphic">
           -?время–деньги! ] вногусовременем>}―:)пришлонашевр время перемен : ) · - время действовать ! . . · -? время – деньги ! ]
