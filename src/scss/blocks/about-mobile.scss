@@ -198,6 +198,10 @@
       &:last-child {
         margin: 0;
       }
+
+      &--active {
+        background-color: red;
+      }
     }
   }
 }
