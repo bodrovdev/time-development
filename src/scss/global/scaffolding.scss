@@ -9,6 +9,10 @@ html {
 
 * {
 	cursor: none;
+
+	@include mixins.respond-to(notDesktopFr) {
+		cursor: auto;
+	}
 }
 
 *,
@@ -114,6 +118,10 @@ input[type=number] {
 	overflow: hidden;
 
 	@media (hover: none) {
+		display: none;
+	}
+
+	@include mixins.respond-to(notDesktopFr) {
 		display: none;
 	}
 }

@@ -185,8 +185,27 @@
     border: 1px solid var(--color-aqua-deep);
     border-radius: 50%;
 
-    @include mixins.respond-to(notDesktop) {
+    @include mixins.respond-to(notDesktopFr) {
+      display: none;
+    }
+  }
+
+  &--bottom--mobile {
+    position: absolute;
+    top: 0;
+    left: -84px;
+
+    display: none;
+
+    width: 140px;
+    height: 140px;
+    border: 1px solid var(--color-aqua-deep);
+    border-radius: 50%;
+
+    @include mixins.respond-to(notDesktopFr) {
       left: -53px;
+
+      display: block;
 
       width: 82px;
       height: 82px;
