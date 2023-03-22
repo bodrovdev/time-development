@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+
+  <link href="css/style.min.css?v=1.0" rel="stylesheet">
+  <title></title>
+</head>
+
+<div class="circle-container">
+  <div class="circle" id="circle_follow"></div>
+  <div class="circle-small" id="circle_follow_small"></div>
+</div>
+
+<body class="cover-default">
+
+  <header class="page-header">
+    <nav class="main-nav">
+      <div class="main-nav__container base-container">
+        <a class="main-nav__logo-link base-link" href="index.html">
+          <figure class="main-nav__logo-image base-figure">
+            <img class="main-nav__logo-img" src="img/image/logo.png" width="124" height="50" alt="Логотип">
+          </figure>
+        </a>
+
+        <div class="main-nav__nav-menu main-nav__nav-menu--mobile" id="mobile_menu">
+
+          <a class="main-nav__logo-link main-nav__logo-link--mobile base-link" href="index.html">
+            <figure class="main-nav__logo-image base-figure">
+              <img class="main-nav__logo-img" src="img/image/logo-mobile-menu.png" width="66" height="26" alt="Логотип">
+            </figure>
+          </a>
+
+          <ul class="main-nav__nav-list base-list">
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-project base-link" href="project.html">Проект</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-archive base-link" href="archive.html">Пресс-центр</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-about base-link" href="about.html">О компании</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-team base-link" href="team.html">Команда</a>
+            </li>
+            <li class="main-nav__nav-item">
+              <a class="main-nav__nav-link @@isActive-contacts base-link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+
+          <div class="main-nav__search-bar" id="search_bar">
+            <svg class="main-nav__search-icon" width="16" height="16" alt="Иконка поиска" id="search_icon">
+              <use href="img/icon/sprite.svg#search-icon"></use>
+            </svg>
+          </div>
+
+        </div>
+
+        <button class="main-nav__burger base-button" id="burger">
+          <span class="main-nav__burger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+
+<div class="wrapper">
+  <div class="boxes">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+  </div>
+</div>
+
+<style>
+  body {
+    background: gray;
+    font-family: Asap, sans-serif;
+  }
+
+  .wrapper {
+    width: 1000px;
+    height: 150px;
+    position: relative;
+    margin: auto;
+    background: #ccc;
+    overflow: hidden;
+  }
+
+  .wrapper::after {
+    width: 1000px;
+    height: 150px;
+    content: "";
+    position: absolute;
+    border: solid 1px white;
+  }
+
+  .box {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: royalblue;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+
+  }
+
+  .boxes {
+    position: relative;
+    left: -50px;
+
+    width: 100%;
+  }
+
+  .nav {
+    position: relative;
+    text-align: center;
+
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+  }
+</style>
+
+<footer class="page-footer">
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="js/index.min.js?v=1.0"></script>
+
+</body>
+
+</html>
