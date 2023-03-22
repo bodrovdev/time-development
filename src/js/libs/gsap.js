@@ -83,26 +83,19 @@ window.addEventListener('load', () => {
   }
 })
 
-let container = document.querySelector('.about-mobile__team-wrapper');
-let setX = window.width() / 2 - demoDiv.outerWidth() / 2;
-let setY = window.height() / 2 - demoDiv.outerHeight() / 2;
-
-animation
-  .set(".demo", { x: setX, y: setY })
-  .from(".text-final", { y: 80, opacity: 0, ease: "back.out(5)", duration: 1 })
-  .to(".demo", { x: 0, y: 0, scale: 0.6, ease: "power1.out", duration: 1 }, "+=.5");
-
 window.addEventListener('load', () => {
   if (document.getElementById('team-item') === null) {
     return;
   }
   else {
-    let team_items = document.querySelectorAll('#team-item');
+    let team_items = document.querySelectorAll('#team-item > .about-mobile__team-image');
 
     team_items.forEach((item) => {
       window.addEventListener('scroll', () => {
         if (isInViewport(item)) {
-          gsap.to('#team-item', { duration: 5, css: { position: 'relative', left: 0 } });
+          let team_mobile_tl = gsap.timeline({});
+          team_mobile_tl.add(gsap.to(item, { duration: 0.8, css: { left: 0, transform: "translate(0, -50%)" } }));
+          team_mobile_tl.add(gsap.to(item.children[0], { duration: 0.5, css: { borderRadius: "50%" }, delay: -0.8, }));
         }
       })
     })
