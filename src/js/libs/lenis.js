@@ -1,7 +1,7 @@
 import Lenis from '@studio-freight/lenis';
 
 const lenis = new Lenis({
-  duration: 2,
+  duration: 1.5,
   easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
   direction: "vertical",
   gestureDirection: "vertical",

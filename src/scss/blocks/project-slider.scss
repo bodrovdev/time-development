@@ -108,6 +108,8 @@
   }
 
   &__more-container {
+    position: relative;
+
     @include mixins.respond-to(notDesktop) {
       display: flex;
       align-items: center;
@@ -116,8 +118,6 @@
   }
 
   &__more {
-    position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,8 +141,8 @@
 
     &-graphic {
       position: absolute;
-      top: -170px;
-      left: -136px;
+      top: -183px;
+      left: -32px;
 
       width: 140px;
       height: 140px;
