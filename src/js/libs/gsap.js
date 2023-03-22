@@ -46,7 +46,7 @@ window.addEventListener('load', () => {
 //Следяющий за курсором элемент
 let circle = document.getElementById('circle_follow');
 function moveCircle(e) {
-  gsap.to(circle, { css: { left: e.pageX, top: e.pageY } });
+  gsap.to(circle, { css: { left: e.clientX, top: e.clientY } });
 }
 
 window.addEventListener('mousemove', moveCircle);
