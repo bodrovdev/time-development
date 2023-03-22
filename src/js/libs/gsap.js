@@ -43,15 +43,17 @@ window.addEventListener('load', () => {
 });
 
 
-//Следяющий за курсором элемент
+// --- Следяющий за курсором элемент
 let circle = document.getElementById('circle_follow');
+let circle_small = document.getElementById('circle_follow_small');
 function moveCircle(e) {
-  gsap.to(circle, { css: { left: e.clientX, top: e.clientY }, duration: 0.1, });
+  gsap.to(circle, { css: { left: e.clientX, top: e.clientY }, duration: 0.3, });
+  gsap.to(circle_small, { css: { left: e.clientX, top: e.clientY }, duration: 0.1, });
 }
 
 window.addEventListener('mousemove', moveCircle);
 
-//Изменение следящего курсора
+// --- Изменение следящего курсора
 window.addEventListener('load', () => {
   if (document.querySelector('.follow-change') === null) {
     return;
@@ -69,4 +71,4 @@ window.addEventListener('load', () => {
       })
     })
   }
-})
+}) 

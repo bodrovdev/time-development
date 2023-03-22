@@ -74,20 +74,6 @@
 
       & .about-body__bottom-image {
         position: relative;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: -61px;
-          right: -70px;
-
-          width: 140px;
-          height: 140px;
-          border: 1px solid var(--color-aqua-deep);
-          border-radius: 50%;
-
-          z-index: -1;
-        }
       }
     }
 
@@ -119,6 +105,7 @@
         left: 50%;
 
         transform: translateY(-50%) translateX(-50%);
+        transition: transform 1s;
       }
 
       & .time-clocks {
@@ -156,4 +143,17 @@
       color: var(--color-black);
     }
   }
+}
+
+.about-body__image-graphic {
+  position: absolute;
+  top: -61px;
+  right: -70px;
+
+  width: 140px;
+  height: 140px;
+  border: 1px solid var(--color-aqua-deep);
+  border-radius: 50%;
+
+  z-index: -1;
 }

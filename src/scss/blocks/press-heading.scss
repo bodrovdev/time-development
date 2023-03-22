@@ -73,8 +73,7 @@
   &__image {
     position: relative;
 
-    &::after {
-      content: "";
+    &-graphic {
       position: absolute;
       top: 0;
       right: -115px;

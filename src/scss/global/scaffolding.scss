@@ -7,6 +7,10 @@ html {
 	scrollbar-gutter: stable;
 }
 
+* {
+	cursor: none;
+}
+
 *,
 :after,
 :before {
@@ -126,7 +130,7 @@ input[type=number] {
 	pointer-events: none;
 
 	transform: translateY(-50%) translateX(-50%);
-	transition: transform 0.6, width 0.3s, height 0.3s, background-color 0.3s, border 0.3s;
+	transition: width 0.3s, height 0.3s, background-color 0.3s, border 0.3s;
 
 	z-index: 1000;
 
@@ -145,6 +149,31 @@ input[type=number] {
 		border: 2px solid var(--color-golden-fizz);
 
 		transition: width 0.3s, height 0.3s, background-color 0.3s, border 0.3s;
+	}
+
+	&--active-yellow~.circle-small {
+		opacity: 0;
+
+		transition: opacity 0.1s;
+	}
+
+	&-small {
+		position: absolute;
+
+		width: 10px;
+		height: 10px;
+		background-color: var(--color-aqua-deep);
+		border-radius: 50%;
+		backface-visibility: hidden;
+		pointer-events: none;
+
+		transform: translateY(-50%) translateX(-50%);
+		// transition: width 0.3s, height 0.3s, background-color 0.3s, border 0.3s;
+		opacity: 1;
+
+		transition: opacity 0.1s;
+
+		z-index: 1000;
 	}
 }
 
@@ -180,5 +209,41 @@ input[type=number] {
 	&:hover span:first-child {
 		transform: rotate(48deg);
 		transition: transform 0.3s;
+	}
+}
+
+#page-title {
+	position: relative;
+
+	display: inline-block;
+
+	overflow: hidden;
+
+	line-height: 130px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+		background-color: var(--color-golden-fizz);
+
+		transform: translateX(-100%);
+		transition: transform 1s;
+
+		z-index: -1;
+	}
+}
+
+.active-title {
+	color: var(--color-aqua-deep) !important;
+	transition: color 1.5s;
+
+	&::before {
+		transform: translateX(0) !important;
+		transition: transform 1;
 	}
 }

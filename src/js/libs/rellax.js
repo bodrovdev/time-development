@@ -8,13 +8,16 @@ let rellax = new Rellax('.rellax', {
   vertical: true,
 });
 let rellax_2 = new Rellax('.rellax-2', {
-  speed: 2.5,
+  speed: 2,
   center: false,
   wrapper: null,
   round: true,
   vertical: true,
 });
 let rellax_3 = new Rellax('.rellax-3', {
-  vertical: false,
-  horizontal: true,
+  speed: 1,
+  center: false,
+  wrapper: null,
+  round: true,
+  vertical: true,
 });

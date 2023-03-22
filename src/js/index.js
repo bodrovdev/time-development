@@ -55,18 +55,6 @@ nav_list.onclick = function (event) {
   enableBodyScroll(mobile_menu);
 };
 
-// --- Добавление интерактивного класса для всех ссылок на странице
-window.addEventListener('load', () => {
-  if (document.querySelector('a') === null) {
-    return;
-  }
-  else {
-    document.querySelectorAll('a').forEach((link) => {
-      link.classList.add('follow-change');
-    })
-  }
-})
-
 // --- Анимация печатающегося текста на главной странице
 window.addEventListener('load', () => {
   if (document.getElementById('index_typing_text') === null) {
@@ -88,6 +76,52 @@ window.addEventListener('load', () => {
     typeWriter();
   }
 })
+
+// --- Добавление интерактивного класса для всех ссылок на странице
+window.addEventListener('load', () => {
+  if (document.querySelector('a') === null) {
+    return;
+  }
+  else {
+    document.querySelectorAll('a').forEach((link) => {
+      link.classList.add('follow-change');
+    })
+  }
+})
+
+// --- Жёлтая подложка для заголовков на главных экранах
+window.addEventListener('load', () => {
+  if (document.querySelector('#page-title') === null) {
+    return;
+  }
+  else {
+    window.addEventListener('scroll', () => {
+      document.getElementById('page-title').classList.add('active-title');
+    })
+  }
+})
+
+// --- Вращение графического элемента на странице about при скролле
+window.addEventListener('load', () => {
+  if (document.querySelector('.about-body__top-graphic') === null) {
+    return;
+  }
+  else {
+    function scrollRotate() {
+      let element = document.querySelector('.about-body__top-graphic');
+      element.style.transform = `translateX(-50%) translateY(-50%) rotate(${window.pageYOffset / 2}deg)`
+    }
+
+    window.addEventListener('scroll', () => {
+      scrollRotate();
+    });
+  }
+})
+
+
+// window.onscroll = function () {
+//   scrollRotate();
+// };
 
 
 // --- Плавный скроллинг до якорных ссылок
