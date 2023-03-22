@@ -7,13 +7,13 @@ window.addEventListener('load', () => {
   }
   else {
     let index_circles_text_tl = gsap.timeline({ paused: true });
-    index_circles_text_tl.add(gsap.to("#puzzle_middle_text", { duration: 0.7, delay: 0.7, y: 50 }));
-    index_circles_text_tl.add(gsap.to("#puzzle_right_text", { duration: 0.7, y: -50 }));
+    index_circles_text_tl.add(gsap.to("#puzzle_middle_text", { duration: 0.5, delay: 0.5, y: 50 }));
+    index_circles_text_tl.add(gsap.to("#puzzle_right_text", { duration: 0.5, y: -50 }));
 
     let index_circles_tl = gsap.timeline({ paused: true });
-    index_circles_tl.add(gsap.to("#puzzle_left", { duration: 0.7, y: -50 }));
-    index_circles_tl.add(gsap.to("#puzzle_middle", { duration: 0.7, y: 80 }));
-    index_circles_tl.add(gsap.to("#puzzle_right", { duration: 0.7, y: -150 }));
+    index_circles_tl.add(gsap.to("#puzzle_left", { duration: 0.5, y: -50 }));
+    index_circles_tl.add(gsap.to("#puzzle_middle", { duration: 0.5, y: 80 }));
+    index_circles_tl.add(gsap.to("#puzzle_right", { duration: 0.5, y: -150 }));
 
     let puzzle = document.getElementById('puzzle');
 
@@ -46,14 +46,10 @@ window.addEventListener('load', () => {
 //Следяющий за курсором элемент
 let circle = document.getElementById('circle_follow');
 function moveCircle(e) {
-  gsap.to(circle, 0.3, {
-    css: {
-      left: e.pageX,
-      top: e.pageY
-    }
-  });
+  gsap.to(circle, { css: { left: e.pageX, top: e.pageY } });
 }
-$(window).on('mousemove', moveCircle);
+
+window.addEventListener('mousemove', moveCircle);
 
 //Изменение следящего курсора
 window.addEventListener('load', () => {
@@ -62,13 +58,13 @@ window.addEventListener('load', () => {
   }
   else {
     document.querySelectorAll('.follow-change').forEach((item) => {
-
-      item.addEventListener('mouseover', () => {
-        circle.classList.add('circle--active');
+      item.addEventListener('mouseover', (e) => {
+        e.target.classList.contains('button-yellow') ? circle.classList.add('circle--active-yellow') : circle.classList.add('circle--active');
       })
     })
     document.querySelectorAll('.follow-change').forEach((item) => {
       item.addEventListener('mouseleave', () => {
+        circle.classList.remove('circle--active-yellow');
         circle.classList.remove('circle--active');
       })
     })

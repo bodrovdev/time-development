@@ -139,8 +139,7 @@
       margin: 0;
     }
 
-    &::after {
-      content: "";
+    &-graphic {
       position: absolute;
       top: -170px;
       left: -136px;

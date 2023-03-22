@@ -85,8 +85,7 @@
 
     margin: 0 151px 0 0;
 
-    &::after {
-      content: "";
+    &-graphic {
       position: absolute;
       top: -50px;
       right: -89px;

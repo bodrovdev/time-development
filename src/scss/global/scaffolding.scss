@@ -1,6 +1,7 @@
 @use "../mixins";
 
 html {
+
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
 	scrollbar-gutter: stable;
@@ -99,12 +100,12 @@ input[type=number] {
 }
 
 .circle {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 
-	width: 80px;
-	height: 80px;
+	width: 40px;
+	height: 40px;
 	background-color: transparent;
 	border: 2px solid var(--color-aqua-deep);
 	border-radius: 50%;
@@ -112,15 +113,59 @@ input[type=number] {
 	pointer-events: none;
 
 	transform: translateY(-50%) translateX(-50%);
-	transition: width 0.3s, height 0.3s, background-color 0.3s;
+	transition: width 0.3s, height 0.3s, background-color 0.3s, border 0.3s;
 
 	z-index: 1000;
 
 	&--active {
-		width: 30px;
-		height: 30px;
+		width: 20px;
+		height: 20px;
 		background-color: var(--color-aqua-deep);
 
 		transition: width 0.3s, height 0.3s, background-color 0.3s;
+	}
+
+	&--active-yellow {
+		width: 20px;
+		height: 20px;
+		background-color: var(--color-golden-fizz);
+		border: 2px solid var(--color-golden-fizz);
+
+		transition: width 0.3s, height 0.3s, background-color 0.3s, border 0.3s;
+	}
+}
+
+.button-yellow {
+	transition: background-color 0.3s, color 0.3s;
+
+	& span,
+	p {
+		transition: color 0.3s;
+	}
+
+	&:hover {
+		background-color: var(--color-aqua-deep);
+
+		color: var(--color-golden-fizz);
+
+		transition: background-color 0.3s, color 0.3s;
+
+		& span,
+		p {
+			color: var(--color-golden-fizz);
+
+			transition: color 0.3s;
+		}
+	}
+}
+
+.arrow-link {
+	& span:first-child {
+		transition: transform 0.3s;
+	}
+
+	&:hover span:first-child {
+		transform: rotate(48deg);
+		transition: transform 0.3s;
 	}
 }
