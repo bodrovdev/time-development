@@ -27,6 +27,8 @@
   }
 
   &__item {
+		position: relative;
+		min-height: 300vh;
     margin: 0 0 157px 0;
 
     &:last-child {
@@ -70,7 +72,8 @@
     }
 
     &-image {
-      position: relative;
+      position: sticky;
+			top: calc(100vh / 2 - 842px / 2)
     }
 
     &-label {
