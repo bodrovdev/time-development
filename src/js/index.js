@@ -73,7 +73,10 @@ window.addEventListener('load', () => {
       }
     }
 
-    typeWriter();
+    setTimeout(() => {
+      typeWriter();
+    }, 7000)
+
   }
 })
 

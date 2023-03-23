@@ -1,5 +1,107 @@
 @@include('components/_base/_base-header.html')
 
+<div class="preloader__wrapper">
+  <div class="preloader__overlay"></div>
+  <div class="preloader__text-first">Какой-то текст</div>
+  <div class="preloader__ball">
+    <span class="preloader__text-second">T!ME</span>
+  </div>
+</div>
+
+<style>
+  .preloader__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    min-height: 300px;
+    background-color: var(--color-white);
+
+    z-index: 3000;
+  }
+
+  .preloader__overlay {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
+    width: 205px;
+    height: 205px;
+    border-radius: 50%;
+    background: var(--color-golden-fizz);
+    box-shadow: var(--color-golden-fizz) 0 0 77px 96px;
+
+    /* animation: test;
+    animation-duration: 3s;
+    animation-fill-mode: forwards; */
+
+    transform: translate(-50%, -50%) scale(10.5);
+  }
+
+  .preloader__text-first {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    opacity: 0;
+
+    font-family: var(--font-family-default);
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 500;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-aqua-deep);
+    text-transform: uppercase;
+
+    transform: translate(-50%, -50%);
+
+
+    z-index: 3003;
+  }
+
+  .preloader__ball {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 196px;
+    height: 196px;
+    background-color: var(--color-golden-fizz);
+    border-radius: 50%;
+
+    z-index: 3001;
+  }
+
+  .preloader__text-second {
+    opacity: 0;
+
+    font-family: var(--font-family-default);
+    font-size: 50px;
+    line-height: 55px;
+    font-weight: 700;
+    color: var(--color-aqua-deep);
+    text-transform: uppercase;
+  }
+
+
+  @keyframes test {
+    0% {
+      transform: translate(-50%, -50%) scale(10.5);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
+</style>
+
 <main class="page-content">
   <section class="heading">
     <div class="heading__container base-container">

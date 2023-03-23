@@ -88,16 +88,37 @@ window.addEventListener('load', () => {
     return;
   }
   else {
-    let team_items = document.querySelectorAll('#team-item > .about-mobile__team-image');
+    let team_items = document.querySelectorAll('#team-item');
 
     team_items.forEach((item) => {
       window.addEventListener('scroll', () => {
         if (isInViewport(item)) {
           let team_mobile_tl = gsap.timeline({});
-          team_mobile_tl.add(gsap.to(item, { duration: 0.8, css: { left: 0, transform: "translate(0, -50%)" } }));
-          team_mobile_tl.add(gsap.to(item.children[0], { duration: 0.5, css: { borderRadius: "50%" }, delay: -0.8, }));
+          team_mobile_tl.add(gsap.to(item.children[0], { duration: 0.8, css: { left: 0, transform: "translate(0, -50%)" } }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[0], { duration: 0.4, css: { width: "140px", height: "250px", borderRadius: "0" }, delay: -0.4, }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[1], { opacity: 1, duration: 0.8, x: 0, duration: 0.4 }));
         }
       })
     })
+  }
+})
+
+window.addEventListener('load', () => {
+  if (document.querySelector('.preloader__wrapper') === null) {
+    return;
+  }
+  else {
+    let preloader_wrapper = document.querySelector('.preloader__wrapper');
+    let preloader_overlay = document.querySelector('.preloader__overlay');
+    let preloader_text_first = document.querySelector('.preloader__text-first');
+    let preloader_text_second = document.querySelector('.preloader__text-second');
+
+
+    let index_preloader_tl = gsap.timeline({});
+    index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 1, duration: 1, ease: "power3.out", }));
+    index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 }));
+    index_preloader_tl.add(gsap.to(preloader_text_second, { opacity: 1, duration: 0.5, ease: "power3.out", }));
+    index_preloader_tl.add(gsap.to(preloader_overlay, { transform: "translate(-50%, -50%) scale(0)", duration: 4, ease: "power3.out", }))
+    index_preloader_tl.add(gsap.to(preloader_wrapper, { opacity: 0, duration: 1, ease: "power3.out", delay: -1 }))
   }
 })
