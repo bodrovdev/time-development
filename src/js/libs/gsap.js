@@ -115,10 +115,12 @@ window.addEventListener('load', () => {
 
 
     let index_preloader_tl = gsap.timeline({});
+    index_preloader_tl.add(gsap.to('body', { css: { overflow: 'hidden' } }))
     index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 1, duration: 1, ease: "power3.out", }));
     index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 }));
     index_preloader_tl.add(gsap.to(preloader_text_second, { opacity: 1, duration: 0.5, ease: "power3.out", }));
     index_preloader_tl.add(gsap.to(preloader_overlay, { transform: "translate(-50%, -50%) scale(0)", duration: 4, ease: "power3.out", }))
     index_preloader_tl.add(gsap.to(preloader_wrapper, { opacity: 0, duration: 1, ease: "power3.out", delay: -0.5 }))
+    index_preloader_tl.add(gsap.to('body', { css: { overflow: 'visible' } }))
   }
 })

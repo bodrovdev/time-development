@@ -21,6 +21,8 @@
     @include mixins.respond-to(notDesktopFr) {
       padding: 0 0 60px 0;
     }
+
+
   }
 
   &__column {
@@ -85,6 +87,7 @@
     width: 550px;
     height: 69px;
     background-color: var(--color-aqua-deep);
+    overflow: hidden;
 
     font-weight: 600;
     font-size: 32px;

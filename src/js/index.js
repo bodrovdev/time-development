@@ -121,10 +121,23 @@ window.addEventListener('load', () => {
   }
 })
 
+// --- Бегущая, мать её за ногу, строка
+$(function () {
+  $('.marquee').marquee({
+    delayBeforeStart: -5000,
+    duration: 20000,
+    startVisible: true,
+    duplicated: true
+  });
+});
 
-// window.onscroll = function () {
-//   scrollRotate();
-// };
+//Горизонтальный скролл на странице команды
+const scrollContainer = document.querySelector(".team-body__item");
+
+scrollContainer.addEventListener("scrolldown", (e) => {
+  e.preventDefault();
+  scrollContainer.scrollLeft += e.deltaY;
+});
 
 
 // --- Плавный скроллинг до якорных ссылок

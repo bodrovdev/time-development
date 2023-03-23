@@ -46,6 +46,22 @@
 
     max-width: 382px;
 
+
+
+    &:hover {
+      .press-body__slide-img {
+        transform: scaleX(1.05) scaleY(1.05);
+
+        transition: transform 0.3s;
+      }
+
+      .press-body__slide-graphic {
+        right: -22px;
+        bottom: -30px;
+        transition: right 0.3s, bottom 0.3s;
+      }
+    }
+
     @include mixins.respond-to(notDesktop) {
       max-width: 230px;
     }
@@ -87,14 +103,38 @@
     }
 
     &-image {
+      position: relative;
+
       margin: 0 0 38px 0;
 
-      @include mixins.respond-to(notDesktop) {
+      @include mixins.respond-to(notDesktopFr) {
         margin: 0 0 10px 0;
       }
     }
 
+    &-graphic {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 412px;
+      background-color: var(--color-golden-fizz);
+
+      transition: right 0.3s, bottom 0.3s;
+
+      z-index: -1;
+    }
+
     &-img {
+
+
+      width: 382px;
+      height: 525px;
+      object-fit: cover;
+
+      transition: transform 0.3s;
+
       @include mixins.respond-to(notDesktop) {
         width: 230px;
         height: 350px;

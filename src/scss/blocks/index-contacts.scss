@@ -145,17 +145,14 @@
     position: absolute;
 
     max-width: 670px;
+    overflow: hidden;
 
     line-height: 23px;
-    color: var(--color-aqua-deep);
+
 
     z-index: -1;
 
-    @include mixins.respond-to(mobileOnly) {
-      display: none;
-    }
-
-    @include mixins.respond-to(tabletOnly) {
+    @include mixins.respond-to(notDesktopFr) {
       display: none;
     }
 
@@ -171,6 +168,25 @@
       left: -183px;
 
       font-size: 20px;
+    }
+
+    &-row {
+      display: flex;
+      animation: test 30s linear infinite;
+      overflow: hidden;
+    }
+
+    & p {
+      display: inline-block;
+
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 23px;
+      color: var(--color-aqua-deep);
+      white-space: nowrap;
+
+      padding: 0;
+      margin: 0;
     }
   }
 
