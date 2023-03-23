@@ -83,6 +83,7 @@ window.addEventListener('load', () => {
   }
 })
 
+// --- 
 window.addEventListener('load', () => {
   if (document.getElementById('team-item') === null) {
     return;
@@ -94,9 +95,9 @@ window.addEventListener('load', () => {
       window.addEventListener('scroll', () => {
         if (isInViewport(item)) {
           let team_mobile_tl = gsap.timeline({});
-          team_mobile_tl.add(gsap.to(item.children[0], { duration: 0.8, css: { left: 0, transform: "translate(0, -50%)" } }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[0], { duration: 0.4, css: { width: "140px", height: "250px", borderRadius: "0" }, delay: -0.4, }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[1], { opacity: 1, duration: 0.8, x: 0, duration: 0.4 }));
+          team_mobile_tl.add(gsap.to(item.children[0], { duration: 0.4, css: { left: 0, transform: "translate(0, -50%)" } }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[0], { duration: 0.4, css: { width: "140px", height: "auto", minHeight: "250px", borderRadius: "0" } }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[1], { opacity: 1, duration: 0.4, x: 0, duration: 0.4 }));
         }
       })
     })

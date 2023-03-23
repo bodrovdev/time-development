@@ -121,7 +121,7 @@ window.addEventListener('load', () => {
   }
 })
 
-// --- Бегущая, мать её за ногу, строка
+// --- Бегущая строка
 $(function () {
   $('.marquee').marquee({
     delayBeforeStart: -5000,
@@ -131,157 +131,149 @@ $(function () {
   });
 });
 
+window.addEventListener('load', () => {
+  if (document.querySelector('.team-body') === null) {
+    return;
+  }
+  else {
+    /**
+     * TEAM
+     */
+    const firstPersonImages = [
+      'https://picsum.photos/id/1/699/842',
+      'https://picsum.photos/id/2/699/842',
+      'https://picsum.photos/id/3/699/842'
+    ]
+    const firstPersonTexts = [
+      {
+        title: 'Иванов И.И',
+        description: 'Ген директор',
+      },
+      {
+        title: 'Иванов И.И 2',
+        description: 'Ген директор 2',
+      },
+      {
+        title: 'Иванов И.И 3',
+        description: 'Ген директор 3',
+      }
+    ]
 
-// --- Плавный скроллинг до якорных ссылок
-// $('a[href^="#"]').on('click', function (e) {
-//   e.preventDefault();
+    const secondPersonImages = [
+      'https://picsum.photos/id/4/699/842',
+      'https://picsum.photos/id/5/699/842',
+      'https://picsum.photos/id/6/699/842'
+    ]
+    const secondPersonTexts = [
+      {
+        title: 'Иванов И.И',
+        description: 'Ген директор',
+      },
+      {
+        title: 'Иванов И.И 2',
+        description: 'Ген директор 2',
+      },
+      {
+        title: 'Иванов И.И 3',
+        description: 'Ген директор 3',
+      }
+    ]
 
-//   var id = $(this).attr('href'),
-//     top = $(id).offset().top;
+    const thirdPersonImages = [
+      'https://picsum.photos/id/7/699/842',
+      'https://picsum.photos/id/8/699/842',
+      'https://picsum.photos/id/9/699/842'
+    ]
+    const thirdPersonTexts = [
+      {
+        title: 'Иванов И.И',
+        description: 'Ген директор',
+      },
+      {
+        title: 'Иванов И.И 2',
+        description: 'Ген директор 2',
+      },
+      {
+        title: 'Иванов И.И 3',
+        description: 'Ген директор 3',
+      }
+    ]
 
-//   $('body,html').animate({
-//     scrollTop: top
-//   }, 0);
-// });
+    const firstPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(1)')
+    const firstPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__item-image')
+    const firstPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__item-img')
+    const firstPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__label-title')
+    const firstPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__label-text')
+    const firstPersonHeight = firstPerson.offsetHeight
+    const firstPersonOffsetTop = firstPerson.offsetTop
+    const firstPersonFigureOffsetHeight = firstPersonFigure.offsetHeight
 
+    const secondPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(2)')
+    const secondPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__item-image')
+    const secondPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__item-img')
+    const secondPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__label-title')
+    const secondPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__label-text')
+    const secondPersonHeight = secondPerson.offsetHeight
+    const secondPersonOffsetTop = secondPerson.offsetTop
+    const secondPersonFigureOffsetHeight = secondPersonFigure.offsetHeight
 
-/**
- * TEAM
- */
-const firstPersonImages = [
-	'https://picsum.photos/id/1/699/842',
-	'https://picsum.photos/id/2/699/842',
-	'https://picsum.photos/id/3/699/842'
-]
-const firstPersonTexts = [
-	{
-		title: 'Иванов И.И',
-		description: 'Ген директор',
-	},
-	{
-		title: 'Иванов И.И 2',
-		description: 'Ген директор 2',
-	},
-	{
-		title: 'Иванов И.И 3',
-		description: 'Ген директор 3',
-	}
-]
+    const thirdPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(3)')
+    const thirdPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__item-image')
+    const thirdPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__item-img')
+    const thirdPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__label-title')
+    const thirdPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__label-text')
+    const thirdPersonHeight = thirdPerson.offsetHeight
+    const thirdPersonOffsetTop = thirdPerson.offsetTop
+    const thirdPersonFigureOffsetHeight = thirdPersonFigure.offsetHeight
 
-const secondPersonImages = [
-	'https://picsum.photos/id/4/699/842',
-	'https://picsum.photos/id/5/699/842',
-	'https://picsum.photos/id/6/699/842'
-]
-const secondPersonTexts = [
-	{
-		title: 'Иванов И.И',
-		description: 'Ген директор',
-	},
-	{
-		title: 'Иванов И.И 2',
-		description: 'Ген директор 2',
-	},
-	{
-		title: 'Иванов И.И 3',
-		description: 'Ген директор 3',
-	}
-]
+    document.addEventListener('scroll', () => {
+      /**
+       * 1
+       */
+      const firstPersonFigureOffsetTop = firstPersonFigure.offsetTop
+      const finalFirstPersonFigureOffsetTop = firstPersonFigureOffsetTop + firstPersonOffsetTop
+      const firstPersonDiff = finalFirstPersonFigureOffsetTop - firstPersonOffsetTop
+      const firstPersonPercentScrolled = Math.floor((firstPersonDiff / (firstPersonHeight - firstPersonFigureOffsetHeight)) * 100)
 
-const thirdPersonImages = [
-	'https://picsum.photos/id/7/699/842',
-	'https://picsum.photos/id/8/699/842',
-	'https://picsum.photos/id/9/699/842'
-]
-const thirdPersonTexts = [
-	{
-		title: 'Иванов И.И',
-		description: 'Ген директор',
-	},
-	{
-		title: 'Иванов И.И 2',
-		description: 'Ген директор 2',
-	},
-	{
-		title: 'Иванов И.И 3',
-		description: 'Ген директор 3',
-	}
-]
+      const firstPersonSegments = firstPersonImages.length
+      const firstPersonSegmentThreshold = Math.floor(100 / firstPersonSegments)
+      const firstPersonCurrentIndex = Math.min(Math.floor(firstPersonPercentScrolled / firstPersonSegmentThreshold), firstPersonSegments - 1)
 
-const firstPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(1)')
-const firstPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__item-image')
-const firstPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__item-img')
-const firstPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__label-title')
-const firstPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__label-text')
-const firstPersonHeight = firstPerson.offsetHeight
-const firstPersonOffsetTop = firstPerson.offsetTop
-const firstPersonFigureOffsetHeight = firstPersonFigure.offsetHeight
+      firstPersonImg.src = firstPersonImages[firstPersonCurrentIndex]
+      firstPersonTitle.textContent = firstPersonTexts[firstPersonCurrentIndex].title
+      firstPersonText.textContent = firstPersonTexts[firstPersonCurrentIndex].description
 
-const secondPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(2)')
-const secondPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__item-image')
-const secondPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__item-img')
-const secondPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__label-title')
-const secondPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__label-text')
-const secondPersonHeight = secondPerson.offsetHeight
-const secondPersonOffsetTop = secondPerson.offsetTop
-const secondPersonFigureOffsetHeight = secondPersonFigure.offsetHeight
+      /**
+       * 2
+       */
+      const secondPersonFigureOffsetTop = secondPersonFigure.offsetTop
+      const finalSecondPersonFigureOffsetTop = secondPersonFigureOffsetTop + secondPersonOffsetTop
+      const secondPersonDiff = finalSecondPersonFigureOffsetTop - secondPersonOffsetTop
+      const secondPersonPercentScrolled = Math.floor((secondPersonDiff / (secondPersonHeight - secondPersonFigureOffsetHeight)) * 100)
 
-const thirdPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(3)')
-const thirdPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__item-image')
-const thirdPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__item-img')
-const thirdPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__label-title')
-const thirdPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__label-text')
-const thirdPersonHeight = thirdPerson.offsetHeight
-const thirdPersonOffsetTop = thirdPerson.offsetTop
-const thirdPersonFigureOffsetHeight = thirdPersonFigure.offsetHeight
+      const secondPersonSegments = secondPersonImages.length
+      const secondPersonSegmentThreshold = Math.floor(100 / secondPersonSegments)
+      const secondPersonCurrentIndex = Math.min(Math.floor(secondPersonPercentScrolled / secondPersonSegmentThreshold), secondPersonSegments - 1)
 
-document.addEventListener('scroll', () => {
-	/**
-	 * 1
-	 */
-	const firstPersonFigureOffsetTop = firstPersonFigure.offsetTop
-	const finalFirstPersonFigureOffsetTop = firstPersonFigureOffsetTop + firstPersonOffsetTop
-	const firstPersonDiff = finalFirstPersonFigureOffsetTop - firstPersonOffsetTop
-	const firstPersonPercentScrolled = Math.floor((firstPersonDiff / (firstPersonHeight - firstPersonFigureOffsetHeight)) * 100)
+      secondPersonImg.src = secondPersonImages[secondPersonCurrentIndex]
+      secondPersonTitle.textContent = secondPersonTexts[secondPersonCurrentIndex].title
+      secondPersonText.textContent = secondPersonTexts[secondPersonCurrentIndex].description
 
-	const firstPersonSegments = firstPersonImages.length
-	const firstPersonSegmentThreshold = Math.floor(100 / firstPersonSegments)
-	const firstPersonCurrentIndex = Math.min(Math.floor(firstPersonPercentScrolled / firstPersonSegmentThreshold), firstPersonSegments - 1)
+      /**
+       * 3
+       */
+      const thirdPersonFigureOffsetTop = thirdPersonFigure.offsetTop
+      const finalThirdPersonFigureOffsetTop = thirdPersonFigureOffsetTop + thirdPersonOffsetTop
+      const thirdPersonDiff = finalThirdPersonFigureOffsetTop - thirdPersonOffsetTop
+      const thirdPersonPercentScrolled = Math.floor((thirdPersonDiff / (thirdPersonHeight - thirdPersonFigureOffsetHeight)) * 100)
 
-	firstPersonImg.src = firstPersonImages[firstPersonCurrentIndex]
-	firstPersonTitle.textContent = firstPersonTexts[firstPersonCurrentIndex].title
-	firstPersonText.textContent = firstPersonTexts[firstPersonCurrentIndex].description
+      const thirdPersonSegments = thirdPersonImages.length
+      const thirdPersonSegmentThreshold = Math.floor(100 / thirdPersonSegments)
+      const currentIndex = Math.min(Math.floor(thirdPersonPercentScrolled / thirdPersonSegmentThreshold), secondPersonSegments - 1)
 
-	/**
-	 * 2
-	 */
-	const secondPersonFigureOffsetTop = secondPersonFigure.offsetTop
-	const finalSecondPersonFigureOffsetTop = secondPersonFigureOffsetTop + secondPersonOffsetTop
-	const secondPersonDiff = finalSecondPersonFigureOffsetTop - secondPersonOffsetTop
-	const secondPersonPercentScrolled = Math.floor((secondPersonDiff / (secondPersonHeight - secondPersonFigureOffsetHeight)) * 100)
-
-	const secondPersonSegments = secondPersonImages.length
-	const secondPersonSegmentThreshold = Math.floor(100 / secondPersonSegments)
-	const secondPersonCurrentIndex = Math.min(Math.floor(secondPersonPercentScrolled / secondPersonSegmentThreshold), secondPersonSegments - 1)
-
-	secondPersonImg.src = secondPersonImages[secondPersonCurrentIndex]
-	secondPersonTitle.textContent = secondPersonTexts[secondPersonCurrentIndex].title
-	secondPersonText.textContent = secondPersonTexts[secondPersonCurrentIndex].description
-
-	/**
-	 * 3
-	 */
-	const thirdPersonFigureOffsetTop = thirdPersonFigure.offsetTop
-	const finalThirdPersonFigureOffsetTop = thirdPersonFigureOffsetTop + thirdPersonOffsetTop
-	const thirdPersonDiff = finalThirdPersonFigureOffsetTop - thirdPersonOffsetTop
-	const thirdPersonPercentScrolled = Math.floor((thirdPersonDiff / (thirdPersonHeight - thirdPersonFigureOffsetHeight)) * 100)
-
-	const thirdPersonSegments = thirdPersonImages.length
-	const thirdPersonSegmentThreshold = Math.floor(100 / thirdPersonSegments)
-	const currentIndex = Math.min(Math.floor(thirdPersonPercentScrolled / thirdPersonSegmentThreshold), secondPersonSegments - 1)
-
-	thirdPersonImg.src = thirdPersonImages[currentIndex]
-	thirdPersonTitle.textContent = thirdPersonTexts[currentIndex].title
-	thirdPersonText.textContent = thirdPersonTexts[currentIndex].description
+      thirdPersonImg.src = thirdPersonImages[currentIndex]
+      thirdPersonTitle.textContent = thirdPersonTexts[currentIndex].title
+      thirdPersonText.textContent = thirdPersonTexts[currentIndex].description
+    })
+  }
 })
-
