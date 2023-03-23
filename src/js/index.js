@@ -131,14 +131,6 @@ $(function () {
   });
 });
 
-//Горизонтальный скролл на странице команды
-const scrollContainer = document.querySelector(".team-body__item");
-
-scrollContainer.addEventListener("scrolldown", (e) => {
-  e.preventDefault();
-  scrollContainer.scrollLeft += e.deltaY;
-});
-
 
 // --- Плавный скроллинг до якорных ссылок
 // $('a[href^="#"]').on('click', function (e) {
