@@ -132,7 +132,8 @@ $(function () {
 });
 
 window.addEventListener('load', () => {
-  if (document.querySelector('.team-body') === null) {
+  if (document.querySelector('.team-body') === null ||
+    (document.querySelector('.team-body') !== null && window.innerWidth <= 1279)) {
     return;
   }
   else {
@@ -224,7 +225,11 @@ window.addEventListener('load', () => {
     const thirdPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__label-text')
     const thirdPersonHeight = thirdPerson.offsetHeight
     const thirdPersonOffsetTop = thirdPerson.offsetTop
-    const thirdPersonFigureOffsetHeight = thirdPersonFigure.offsetHeight
+    const thirdPersonFigureOffsetHeight = thirdPersonFigure.offsetHeight;
+
+    // team_members.forEach((item), () => {
+    //   let item_figure_offset_top = item.c
+    // })
 
     document.addEventListener('scroll', () => {
       /**
@@ -239,9 +244,17 @@ window.addEventListener('load', () => {
       const firstPersonSegmentThreshold = Math.floor(100 / firstPersonSegments)
       const firstPersonCurrentIndex = Math.min(Math.floor(firstPersonPercentScrolled / firstPersonSegmentThreshold), firstPersonSegments - 1)
 
-      firstPersonImg.src = firstPersonImages[firstPersonCurrentIndex]
-      firstPersonTitle.textContent = firstPersonTexts[firstPersonCurrentIndex].title
-      firstPersonText.textContent = firstPersonTexts[firstPersonCurrentIndex].description
+      document.querySelectorAll('.team-body__item').forEach((item) => {
+        Array.from(item.children[0].children).forEach((child) => {
+          child.classList.remove('team-body__item-content--active');
+        })
+      })
+      document.querySelector('.team-body__item').children[0].children[firstPersonCurrentIndex].classList.add('team-body__item-content--active');
+
+      // firstPersonImg.src = firstPersonImages[firstPersonCurrentIndex]
+      // firstPersonTitle.textContent = firstPersonTexts[firstPersonCurrentIndex].title
+      // firstPersonText.textContent = firstPersonTexts[firstPersonCurrentIndex].description
+
 
       /**
        * 2
@@ -255,9 +268,11 @@ window.addEventListener('load', () => {
       const secondPersonSegmentThreshold = Math.floor(100 / secondPersonSegments)
       const secondPersonCurrentIndex = Math.min(Math.floor(secondPersonPercentScrolled / secondPersonSegmentThreshold), secondPersonSegments - 1)
 
-      secondPersonImg.src = secondPersonImages[secondPersonCurrentIndex]
-      secondPersonTitle.textContent = secondPersonTexts[secondPersonCurrentIndex].title
-      secondPersonText.textContent = secondPersonTexts[secondPersonCurrentIndex].description
+      //???
+
+      // secondPersonImg.src = secondPersonImages[secondPersonCurrentIndex]
+      // secondPersonTitle.textContent = secondPersonTexts[secondPersonCurrentIndex].title
+      // secondPersonText.textContent = secondPersonTexts[secondPersonCurrentIndex].description
 
       /**
        * 3
@@ -271,9 +286,11 @@ window.addEventListener('load', () => {
       const thirdPersonSegmentThreshold = Math.floor(100 / thirdPersonSegments)
       const currentIndex = Math.min(Math.floor(thirdPersonPercentScrolled / thirdPersonSegmentThreshold), secondPersonSegments - 1)
 
-      thirdPersonImg.src = thirdPersonImages[currentIndex]
-      thirdPersonTitle.textContent = thirdPersonTexts[currentIndex].title
-      thirdPersonText.textContent = thirdPersonTexts[currentIndex].description
+      //???
+
+      // thirdPersonImg.src = thirdPersonImages[currentIndex]
+      // thirdPersonTitle.textContent = thirdPersonTexts[currentIndex].title
+      // thirdPersonText.textContent = thirdPersonTexts[currentIndex].description
     })
   }
 })

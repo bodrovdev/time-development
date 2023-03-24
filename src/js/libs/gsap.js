@@ -63,6 +63,10 @@ function moveCircle(e) {
 
 window.addEventListener('mousemove', moveCircle);
 
+// window.addEventListener('mousemove', (e) => {
+//   console.log(e.target);
+// })
+
 // --- Изменение следящего курсора
 window.addEventListener('load', () => {
   if (document.querySelector('.follow-change') === null) {
@@ -83,7 +87,22 @@ window.addEventListener('load', () => {
   }
 })
 
-// --- 
+// --- Изменение курсора в мобильном меню
+window.addEventListener('mousemove', (e) => {
+  if (e.target.classList.contains('main-nav__nav-menu--mobile--active')) {
+    circle.classList.add('circle--active-yellow');
+
+    document.querySelector('.main-nav__nav-menu--mobile--active').addEventListener('mouseleavse', () => {
+      circle.classList.remove('circle--active-yellow');
+      circle.classList.remove('circle--active');
+    })
+  }
+  else {
+    return;
+  }
+})
+
+// --- Анимация для мобильной версии блока с командой
 window.addEventListener('load', () => {
   if (document.getElementById('team-item') === null) {
     return;
@@ -91,19 +110,24 @@ window.addEventListener('load', () => {
   else {
     let team_items = document.querySelectorAll('#team-item');
 
+
     team_items.forEach((item) => {
+      console.log(item.children[0].children[0]);
+
+
       window.addEventListener('scroll', () => {
         if (isInViewport(item)) {
           let team_mobile_tl = gsap.timeline({});
-          team_mobile_tl.add(gsap.to(item.children[0], { duration: 0.4, css: { left: 0, transform: "translate(0, -50%)" } }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[0], { duration: 0.4, css: { width: "140px", height: "auto", minHeight: "250px", borderRadius: "0" } }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[1], { opacity: 1, duration: 0.4, x: 0, duration: 0.4 }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[0], { left: 0, transform: 'none', duration: 1, }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[0], { borderRadius: 0, width: "30%", height: "auto", minHeight: "250px", duration: 1 }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[1], { transform: "translateX(0)", width: "70%", opacity: 1, duration: 1, delay: -1 }));
         }
       })
     })
   }
 })
 
+// --- Прелоадер
 window.addEventListener('load', () => {
   if (document.querySelector('.preloader__wrapper') === null) {
     return;
@@ -125,3 +149,15 @@ window.addEventListener('load', () => {
     index_preloader_tl.add(gsap.to('body', { css: { overflow: 'visible' } }))
   }
 })
+
+// --- Анимация карточек команды
+// window.addEventListener('load', () => {
+//   if (document.querySelector('.team-body') === null ||
+//     (document.querySelector('.team-body') !== null && window.innerWidth >= 1280)) {
+//     return;
+//   }
+//   else {
+//     team_tl = gsap.timeline({});
+//     team_tl.add(gsap.to())
+//   }
+// })

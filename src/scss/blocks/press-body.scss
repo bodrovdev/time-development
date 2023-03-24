@@ -124,6 +124,10 @@
       transition: right 0.3s, bottom 0.3s;
 
       z-index: -1;
+
+      @include mixins.respond-to(notDesktop) {
+        display: none;
+      }
     }
 
     &-img {

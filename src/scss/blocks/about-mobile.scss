@@ -195,8 +195,6 @@
     }
 
     &-item {
-      position: relative;
-
       width: 100%;
       min-height: 250px;
 
@@ -208,21 +206,28 @@
     }
 
     &-image {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
 
       display: flex;
       align-items: stretch;
 
-      transform: translate(-50%, -50%);
+      width: 100%;
+
+      // transform: translate(-50%, -50%);
     }
 
     &-img {
+      position: relative;
+      left: 50%;
+
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
+
+      transform: translateX(-50%);
     }
 
     &-desc {
