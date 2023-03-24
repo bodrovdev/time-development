@@ -16,3 +16,11 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+document.getElementById('map').addEventListener('mouseover', () => {
+  lenis.stop();
+})
+
+document.getElementById('map').addEventListener('mouseleave', () => {
+  lenis.start();
+})

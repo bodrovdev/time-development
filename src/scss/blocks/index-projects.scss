@@ -194,11 +194,13 @@
     z-index: 1;
 
     @include mixins.respond-to(mobileOnly) {
-      margin: -137px 0 0 5%;
+      padding: 0 0 0 5%;
+      margin: -137px 0 0 0;
     }
 
     @include mixins.respond-to(tabletOnly) {
-      margin: -137px 0 0 5%;
+      padding: 0 0 0 5%;
+      margin: -137px 0 0 0;
     }
 
     &-slide {

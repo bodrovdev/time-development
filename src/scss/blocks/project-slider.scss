@@ -17,11 +17,11 @@
     margin: 0 0 0 auto;
 
     @include mixins.respond-to(notDesktop) {
-      width: 90%;
+      width: 100%;
       max-width: inherit;
 
-      padding: 0;
-      margin: 0 auto;
+      padding: 0 5%;
+      // margin: 0 auto;
     }
   }
 

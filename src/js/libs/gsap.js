@@ -25,16 +25,21 @@ window.addEventListener('load', () => {
     index_circles_tl.add(gsap.to("#puzzle_middle", { duration: 0.5, y: 80 }));
     index_circles_tl.add(gsap.to("#puzzle_right", { duration: 0.5, y: -150 }));
 
-    let puzzle = document.getElementById('puzzle');
+    let puzzle = document.querySelectorAll('.heading__puzzle-image');
+    puzzle.forEach((item) => {
+      item.addEventListener('mouseover', () => {
+        index_circles_text_tl.play();
+        index_circles_tl.play();
+      })
 
-    puzzle.addEventListener('mouseover', () => {
-      index_circles_text_tl.play();
-      index_circles_tl.play();
+      item.addEventListener('mouseleave', () => {
+        index_circles_text_tl.reverse();
+        index_circles_tl.reverse();
+      })
     })
-    puzzle.addEventListener('mouseleave', () => {
-      index_circles_text_tl.reverse();
-      index_circles_tl.reverse();
-    })
+
+
+
   }
 })
 
