@@ -227,9 +227,17 @@ window.addEventListener('load', () => {
     const thirdPersonOffsetTop = thirdPerson.offsetTop
     const thirdPersonFigureOffsetHeight = thirdPersonFigure.offsetHeight;
 
-    // team_members.forEach((item), () => {
-    //   let item_figure_offset_top = item.c
-    // })
+		const teamItems = document.querySelectorAll('.team-body__item')
+
+		function handlePersonContent(teamItem, index) {
+			const contents = teamItem.querySelectorAll('.team-body__item-content')
+
+			Array.from(contents).forEach((child) => {
+				child.classList.remove('team-body__item-content--active');
+			})
+
+			contents[index].classList.add('team-body__item-content--active')
+		}
 
     document.addEventListener('scroll', () => {
       /**
@@ -244,17 +252,7 @@ window.addEventListener('load', () => {
       const firstPersonSegmentThreshold = Math.floor(100 / firstPersonSegments)
       const firstPersonCurrentIndex = Math.min(Math.floor(firstPersonPercentScrolled / firstPersonSegmentThreshold), firstPersonSegments - 1)
 
-      document.querySelectorAll('.team-body__item').forEach((item) => {
-        Array.from(item.children[0].children).forEach((child) => {
-          child.classList.remove('team-body__item-content--active');
-        })
-      })
-      document.querySelector('.team-body__item').children[0].children[firstPersonCurrentIndex].classList.add('team-body__item-content--active');
-
-      // firstPersonImg.src = firstPersonImages[firstPersonCurrentIndex]
-      // firstPersonTitle.textContent = firstPersonTexts[firstPersonCurrentIndex].title
-      // firstPersonText.textContent = firstPersonTexts[firstPersonCurrentIndex].description
-
+			handlePersonContent(teamItems[0], firstPersonCurrentIndex)
 
       /**
        * 2
@@ -268,11 +266,8 @@ window.addEventListener('load', () => {
       const secondPersonSegmentThreshold = Math.floor(100 / secondPersonSegments)
       const secondPersonCurrentIndex = Math.min(Math.floor(secondPersonPercentScrolled / secondPersonSegmentThreshold), secondPersonSegments - 1)
 
-      //???
+			handlePersonContent(teamItems[1], secondPersonCurrentIndex)
 
-      // secondPersonImg.src = secondPersonImages[secondPersonCurrentIndex]
-      // secondPersonTitle.textContent = secondPersonTexts[secondPersonCurrentIndex].title
-      // secondPersonText.textContent = secondPersonTexts[secondPersonCurrentIndex].description
 
       /**
        * 3
@@ -284,13 +279,9 @@ window.addEventListener('load', () => {
 
       const thirdPersonSegments = thirdPersonImages.length
       const thirdPersonSegmentThreshold = Math.floor(100 / thirdPersonSegments)
-      const currentIndex = Math.min(Math.floor(thirdPersonPercentScrolled / thirdPersonSegmentThreshold), secondPersonSegments - 1)
+      const thirdPersonCurrentIndex = Math.min(Math.floor(thirdPersonPercentScrolled / thirdPersonSegmentThreshold), secondPersonSegments - 1)
 
-      //???
-
-      // thirdPersonImg.src = thirdPersonImages[currentIndex]
-      // thirdPersonTitle.textContent = thirdPersonTexts[currentIndex].title
-      // thirdPersonText.textContent = thirdPersonTexts[currentIndex].description
+			handlePersonContent(teamItems[2], thirdPersonCurrentIndex)
     })
   }
 })
