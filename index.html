@@ -64,7 +64,7 @@
 
         </div>
 
-        <button class="main-nav__burger base-button" id="burger">
+        <button class="main-nav__burger base-button follow-change" id="burger">
           <span class="main-nav__burger-line"></span>
         </button>
 
@@ -124,16 +124,23 @@
     font-family: var(--font-family-default);
     font-size: 40px;
     line-height: 45px;
-    font-weight: 500;
+    font-weight: 700;
     color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--color-aqua-deep);
     text-transform: uppercase;
+    white-space: nowrap;
 
     transform: translate(-50%, -50%);
 
 
     z-index: 3003;
+  }
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    .preloader__text-first {
+      font-size: 32px;
+    }
   }
 
   .preloader__ball {
