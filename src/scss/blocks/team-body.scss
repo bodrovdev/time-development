@@ -85,8 +85,6 @@
 
       opacity: 0;
 
-      transform: translateX(-10%);
-
       transition: opacity 1s, transform 1s;
 
       &--active {

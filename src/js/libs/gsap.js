@@ -117,9 +117,6 @@ window.addEventListener('load', () => {
 
 
     team_items.forEach((item) => {
-      console.log(item.children[0].children[0]);
-
-
       window.addEventListener('scroll', () => {
         if (isInViewport(item)) {
           let team_mobile_tl = gsap.timeline({});

@@ -137,151 +137,74 @@ window.addEventListener('load', () => {
     return;
   }
   else {
-    /**
-     * TEAM
-     */
-    const firstPersonImages = [
-      'https://picsum.photos/id/1/699/842',
-      'https://picsum.photos/id/2/699/842',
-      'https://picsum.photos/id/3/699/842'
-    ]
-    const firstPersonTexts = [
-      {
-        title: 'Иванов И.И',
-        description: 'Ген директор',
-      },
-      {
-        title: 'Иванов И.И 2',
-        description: 'Ген директор 2',
-      },
-      {
-        title: 'Иванов И.И 3',
-        description: 'Ген директор 3',
-      }
-    ]
-
-    const secondPersonImages = [
-      'https://picsum.photos/id/4/699/842',
-      'https://picsum.photos/id/5/699/842',
-      'https://picsum.photos/id/6/699/842'
-    ]
-    const secondPersonTexts = [
-      {
-        title: 'Иванов И.И',
-        description: 'Ген директор',
-      },
-      {
-        title: 'Иванов И.И 2',
-        description: 'Ген директор 2',
-      },
-      {
-        title: 'Иванов И.И 3',
-        description: 'Ген директор 3',
-      }
-    ]
-
-    const thirdPersonImages = [
-      'https://picsum.photos/id/7/699/842',
-      'https://picsum.photos/id/8/699/842',
-      'https://picsum.photos/id/9/699/842'
-    ]
-    const thirdPersonTexts = [
-      {
-        title: 'Иванов И.И',
-        description: 'Ген директор',
-      },
-      {
-        title: 'Иванов И.И 2',
-        description: 'Ген директор 2',
-      },
-      {
-        title: 'Иванов И.И 3',
-        description: 'Ген директор 3',
-      }
-    ]
-
     const firstPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(1)')
     const firstPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__item-image')
-    const firstPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__item-img')
-    const firstPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__label-title')
-    const firstPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__label-text')
     const firstPersonHeight = firstPerson.offsetHeight
     const firstPersonOffsetTop = firstPerson.offsetTop
     const firstPersonFigureOffsetHeight = firstPersonFigure.offsetHeight
 
     const secondPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(2)')
     const secondPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__item-image')
-    const secondPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__item-img')
-    const secondPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__label-title')
-    const secondPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__label-text')
     const secondPersonHeight = secondPerson.offsetHeight
     const secondPersonOffsetTop = secondPerson.offsetTop
     const secondPersonFigureOffsetHeight = secondPersonFigure.offsetHeight
 
     const thirdPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(3)')
     const thirdPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__item-image')
-    const thirdPersonImg = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__item-img')
-    const thirdPersonTitle = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__label-title')
-    const thirdPersonText = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__label-text')
     const thirdPersonHeight = thirdPerson.offsetHeight
     const thirdPersonOffsetTop = thirdPerson.offsetTop
     const thirdPersonFigureOffsetHeight = thirdPersonFigure.offsetHeight;
 
-		const teamItems = document.querySelectorAll('.team-body__item')
+    const teamItems = document.querySelectorAll('.team-body__item')
 
-		function handlePersonContent(teamItem, index) {
-			const contents = teamItem.querySelectorAll('.team-body__item-content')
+    function handlePersonContent(teamItem, index) {
+      const contents = teamItem.querySelectorAll('.team-body__item-content')
 
-			Array.from(contents).forEach((child) => {
-				child.classList.remove('team-body__item-content--active');
-			})
+      Array.from(contents).forEach((child) => {
+        child.classList.remove('team-body__item-content--active');
+      })
 
-			contents[index].classList.add('team-body__item-content--active')
-		}
+      contents[index].classList.add('team-body__item-content--active')
+    }
 
     document.addEventListener('scroll', () => {
-      /**
-       * 1
-       */
+
+      // --- Первый член команды
       const firstPersonFigureOffsetTop = firstPersonFigure.offsetTop
       const finalFirstPersonFigureOffsetTop = firstPersonFigureOffsetTop + firstPersonOffsetTop
       const firstPersonDiff = finalFirstPersonFigureOffsetTop - firstPersonOffsetTop
       const firstPersonPercentScrolled = Math.floor((firstPersonDiff / (firstPersonHeight - firstPersonFigureOffsetHeight)) * 100)
 
-      const firstPersonSegments = firstPersonImages.length
+      const firstPersonSegments = 3
       const firstPersonSegmentThreshold = Math.floor(100 / firstPersonSegments)
       const firstPersonCurrentIndex = Math.min(Math.floor(firstPersonPercentScrolled / firstPersonSegmentThreshold), firstPersonSegments - 1)
 
-			handlePersonContent(teamItems[0], firstPersonCurrentIndex)
+      handlePersonContent(teamItems[0], firstPersonCurrentIndex)
 
-      /**
-       * 2
-       */
+      // --- Второй член команды
       const secondPersonFigureOffsetTop = secondPersonFigure.offsetTop
       const finalSecondPersonFigureOffsetTop = secondPersonFigureOffsetTop + secondPersonOffsetTop
       const secondPersonDiff = finalSecondPersonFigureOffsetTop - secondPersonOffsetTop
       const secondPersonPercentScrolled = Math.floor((secondPersonDiff / (secondPersonHeight - secondPersonFigureOffsetHeight)) * 100)
 
-      const secondPersonSegments = secondPersonImages.length
+      const secondPersonSegments = 3
       const secondPersonSegmentThreshold = Math.floor(100 / secondPersonSegments)
       const secondPersonCurrentIndex = Math.min(Math.floor(secondPersonPercentScrolled / secondPersonSegmentThreshold), secondPersonSegments - 1)
 
-			handlePersonContent(teamItems[1], secondPersonCurrentIndex)
+      handlePersonContent(teamItems[1], secondPersonCurrentIndex)
 
 
-      /**
-       * 3
-       */
+      // --- Третий член команды
       const thirdPersonFigureOffsetTop = thirdPersonFigure.offsetTop
       const finalThirdPersonFigureOffsetTop = thirdPersonFigureOffsetTop + thirdPersonOffsetTop
       const thirdPersonDiff = finalThirdPersonFigureOffsetTop - thirdPersonOffsetTop
       const thirdPersonPercentScrolled = Math.floor((thirdPersonDiff / (thirdPersonHeight - thirdPersonFigureOffsetHeight)) * 100)
 
-      const thirdPersonSegments = thirdPersonImages.length
+      const thirdPersonSegments = 3
       const thirdPersonSegmentThreshold = Math.floor(100 / thirdPersonSegments)
       const thirdPersonCurrentIndex = Math.min(Math.floor(thirdPersonPercentScrolled / thirdPersonSegmentThreshold), secondPersonSegments - 1)
 
-			handlePersonContent(teamItems[2], thirdPersonCurrentIndex)
+      handlePersonContent(teamItems[2], thirdPersonCurrentIndex)
     })
   }
 })
