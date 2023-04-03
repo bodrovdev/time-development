@@ -55,6 +55,25 @@ nav_list.onclick = function (event) {
   enableBodyScroll(mobile_menu);
 };
 
+// - Закрытие при сколле на ширине экрана от 1024 до 1280
+window.addEventListener('load', () => {
+  if (window.innerWidth < 1023 && window.innerWidth > 1280) {
+    return;
+  }
+  else {
+    document.body.style.overflow = "hidden";
+
+    window.addEventListener('scroll', () => {
+      if (mobile_menu.classList.contains('main-nav__nav-menu--mobile--active')) {
+        mobile_menu.classList.remove('main-nav__nav-menu--mobile--active');
+        burger.classList.remove('main-nav__burger--active');
+        page_cover.classList.remove('cover-default--active');
+        enableBodyScroll(mobile_menu);
+      }
+    })
+  }
+})
+
 // --- Анимация печатающегося текста на главной странице
 window.addEventListener('load', () => {
   if (document.getElementById('index_typing_text') === null) {
@@ -75,7 +94,7 @@ window.addEventListener('load', () => {
 
     setTimeout(() => {
       typeWriter();
-    }, 7000)
+    }, 6000)
 
   }
 })
@@ -122,14 +141,67 @@ window.addEventListener('load', () => {
 })
 
 // --- Бегущая строка
-$(function () {
-  $('.marquee').marquee({
-    delayBeforeStart: -5000,
-    duration: 20000,
-    startVisible: true,
-    duplicated: true
-  });
-});
+window.addEventListener('load', () => {
+  if (document.querySelector('#marquee') === null) {
+    return;
+  }
+  else {
+
+    $(function () {
+      $('.marquee-1').marquee({
+        delayBeforeStart: -5000,
+        duration: 20000,
+        startVisible: true,
+        duplicated: true
+      });
+    });
+    $(function () {
+      $('.marquee-2').marquee({
+        delayBeforeStart: -5000,
+        duration: 10000,
+        startVisible: true,
+        duplicated: true
+      });
+    });
+    $(function () {
+      $('.marquee-3').marquee({
+        delayBeforeStart: -5000,
+        duration: 55000,
+        startVisible: true,
+        duplicated: true
+      });
+    });
+    $(function () {
+      $('.marquee-4').marquee({
+        delayBeforeStart: -5000,
+        duration: 15000,
+        startVisible: true,
+        duplicated: true
+      });
+    });
+    $(function () {
+      $('.marquee-5').marquee({
+        delayBeforeStart: -5000,
+        duration: 75000,
+        startVisible: true,
+        duplicated: true
+      });
+    });
+    $(function () {
+      $('.marquee-6').marquee({
+        delayBeforeStart: -5000,
+        duration: 30000,
+        startVisible: true,
+        duplicated: true
+      });
+    });
+
+    let marquees = document.querySelectorAll('#marquee');
+    marquees.forEach((item) => {
+      item.classList.add(`marquee-${Math.floor(Math.random() * (6 - 1 + 1) + 1)}`)
+    })
+  }
+})
 
 window.addEventListener('load', () => {
   if (document.querySelector('.team-body') === null ||

@@ -562,11 +562,17 @@
 
   & .time-clocks {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 24px);
     left: 50%;
 
     transform: translateY(-50%) translateX(-50%);
 
     z-index: 10;
+  }
+
+  & .time-clocks__number {
+    color: var(--color-white);
+    -webkit-text-stroke-width: 0;
+    -webkit-text-stroke-color: var(--color-white);
   }
 }

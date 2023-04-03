@@ -193,6 +193,9 @@
   }
 
   &__running-text {
+    display: flex;
+    flex-direction: column;
+
     width: 733px;
     height: 204px;
 
