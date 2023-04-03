@@ -283,6 +283,8 @@
       height: 103px;
       background: #F9F9F9;
 
+      transition: background 0.3s;
+
       padding: 0 13px;
 
       @include mixins.respond-to(mobileOnly) {
@@ -306,6 +308,8 @@
       line-height: 28px;
       color: var(--color-aqua-deep);
 
+      transition: color 0.3s;
+
       margin: 0 0 3px 0;
 
       @include mixins.respond-to(mobileOnly) {
@@ -322,6 +326,8 @@
       font-size: 16px;
       line-height: 19px;
       color: var(--color-black);
+
+      transition: color 0.3s;
     }
   }
 
@@ -355,6 +361,23 @@
       display: flex;
 
       max-width: 300px;
+    }
+  }
+
+  &__slide-link {
+    &:hover {
+      & .index-projects__slide-info {
+        background: var(--color-aqua-deep);
+
+        transition: background 0.3s;
+      }
+
+      & .index-projects__slide-title,
+      .index-projects__slide-subtitle {
+        color: var(--color-golden-fizz);
+
+        transition: color 0.3s;
+      }
     }
   }
 }

@@ -55,6 +55,12 @@
         transition: transform 0.3s;
       }
 
+      .press-body__slide-footer {
+        font-size: 18px;
+
+        transition: font-size 0.3s;
+      }
+
       .press-body__slide-graphic {
         right: -22px;
         bottom: -30px;
@@ -153,6 +159,9 @@
       font-size: 16px;
       line-height: 19px;
       color: var(--color-black);
+      white-space: nowrap;
+
+      transition: font-size 0.3s;
 
       @include mixins.respond-to(notDesktop) {
         font-size: 14px;

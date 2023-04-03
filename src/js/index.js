@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
     return;
   }
   else {
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
 
     window.addEventListener('scroll', () => {
       if (mobile_menu.classList.contains('main-nav__nav-menu--mobile--active')) {
@@ -158,7 +158,7 @@ window.addEventListener('load', () => {
     $(function () {
       $('.marquee-2').marquee({
         delayBeforeStart: -5000,
-        duration: 10000,
+        duration: 30000,
         startVisible: true,
         duplicated: true
       });
@@ -174,7 +174,7 @@ window.addEventListener('load', () => {
     $(function () {
       $('.marquee-4').marquee({
         delayBeforeStart: -5000,
-        duration: 15000,
+        duration: 25000,
         startVisible: true,
         duplicated: true
       });
@@ -190,7 +190,7 @@ window.addEventListener('load', () => {
     $(function () {
       $('.marquee-6').marquee({
         delayBeforeStart: -5000,
-        duration: 30000,
+        duration: 35000,
         startVisible: true,
         duplicated: true
       });
