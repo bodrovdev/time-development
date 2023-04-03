@@ -52,7 +52,7 @@
               <a class="main-nav__nav-link @@isActive-team base-link" href="team.html">Команда</a>
             </li>
             <li class="main-nav__nav-item">
-              <a class="main-nav__nav-link nav-contacts--active base-link" href="contacts.html">Контакты</a>
+              <a class="main-nav__nav-link @@isActive-contacts base-link" href="contacts.html">Контакты</a>
             </li>
           </ul>
 
@@ -73,21 +73,9 @@
   </header>
 
 <main class="page-content">
-  <style>
-    .contacts {
-      margin: 141px 0 0 0;
-    }
 
-    @media (min-width: 320px) and (max-width: 1279px) {
-      .contacts {
-        margin: 38px 0 0 0;
-      }
 
-      .contacts-page {
-        margin: 68px 0 0 0;
-      }
-    }
-  </style>
+
   <section class="contacts">
   <div class="contacts__container base-container">
     <div class="contacts__column contacts__column--left">
@@ -131,30 +119,6 @@
     </div>
   </div>
 </section>
-  <section class="contacts-page">
-    <div class="contacts-page__container base-container">
-      <figure class="contacts-page__image base-figure">
-        <div class="time-clocks">
-  <span class="time-clocks__number">12</span>
-  <svg class="time-clocks__clocks" width="@@width" height="@@height" alt="Циферблат">
-    <use href="img/icon/sprite.svg#time-clock-icon"></use>
-  </svg>
-</div>
-        <img class="contacts-page__img" src="img/image/contacts-page-image.png" width="391" height="391" alt="Декоративное изображение здания с множеством окон">
-      </figure>
-      <figure class="contacts-page__image contacts-page__image--mobile base-figure">
-        <svg class="contacts-page__sign-icon" width="16" height="68" alt="#" aria-hidden="true">
-          <use href="img/icon/sprite.svg#sign-fill-icon"></use>
-        </svg>
-        <img class="contacts-page__img" src="img/image/contacts-page-image-mobile.png" width="178" height="264" alt="Декоративное изображение здания с множеством окон">
-      </figure>
-      <form class="contacts-page__form" if="form">
-        <input class="contacts-page__input" type="text" name="name" id="name" placeholder="Ваше имя">
-        <input class="contacts-page__input" type="tel" name="phone" id="phone" placeholder="Ваш телефон">
-        <textarea class="contacts-page__input contacts-page__input--textarea" name="text" id="text" placeholder="Ваше сообщение..."></textarea>
-      </form>
-    </div>
-  </section>
   <section class="map" id="map">
   <!-- <figure class="map__image base-figure">
     <img class="map__img" src="img/image/map.png" alt="Заглушка для карты">
