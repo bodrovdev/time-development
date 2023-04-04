@@ -138,25 +138,25 @@ window.addEventListener('load', () => {
 })
 
 // --- Прелоадер
-// window.addEventListener('load', () => {
-//   if (document.querySelector('.preloader__wrapper') === null) {
-//     return;
-//   }
-//   else {
-//     let preloader_wrapper = document.querySelector('.preloader__wrapper');
-//     let preloader_overlay = document.querySelector('.preloader__overlay');
-//     let preloader_text_first = document.querySelector('.preloader__text-first');
-//     let preloader_text_second = document.querySelector('.preloader__text-second');
+window.addEventListener('load', () => {
+  if (document.querySelector('.preloader__wrapper') === null) {
+    return;
+  }
+  else {
+    let preloader_wrapper = document.querySelector('.preloader__wrapper');
+    let preloader_overlay = document.querySelector('.preloader__overlay');
+    let preloader_text_first = document.querySelector('.preloader__text-first');
+    let preloader_text_second = document.querySelector('.preloader__text-second');
 
 
-//     let index_preloader_tl = gsap.timeline({});
-//     index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 1, duration: 1, ease: "power3.out", }));
-//     index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 }));
-//     index_preloader_tl.add(gsap.to(preloader_text_second, { opacity: 1, duration: 0.5, ease: "power3.out", }));
-//     index_preloader_tl.add(gsap.to(preloader_overlay, { transform: "translate(-50%, -50%) scale(0)", duration: 3, ease: "power3.out", }))
-//     index_preloader_tl.add(gsap.to(preloader_wrapper, { opacity: 0, duration: 1, ease: "power3.out", delay: -0.5 }))
-//   }
-// })
+    let index_preloader_tl = gsap.timeline({});
+    index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 1, duration: 1, ease: "power3.out", }));
+    index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 }));
+    index_preloader_tl.add(gsap.to(preloader_text_second, { opacity: 1, duration: 0.5, ease: "power3.out", }));
+    index_preloader_tl.add(gsap.to(preloader_overlay, { transform: "translate(-50%, -50%) scale(0)", duration: 3, ease: "power3.out", }))
+    index_preloader_tl.add(gsap.to(preloader_wrapper, { opacity: 0, duration: 1, ease: "power3.out", delay: -0.5 }))
+  }
+})
 
 // --- Анимация карточек команды
 // window.addEventListener('load', () => {
