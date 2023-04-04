@@ -1,0 +1,157 @@
+@use "../mixins";
+
+.single-projects {
+  &__heading {
+    margin: 91px 0 87px 0;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-top {
+      position: relative;
+
+      display: flex;
+    }
+
+    &-bottom {
+      display: flex;
+    }
+  }
+
+  &__top {
+    &-image {
+      position: relative;
+
+      margin: 0 84px 0 0;
+    }
+
+    &-graphic {
+      position: absolute;
+      top: -42px;
+      right: -76px;
+
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+
+      z-index: -1;
+    }
+
+    &-desc {
+      padding: 98px 0 0 0;
+    }
+
+    &-title {
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 42px;
+
+      margin: 0 0 25px 0;
+    }
+
+    &-text {
+      max-width: 485px;
+
+      & p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: lowercase;
+
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    &-text {
+      max-width: 605px;
+
+      padding: 78px 0 0 0;
+      margin: 0 160px 0 0;
+
+      & p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: lowercase;
+
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  &__time-clocks {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__time-number {
+    display: inline-block;
+
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 38px;
+
+    margin: 0 0 10px 0;
+  }
+
+  &__slider {
+    position: relative;
+
+    &-slide {
+      width: 522px;
+      height: 408px;
+    }
+
+    &-arrows {
+      position: absolute;
+      top: 155px;
+      left: 50%;
+
+      display: flex;
+      justify-content: space-between;
+
+      width: 90%;
+
+      transform: translateX(-50%);
+
+      margin: 0 auto;
+
+      z-index: 10;
+    }
+
+    &-pagination {
+      display: none;
+
+      @include mixins.respond-to(notDesktop) {
+        display: flex;
+      }
+    }
+  }
+
+  &__arrows-arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.83);
+
+    transition: background 0.3s;
+
+    &:hover {
+      background: var(--color-golden-fizz);
+
+      transition: background 0.3s;
+    }
+  }
+}

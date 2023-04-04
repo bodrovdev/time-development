@@ -14,6 +14,23 @@ let project_slider = new Swiper('.index-projects__slider', {
   }
 });
 
+let project_single_slider = new Swiper('.single-projects__slider', {
+  speed: 500,
+  slidesPerView: "auto",
+  spaceBetween: 57,
+
+  navigation: {
+    nextEl: '.single-projects__arrows-arrow--next',
+    prevEl: '.single-projects__arrows-arrow--prev',
+  },
+
+  pagination: {
+    el: ".single-projects__slider-pagination",
+    clickable: true,
+  },
+
+})
+
 var init = false;
 
 function archiveSlider() {
