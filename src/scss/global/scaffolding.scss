@@ -252,6 +252,10 @@ input[type=number] {
 
 		z-index: -1;
 	}
+
+	@include mixins.respond-to(notDesktop) {
+		line-height: 50px;
+	}
 }
 
 .active-title {

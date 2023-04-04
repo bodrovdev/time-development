@@ -10,9 +10,13 @@
         <div class="single-projects__heading-top">
           <figure class="single-projects__top-image base-figure">
             <img class="single-projects__top-img" src="img/image/single-projects-image-1.png" alt="#">
-
-            <div class="single-projects__top-graphic" style="border: 1px solid #737A67;"></div>
+            <div class="single-projects__top-graphic rellax-2" style="border: 1px solid #737A67;"></div>
           </figure>
+
+          <figure class="single-projects__top-image single-projects__top-image--mobile base-figure">
+            <img class="single-projects__top-img single-projects__top-img--mobile" src="img/image/single-projects-image-1-mobile.png" alt="#">
+          </figure>
+
           <div class="single-projects__top-desc">
             <h2 class="single-projects__top-title base-title" style="color:#737A68">Первый квартал</h2>
             <div class="single-projects__top-text">
@@ -20,7 +24,6 @@
                 Первая очередь масштабного девелоперского проекта, состоящая из шести малоэтажных жилых домов, полностью построена и сдана в 2022 году.
               </p>
             </div>
-
             <div class="single-projects__time-clocks time-clocks">
               <span class="single-projects__time-number" style="color: #737A68">12</span>
               <svg class="single-projects__clocks-icon time-clocks__clocks" width="190" height="190" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,8 +39,16 @@
           <div class="single-projects__bottom-text">
             <p>
               С другой стороны, новая модель организационной деятельности, в своём классическом представлении, допускает внедрение существующих финансовых и административных условий. Каждый из нас понимает очевидную вещь: разбавленное изрядной долей эмпатии,
-              рациональное мышление не даёт нам иного выбора, кроме определения распределения внутренних резервов и ресурсов. Имеется спорная точка зрения, гласящая примерно следующее: стремящиеся вытеснить традиционное производство, нанотехнологии могут быть
-              ассоциативно распределены по отраслям. Предварительные выводы неутешительны: постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Внезапно, тщательные
+              рациональное мышление не даёт нам иного выбора, кроме определения распределения внутренних резервов и ресурсов.
+            </p>
+
+            <p>
+              Имеется спорная точка зрения, гласящая примерно следующее: стремящиеся вытеснить традиционное производство, нанотехнологии могут быть
+              ассоциативно распределены по отраслям. Предварительные выводы неутешительны: постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации дальнейших направлений развития.
+            </p>
+
+            <p>
+              Внезапно, тщательные
               исследования конкурентов в равной степени предоставлены сами себе. Лишь стремящиеся вытеснить традиционное производство, н
             </p>
           </div>
@@ -53,44 +64,90 @@
         <div class="single-projects__slider-wrapper swiper-wrapper">
           <div class="single-projects__slider-slide swiper-slide">
             <figure class="single-projects__slide-image base-figure">
-              <img class="single-projects__slide-img" src="img/image/single-projects-image-1.png" width="522" height="408" alt="#">
+              <a class="base-link" data-fancybox href="img/image/single-projects-image-1.png">
+                <img class="single-projects__slide-img" src="img/image/single-projects-image-1.png" width="522" height="408" alt="#">
+              </a>
             </figure>
           </div>
           <div class="single-projects__slider-slide swiper-slide">
             <figure class="single-projects__slide-image base-figure">
-              <img class="single-projects__slide-img" src="img/image/single-projects-slider-2.png" width="522" height="408" alt="#">
+              <a class="base-link" data-fancybox href="img/image/single-projects-slider-1.png">
+                <img class="single-projects__slide-img" src="img/image/single-projects-slider-1.png" width="522" height="408" alt="#">
+              </a>
             </figure>
           </div>
           <div class="single-projects__slider-slide swiper-slide">
             <figure class="single-projects__slide-image base-figure">
-              <img class="single-projects__slide-img" src="img/image/single-projects-slider-2.png" width="522" height="408" alt="#">
+              <a class="base-link" data-fancybox href="img/image/single-projects-slider-2.png">
+                <img class="single-projects__slide-img" src="img/image/single-projects-slider-2.png" width="522" height="408" alt="#">
+              </a>
             </figure>
           </div>
         </div>
 
         <div class="single-projects__slider-arrows">
-          <button class="single-projects__arrows-arrow single-projects__arrows-arrow--prev follow-change base-button" type="button" style="transform: scaleX(-1);">
+          <div class="single-projects__arrows-arrow single-projects__arrows-arrow--prev follow-change" style="transform: scaleX(-1);">
             <svg class="single-projects__arrow-icon" width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M10.8839 10.8839C11.372 10.3957 11.372 9.60427 10.8839 9.11612L2.92893 1.16117C2.44078 0.67301 1.64932 0.67301 1.16117 1.16117C0.67301 1.64932 0.67301 2.44078 1.16117 2.92893L8.23223 10L1.16117 17.0711C0.67301 17.5592 0.67301 18.3507 1.16117 18.8388C1.64932 19.327 2.44078 19.327 2.92893 18.8388L10.8839 10.8839ZM10 8.75H9V11.25H10V8.75Z"
                 fill="#737A67" />
             </svg>
-          </button>
-          <button class="single-projects__arrows-arrow single-projects__arrows-arrow--next follow-change base-button" type="button">
+          </div>
+          <div class="single-projects__arrows-arrow single-projects__arrows-arrow--next follow-change">
             <svg class="single-projects__arrow-icon" width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M10.8839 10.8839C11.372 10.3957 11.372 9.60427 10.8839 9.11612L2.92893 1.16117C2.44078 0.67301 1.64932 0.67301 1.16117 1.16117C0.67301 1.64932 0.67301 2.44078 1.16117 2.92893L8.23223 10L1.16117 17.0711C0.67301 17.5592 0.67301 18.3507 1.16117 18.8388C1.64932 19.327 2.44078 19.327 2.92893 18.8388L10.8839 10.8839ZM10 8.75H9V11.25H10V8.75Z"
                 fill="#737A67" />
             </svg>
-          </button>
+          </div>
         </div>
 
         <div class="single-projects__slider-pagination swiper-pagination"></div>
       </div>
     </div>
+    </div>
 
     <div class="single-projects__marquee-container">
-      <div class="single-projects__marquee"></div>
+
+      <style>
+        #marquee {
+          color: #737A68;
+        }
+      </style>
+
+      <div class="single-projects__marquee">
+        <div class="single-projects__marquee-row">
+          <p id="marquee">
+            -?время–деньги! ] вногусовременем>}―:)пришлонашевр время перемен : ) · - время действовать ! . . · -? время – деньги !
+          </p>
+        </div>
+        <div class="single-projects__marquee-row">
+          <p id="marquee">
+            временем>}―:)·-?время– нашевремя―]·времяперемен:)· действовать–деньги! ] вногусовременем>}―:)·-?время–ден
+          </p>
+        </div>
+        <div class="single-projects__marquee-row">
+          <p id="marquee">
+            ногу со временем > } ― : ) пришло наше время ― ] · время перемен : ) действовать!.. ·-?время–деньги! ] вногусовременем>}―:)·-?
+          </p>
+        </div>
+        <div class="single-projects__marquee-row">
+          <p id="marquee">
+            наше время ― ] · время перемен : ) · - время действовать – деньги ! ] временем>}―:)·-?время–деньги! ] вногусовременем>}―:) наше время ― ] · время перемен : ) · - время действовать – деньги ! ] временем>}―:)·-?время–деньги! ]
+            вногусовременем>}―:) наше время ― ]
+          </p>
+        </div>
+        <div class="single-projects__marquee-row">
+          <p id="marquee">
+            наше время ― ] · время перемен : ) · - время действовать ! . . · -? время! ] вногусовременем>}―:)·-?время– нашевремя―]·времяпе наше время ― ] · время перемен : )
+          </p>
+        </div>
+        <div class="single-projects__marquee-row">
+          <p id="marquee">
+            -времядействовать–деньги! ] вногусовременем>}―:)·-?время! ] вногусовременем>}―:)пришлонашевремя―]·времяпере -времядействовать–деньги!
+          </p>
+        </div>
+      </div>
     </div>
 
   </section>

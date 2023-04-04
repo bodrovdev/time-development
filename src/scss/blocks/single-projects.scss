@@ -4,6 +4,12 @@
   &__heading {
     margin: 91px 0 87px 0;
 
+    @include mixins.respond-to(notDesktop) {
+      flex-direction: column;
+
+      margin: 30px 0 40px 0;
+    }
+
     &-container {
       display: flex;
       flex-direction: column;
@@ -13,10 +19,20 @@
       position: relative;
 
       display: flex;
+
+      @include mixins.respond-to(notDesktop) {
+        flex-direction: column;
+
+        margin: 0 0 30px 0;
+      }
     }
 
     &-bottom {
       display: flex;
+
+      @include mixins.respond-to(notDesktop) {
+        flex-direction: column;
+      }
     }
   }
 
@@ -24,7 +40,31 @@
     &-image {
       position: relative;
 
+      display: block;
+
       margin: 0 84px 0 0;
+
+      @include mixins.respond-to(notDesktop) {
+        display: none;
+      }
+
+      &--mobile {
+        display: none;
+
+        @include mixins.respond-to(notDesktop) {
+          display: block;
+
+          margin: 0 0 50px 0;
+        }
+      }
+    }
+
+    &-img--mobile {
+      @include mixins.respond-to(notDesktop) {
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+      }
     }
 
     &-graphic {
@@ -37,22 +77,40 @@
       border-radius: 50%;
 
       z-index: -1;
+
+      @include mixins.respond-to(notDesktop) {
+        display: none;
+      }
     }
 
     &-desc {
       padding: 98px 0 0 0;
+
+      @include mixins.respond-to(notDesktop) {
+        padding: 0;
+      }
     }
 
     &-title {
       font-weight: 800;
       font-size: 36px;
       line-height: 42px;
+      text-transform: uppercase;
 
       margin: 0 0 25px 0;
+
+      @include mixins.respond-to(notDesktop) {
+        margin: 0 0 20px 0;
+      }
     }
 
     &-text {
       max-width: 485px;
+
+      @include mixins.respond-to(notDesktop) {
+        width: 100%;
+        max-width: initial;
+      }
 
       & p {
         font-weight: 300;
@@ -61,7 +119,11 @@
         text-transform: lowercase;
 
         padding: 0;
-        margin: 0;
+        margin: 0 0 20px 0;
+
+        &:last-child {
+          margin: 0;
+        }
       }
     }
   }
@@ -73,6 +135,13 @@
       padding: 78px 0 0 0;
       margin: 0 160px 0 0;
 
+      @include mixins.respond-to(notDesktop) {
+        order: 2;
+
+        padding: 0;
+        margin: 0;
+      }
+
       & p {
         font-weight: 300;
         font-size: 16px;
@@ -80,15 +149,37 @@
         text-transform: lowercase;
 
         padding: 0;
-        margin: 0;
+        margin: 0 0 20px 0;
+
+        &:last-child {
+          margin: 0;
+        }
       }
+    }
+
+    &-image {
+      @include mixins.respond-to(notDesktop) {
+        order: 1;
+
+        margin: 0 0 30px 0;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
     }
   }
 
   &__time-clocks {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -58px;
+    right: 40px;
+
+    @include mixins.respond-to(notDesktop) {
+      display: none;
+    }
   }
 
   &__time-number {
@@ -104,9 +195,20 @@
   &__slider {
     position: relative;
 
+    margin: 0 0 51px 0;
+
+    @include mixins.respond-to(notDesktop) {
+      padding: 0 0 42px 5%;
+    }
+
     &-slide {
       width: 522px;
       height: 408px;
+
+      @include mixins.respond-to(notDesktop) {
+        width: 230px;
+        height: 350px;
+      }
     }
 
     &-arrows {
@@ -124,14 +226,22 @@
       margin: 0 auto;
 
       z-index: 10;
-    }
-
-    &-pagination {
-      display: none;
 
       @include mixins.respond-to(notDesktop) {
-        display: flex;
+        display: none;
       }
+
+      & .swiper-button-disabled:hover {
+        background: rgba(255, 255, 255, 0.83) !important;
+        background: rgba($color: #000000, $alpha: 1.0);
+      }
+    }
+  }
+
+  &__slide-img {
+    @include mixins.respond-to(notDesktop) {
+      width: 230px;
+      height: 350px;
     }
   }
 
@@ -153,5 +263,62 @@
 
       transition: background 0.3s;
     }
+  }
+
+  &__marquee-container {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    margin: 0 0 66px 0;
+  }
+
+  &__marquee {
+    display: flex;
+    flex-direction: column;
+
+    width: 730px;
+    height: 220px;
+    overflow: hidden;
+
+    @include mixins.respond-to(notDesktop) {
+      display: none;
+    }
+  }
+
+  &__marquee-row {
+    & p {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 34px;
+      text-align: justify;
+      white-space: nowrap;
+
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__slider-pagination {
+    display: none;
+
+    @include mixins.respond-to(notDesktop) {
+      display: block;
+    }
+  }
+
+  &__slider-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border: 0.5px solid var(--color-aqua-deep);
+    background-color: transparent;
+  }
+
+  &__slider-pagination .swiper-pagination-bullet-active {
+    width: 12px;
+    height: 12px;
+    border: 0.5px solid var(--color-aqua-deep);
+    background-color: var(--color-aqua-deep);
   }
 }
