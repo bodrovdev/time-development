@@ -2,6 +2,8 @@
 
 .single-projects {
   &__heading {
+    overflow: hidden;
+
     margin: 91px 0 87px 0;
 
     @include mixins.respond-to(notDesktop) {
@@ -195,6 +197,8 @@
   &__slider {
     position: relative;
 
+    overflow: hidden;
+
     margin: 0 0 51px 0;
 
     @include mixins.respond-to(notDesktop) {
@@ -270,6 +274,7 @@
     justify-content: flex-end;
 
     width: 100%;
+    overflow: hidden;
 
     margin: 0 0 66px 0;
   }

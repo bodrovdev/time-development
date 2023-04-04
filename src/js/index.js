@@ -1,4 +1,4 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { lock, unlock } from 'tua-body-scroll-lock'
 
 // --- Мобильное меню
 let burger = document.getElementById('burger');
@@ -14,10 +14,12 @@ burger.addEventListener('click', () => {
   page_cover.classList.toggle('cover-default--active');
 
   if (burger.classList.contains('main-nav__burger--active')) {
-    disableBodyScroll(mobile_menu);
+    lock(mobile_menu);
+    console.log('opa');
   }
   else {
-    enableBodyScroll(mobile_menu);
+    unlock(mobile_menu);
+    console.log('nihuya');
   }
 })
 
@@ -37,7 +39,7 @@ window.addEventListener('click', (e) => {
     mobile_menu.classList.remove('main-nav__nav-menu--mobile--active');
     burger.classList.remove('main-nav__burger--active');
     page_cover.classList.remove('cover-default--active');
-    enableBodyScroll(mobile_menu);
+    unlock(mobile_menu);
   }
 })
 
@@ -52,7 +54,7 @@ nav_list.onclick = function (event) {
   burger.classList.toggle('main-nav__burger--active');
   mobile_menu.classList.toggle('main-nav__nav-menu--mobile--active');
   page_cover.classList.remove('cover-default--active');
-  enableBodyScroll(mobile_menu);
+  unlock(mobile_menu);
 };
 
 // - Закрытие при сколле на ширине экрана от 1024 до 1280
@@ -61,14 +63,12 @@ window.addEventListener('load', () => {
     return;
   }
   else {
-    // document.body.style.overflow = "hidden";
-
     window.addEventListener('scroll', () => {
       if (mobile_menu.classList.contains('main-nav__nav-menu--mobile--active')) {
         mobile_menu.classList.remove('main-nav__nav-menu--mobile--active');
         burger.classList.remove('main-nav__burger--active');
         page_cover.classList.remove('cover-default--active');
-        enableBodyScroll(mobile_menu);
+        unlock(mobile_menu);
       }
     })
   }
