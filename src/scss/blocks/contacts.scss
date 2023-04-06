@@ -76,12 +76,12 @@
 
       @include mixins.respond-to(mobileOnly) {
         padding: 0;
-        margin: 89px 0 0 0;
+        margin: 143px 0 0 0;
       }
 
       @include mixins.respond-to(tabletOnly) {
         padding: 0;
-        margin: 89px 0 0 0;
+        margin: 143px 0 0 0;
       }
     }
   }

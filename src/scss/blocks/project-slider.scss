@@ -1,7 +1,6 @@
 @use "../mixins";
 
 .project-slider {
-
   margin: 0 0 231px 0;
 
   @include mixins.respond-to(notDesktop) {
@@ -20,7 +19,7 @@
       width: 100%;
       max-width: inherit;
 
-      padding: 0 5%;
+      padding: 0;
       // margin: 0 auto;
     }
   }
@@ -58,6 +57,7 @@
     margin: 0 0 71px 0;
 
     @include mixins.respond-to(notDesktop) {
+      padding: 0 5%;
       margin: 0 0 96px 0;
     }
   }
@@ -68,13 +68,33 @@
     @include mixins.respond-to(notDesktop) {
       width: 359px;
     }
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+    }
   }
 
   &__slide {
+
+    &-image {
+      @include mixins.respond-to(notDesktop) {
+        width: 359px;
+        height: 222px;
+      }
+
+      @include mixins.respond-to(mobileOnly) {
+        width: 100%;
+      }
+    }
+
     &-img {
       @include mixins.respond-to(notDesktop) {
         width: 359px;
         height: 222px;
+      }
+
+      @include mixins.respond-to(mobileOnly) {
+        width: 100%;
       }
     }
 

@@ -21,3 +21,10 @@ let rellax_3 = new Rellax('.rellax-3', {
   round: true,
   vertical: true,
 });
+let rellax_4 = new Rellax('.rellax-4', {
+  speed: 0.3,
+  center: false,
+  wrapper: null,
+  round: true,
+  vertical: true,
+});

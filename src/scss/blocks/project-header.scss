@@ -31,8 +31,14 @@
 
     & .scroll-help {
       position: absolute;
-
       right: -30px;
+
+      display: none;
+
+      @include mixins.respond-to(desktopM) {
+        display: block;
+      }
+
     }
   }
 

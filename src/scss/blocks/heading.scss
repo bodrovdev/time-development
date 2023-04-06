@@ -253,14 +253,18 @@
     margin: 0 0 77px 0;
 
     @include mixins.respond-to(mobileOnly) {
-      max-width: 100%;
+      width: 330px;
+      min-width: initial;
+      max-width: initial;
 
       padding: 32px 0 0 0;
       margin: 0 0 34px 0;
     }
 
     @include mixins.respond-to(tabletOnly) {
-      max-width: 100%;
+      width: 321px;
+      min-width: initial;
+      max-width: initial;
 
       padding: 32px 0 0 0;
       margin: 0 0 34px 0;

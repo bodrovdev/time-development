@@ -123,14 +123,13 @@ window.addEventListener('load', () => {
   else {
     let team_items = document.querySelectorAll('#team-item');
 
-
     team_items.forEach((item) => {
       window.addEventListener('scroll', () => {
         if (isInViewport(item)) {
           let team_mobile_tl = gsap.timeline({});
-          team_mobile_tl.add(gsap.to(item.children[0].children[0], { left: 0, transform: 'none', duration: 1, }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[0], { borderRadius: 0, width: "30%", height: "auto", minHeight: "250px", duration: 1 }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[1], { transform: "translateX(0)", width: "70%", opacity: 1, duration: 1, delay: -1 }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[0], { left: 0, transform: 'none', duration: 0.5, }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[0], { borderRadius: 0, width: "30%", height: "auto", minHeight: "250px", duration: 0.5 }));
+          team_mobile_tl.add(gsap.to(item.children[0].children[1], { transform: "translateX(0)", width: "70%", opacity: 1, duration: 0.5, delay: -0.5 }));
         }
       })
     })

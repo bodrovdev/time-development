@@ -1,26 +1,35 @@
 import Lenis from '@studio-freight/lenis';
 
-const lenis = new Lenis({
-  duration: 1.5,
-  easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-  direction: "vertical",
-  gestureDirection: "vertical",
-  smooth: true,
-  smoothTouch: false,
-  touchMultiplier: 2,
-});
+window.addEventListener('load', () => {
+  if (window.innerWidth < 767) {
+    return;
+  }
+  else {
+    console.log('gugugaga');
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+      direction: "vertical",
+      gestureDirection: "vertical",
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
 
-requestAnimationFrame(raf);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-document.getElementById('map').addEventListener('mouseover', () => {
-  lenis.stop();
-})
+    requestAnimationFrame(raf);
 
-document.getElementById('map').addEventListener('mouseleave', () => {
-  lenis.start();
+    document.getElementById('map').addEventListener('mouseover', () => {
+      lenis.stop();
+    })
+
+    document.getElementById('map').addEventListener('mouseleave', () => {
+      lenis.start();
+    })
+  }
 })
