@@ -262,9 +262,12 @@
     }
 
     @include mixins.respond-to(tabletOnly) {
-      width: 321px;
+      width: 100%;
       min-width: initial;
       max-width: initial;
+
+      font-size: 60px;
+      line-height: 65px;
 
       padding: 32px 0 0 0;
       margin: 0 0 34px 0;
@@ -302,7 +305,7 @@
     }
   }
 
-  @media only screen and (min-device-width: 390px) and (max-device-width: 1023px) {
+  @media only screen and (min-device-width: 390px) and (max-device-width: 767px) {
     &__title {
       font-size: 40px;
     }

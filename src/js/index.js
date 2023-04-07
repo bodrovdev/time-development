@@ -81,7 +81,7 @@ window.addEventListener('load', () => {
   }
   else {
     let i = 0;
-    let txt = 'ДЕВЕЛОПЕР БЕЗУПРЕЧНОГО ОБРАЗА ЖИЗНИ';
+    let txt = document.querySelector('#index_typing_text').dataset.typing;
     let speed = 100;
 
     function typeWriter() {
