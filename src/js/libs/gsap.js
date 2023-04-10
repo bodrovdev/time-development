@@ -156,15 +156,3 @@ window.addEventListener('load', () => {
     index_preloader_tl.add(gsap.to(preloader_wrapper, { opacity: 0, duration: 1, ease: "power3.out", delay: -0.5 }))
   }
 })
-
-// --- Анимация карточек команды
-// window.addEventListener('load', () => {
-//   if (document.querySelector('.team-body') === null ||
-//     (document.querySelector('.team-body') !== null && window.innerWidth >= 1280)) {
-//     return;
-//   }
-//   else {
-//     team_tl = gsap.timeline({});
-//     team_tl.add(gsap.to())
-//   }
-// })

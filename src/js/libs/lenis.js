@@ -5,8 +5,6 @@ window.addEventListener('load', () => {
     return;
   }
   else {
-    console.log('gugugaga');
-
     const lenis = new Lenis({
       duration: 1.5,
       easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),

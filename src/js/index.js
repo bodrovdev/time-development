@@ -154,40 +154,35 @@ window.addEventListener('load', () => {
         startVisible: true,
         duplicated: true
       });
-    });
-    $(function () {
+
       $('.marquee-2').marquee({
         delayBeforeStart: -5000,
         duration: 30000,
         startVisible: true,
         duplicated: true
       });
-    });
-    $(function () {
+
       $('.marquee-3').marquee({
         delayBeforeStart: -5000,
         duration: 55000,
         startVisible: true,
         duplicated: true
       });
-    });
-    $(function () {
+
       $('.marquee-4').marquee({
         delayBeforeStart: -5000,
         duration: 25000,
         startVisible: true,
         duplicated: true
       });
-    });
-    $(function () {
+
       $('.marquee-5').marquee({
         delayBeforeStart: -5000,
         duration: 75000,
         startVisible: true,
         duplicated: true
       });
-    });
-    $(function () {
+
       $('.marquee-6').marquee({
         delayBeforeStart: -5000,
         duration: 35000,
@@ -198,85 +193,50 @@ window.addEventListener('load', () => {
 
     let marquees = document.querySelectorAll('#marquee');
     marquees.forEach((item) => {
-      item.classList.add(`marquee-${Math.floor(Math.random() * (6 - 1 + 1) + 1)}`)
+      item.classList.add(`marquee-${Math.floor(Math.random() * (6) + 1)}`)
     })
   }
 })
 
+// --- Анимация смены описания и фотографий на десктопной версии страницы "команда"
 window.addEventListener('load', () => {
   if (document.querySelector('.team-body') === null ||
     (document.querySelector('.team-body') !== null && window.innerWidth <= 1279)) {
     return;
   }
   else {
-    const firstPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(1)')
-    const firstPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(1) .team-body__item-image')
-    const firstPersonHeight = firstPerson.offsetHeight
-    const firstPersonOffsetTop = firstPerson.offsetTop
-    const firstPersonFigureOffsetHeight = firstPersonFigure.offsetHeight
 
-    const secondPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(2)')
-    const secondPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(2) .team-body__item-image')
-    const secondPersonHeight = secondPerson.offsetHeight
-    const secondPersonOffsetTop = secondPerson.offsetTop
-    const secondPersonFigureOffsetHeight = secondPersonFigure.offsetHeight
+    let team_items = document.querySelectorAll('.team-body__item');
 
-    const thirdPerson = document.querySelector('.team-body__container .team-body__item:nth-of-type(3)')
-    const thirdPersonFigure = document.querySelector('.team-body__container .team-body__item:nth-of-type(3) .team-body__item-image')
-    const thirdPersonHeight = thirdPerson.offsetHeight
-    const thirdPersonOffsetTop = thirdPerson.offsetTop
-    const thirdPersonFigureOffsetHeight = thirdPersonFigure.offsetHeight;
+    function handlePersonContent(value, index) {
+      let team_item_contents = value.querySelectorAll('.team-body__item-content')
 
-    const teamItems = document.querySelectorAll('.team-body__item')
-
-    function handlePersonContent(teamItem, index) {
-      const contents = teamItem.querySelectorAll('.team-body__item-content')
-
-      Array.from(contents).forEach((child) => {
-        child.classList.remove('team-body__item-content--active');
+      Array.from(team_item_contents).forEach((content) => {
+        content.classList.remove('team-body__item-content--active');
       })
 
-      contents[index].classList.add('team-body__item-content--active')
+      team_item_contents[index].classList.add('team-body__item-content--active')
     }
 
-    document.addEventListener('scroll', () => {
-
-      // --- Первый член команды
-      const firstPersonFigureOffsetTop = firstPersonFigure.offsetTop
-      const finalFirstPersonFigureOffsetTop = firstPersonFigureOffsetTop + firstPersonOffsetTop
-      const firstPersonDiff = finalFirstPersonFigureOffsetTop - firstPersonOffsetTop
-      const firstPersonPercentScrolled = Math.floor((firstPersonDiff / (firstPersonHeight - firstPersonFigureOffsetHeight)) * 100)
-
-      const firstPersonSegments = 3
-      const firstPersonSegmentThreshold = Math.floor(100 / firstPersonSegments)
-      const firstPersonCurrentIndex = Math.min(Math.floor(firstPersonPercentScrolled / firstPersonSegmentThreshold), firstPersonSegments - 1)
-
-      handlePersonContent(teamItems[0], firstPersonCurrentIndex)
-
-      // --- Второй член команды
-      const secondPersonFigureOffsetTop = secondPersonFigure.offsetTop
-      const finalSecondPersonFigureOffsetTop = secondPersonFigureOffsetTop + secondPersonOffsetTop
-      const secondPersonDiff = finalSecondPersonFigureOffsetTop - secondPersonOffsetTop
-      const secondPersonPercentScrolled = Math.floor((secondPersonDiff / (secondPersonHeight - secondPersonFigureOffsetHeight)) * 100)
-
-      const secondPersonSegments = 3
-      const secondPersonSegmentThreshold = Math.floor(100 / secondPersonSegments)
-      const secondPersonCurrentIndex = Math.min(Math.floor(secondPersonPercentScrolled / secondPersonSegmentThreshold), secondPersonSegments - 1)
-
-      handlePersonContent(teamItems[1], secondPersonCurrentIndex)
+    team_items.forEach((team_item) => {
+      let team_item_figure = team_item.querySelector('.team-body__item-image');
+      let team_item_height = team_item.offsetHeight;
+      let team_item_offset_top = team_item.offsetTop;
+      let team_item_figure_height = team_item_figure.offsetHeight;
 
 
-      // --- Третий член команды
-      const thirdPersonFigureOffsetTop = thirdPersonFigure.offsetTop
-      const finalThirdPersonFigureOffsetTop = thirdPersonFigureOffsetTop + thirdPersonOffsetTop
-      const thirdPersonDiff = finalThirdPersonFigureOffsetTop - thirdPersonOffsetTop
-      const thirdPersonPercentScrolled = Math.floor((thirdPersonDiff / (thirdPersonHeight - thirdPersonFigureOffsetHeight)) * 100)
+      window.addEventListener('scroll', () => {
+        let team_item_figure_offset_top = team_item_figure.offsetTop;
+        let team_item_final_figure_offset_top = team_item_figure_offset_top + team_item_offset_top;
+        let team_item_diff = team_item_final_figure_offset_top - team_item_offset_top;
+        let team_item_percent_scrolled = Math.floor((team_item_diff / (team_item_height - team_item_figure_height)) * 100)
 
-      const thirdPersonSegments = 3
-      const thirdPersonSegmentThreshold = Math.floor(100 / thirdPersonSegments)
-      const thirdPersonCurrentIndex = Math.min(Math.floor(thirdPersonPercentScrolled / thirdPersonSegmentThreshold), secondPersonSegments - 1)
+        let team_item_segments = Array.from(team_item.querySelectorAll('.team-body__item-content')).length;
+        let team_item_segment_threshold = Math.floor(100 / team_item_segments);
+        let team_item_segment_current_index = Math.min(Math.floor(team_item_percent_scrolled / team_item_segment_threshold), team_item_segments - 1);
 
-      handlePersonContent(teamItems[2], thirdPersonCurrentIndex)
+        handlePersonContent(team_item, team_item_segment_current_index);
+      })
     })
   }
 })
