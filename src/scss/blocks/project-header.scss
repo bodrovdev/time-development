@@ -125,6 +125,13 @@
     }
   }
 
+  &__img {
+    @include mixins.respond-to(tabletOnly) {
+      width: 250px;
+      height: auto;
+    }
+  }
+
   &__info {
     max-width: 610px;
   }
@@ -139,6 +146,16 @@
       line-height: 45px;
 
       margin: 0 0 35px 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      font-size: 70px;
+      line-height: 60px !important;
+    }
+
+    @include mixins.respond-to(desktopSOnly) {
+      font-size: 70px;
+      line-height: 60px !important;
     }
   }
 

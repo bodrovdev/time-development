@@ -61,9 +61,23 @@
 
     padding: 55px 0 0 0;
 
-    @include mixins.respond-to(notDesktopFr) {
+    @include mixins.respond-to(mobileOnly) {
       font-size: 50px;
       line-height: 59px;
+
+      padding: 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      font-size: 70px;
+      line-height: 75px !important;
+
+      padding: 0;
+    }
+
+    @include mixins.respond-to(desktopSOnly) {
+      font-size: 70px;
+      line-height: 75px !important;
 
       padding: 0;
     }
