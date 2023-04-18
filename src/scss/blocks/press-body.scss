@@ -24,10 +24,10 @@
     @include mixins.respond-to(desktopD) {
       display: grid;
       grid-template: repeat(2, 1fr) / repeat(3, 1fr);
-      grid-gap: 38px 52px;
+      grid-gap: 10px;
       grid-auto-flow: row;
 
-      width: 90px;
+      width: 90%;
 
       margin: 0 auto;
     }
@@ -35,6 +35,8 @@
 
   @media(min-width: '1300px') {
     &__slider-wrapper {
+      grid-gap: 38px 52px;
+
       width: 100%;
       max-width: 1296px;
     }

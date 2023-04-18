@@ -1,5 +1,11 @@
 @use "../mixins";
 
+.team__content {
+  @include mixins.respond-to(notDesktop) {
+    overflow: hidden;
+  }
+}
+
 .team-heading {
   position: relative;
 
