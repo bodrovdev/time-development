@@ -19,6 +19,7 @@ let project_single_slider = new Swiper('.single-projects__slider', {
   slidesPerView: "auto",
   spaceBetween: 57,
 
+
   navigation: {
     nextEl: '.single-projects__arrows-arrow--next',
     prevEl: '.single-projects__arrows-arrow--prev',
