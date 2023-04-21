@@ -198,7 +198,7 @@
     margin: 0 0 51px 0;
 
     @include mixins.respond-to(notDesktop) {
-      padding: 0 0 42px 5%;
+      padding: 0 5% 42px 5%;
     }
 
     &-slide {

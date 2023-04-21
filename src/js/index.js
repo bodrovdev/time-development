@@ -99,6 +99,32 @@ window.addEventListener('load', () => {
   }
 })
 
+// --- Отключение неактивных элементов в слайдере 
+window.addEventListener('load', () => {
+  if (document.querySelector('.index-projects__slider-slide') === null) {
+    return;
+  }
+  else {
+    let project_items = document.querySelectorAll('.index-projects__slider-slide');
+
+    project_items.forEach((item) => {
+      switch (item.getAttribute('data-status')) {
+        case 'ready':
+          item.querySelector('.index-projects__slide-caption').innerHTML = 'Реализован';
+          break;
+        case 'active':
+          item.querySelector('.index-projects__slide-caption').innerHTML = 'В стадии реализации';
+          break;
+        case 'disabled':
+          item.classList.add('disabled');
+          item.setAttribute('href', '');
+          item.querySelector('.index-projects__slide-caption').innerHTML = 'В стадии проектирования';
+          break;
+      }
+    })
+  }
+})
+
 // --- Добавление интерактивного класса для всех ссылок на странице
 window.addEventListener('load', () => {
   if (document.querySelector('a') === null) {
@@ -237,6 +263,56 @@ window.addEventListener('load', () => {
 
         handlePersonContent(team_item, team_item_segment_current_index);
       })
+    })
+  }
+})
+
+// Задержка появления элементов на главной странице
+window.addEventListener('load', () => {
+  if (document.querySelector('.index-projects') === null) {
+    return;
+  }
+  else {
+    let index_projects_items_initial = Array.from(document.querySelectorAll('.index-projects__slider-slide'));
+
+    const chunk = (arr, size) =>
+      Array.from({
+        length: Math.ceil(arr.length / size)
+      }, (v, i) =>
+        arr.slice(i * size, i * size + size)
+      );
+
+    let index_projects_items = chunk(index_projects_items_initial, 3);
+
+    index_projects_items.forEach((item) => {
+      item[0] ? item[0].setAttribute('data-aos-delay', 0) : console.log('');
+      item[1] ? item[1].setAttribute('data-aos-delay', 500) : console.log('');
+      item[2] ? item[2].setAttribute('data-aos-delay', 1000) : console.log('');
+    })
+  }
+})
+
+// Задержка появления элементов на странице архива новостей
+window.addEventListener('load', () => {
+  if (document.querySelector('.press-body') === null) {
+    return;
+  }
+  else {
+    let press_items_initial = Array.from(document.querySelectorAll('.press-body__slider-slide'));
+
+    const chunk = (arr, size) =>
+      Array.from({
+        length: Math.ceil(arr.length / size)
+      }, (v, i) =>
+        arr.slice(i * size, i * size + size)
+      );
+
+    let press_items = chunk(press_items_initial, 3);
+
+    press_items.forEach((item) => {
+      item[0] ? item[0].setAttribute('data-aos-delay', 0) : console.log('');
+      item[1] ? item[1].setAttribute('data-aos-delay', 100) : console.log('');
+      item[2] ? item[2].setAttribute('data-aos-delay', 200) : console.log('');
     })
   }
 })
