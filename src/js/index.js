@@ -99,7 +99,7 @@ window.addEventListener('load', () => {
   }
 })
 
-// --- Отключение неактивных элементов в слайдере 
+// --- Отключение неактивных элементов в слайдере
 window.addEventListener('load', () => {
   if (document.querySelector('.index-projects__slider-slide') === null) {
     return;
@@ -323,7 +323,7 @@ let search_input = document.querySelector('.is-search-input');
 let search_button = document.querySelector('.is-search-submit');
 
 // - Создание иконки
-let search_icon = document.createElement('svg');
+let search_icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 search_icon.classList.add('search-icon');
 search_icon.setAttribute('width', '16');
 search_icon.setAttribute('height', '16');
