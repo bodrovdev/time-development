@@ -2,6 +2,19 @@
 "isActive-contacts": "nav-contacts--active",
 })
 
+<div class="modal" id="modal">
+  <div class="modal__wrapper">
+    <button class="modal__close follow-change base-button" id="modal_close">
+      <svg class="modal__close-icon" width="20" height="20" alt="#">
+        <use href="img/icon/sprite.svg#modal-close-icon"></use>
+      </svg>
+    </button>
+    <div class="modal__inner">
+      <span class="modal__success-text">Спасибо, ваша заявка отправлена</span>
+    </div>
+  </div>
+</div>
+
 <main class="page-content contacts-page__content">
 
   <section class="contacts-page">
@@ -17,9 +30,9 @@
         <img class="contacts-page__img" src="img/image/contacts-page-image-mobile.png" width="178" height="264" alt="Декоративное изображение здания с множеством окон">
       </figure>
       <form class="contacts-page__form" id="modal_form">
-        <input class="contacts-page__input" type="text" name="name" id="name" placeholder="Ваше имя">
-        <input class="contacts-page__input" type="tel" name="phone" id="phone" placeholder="Ваш телефон">
-        <textarea class="contacts-page__input contacts-page__input--textarea" name="text" id="text" placeholder="Ваше сообщение..."></textarea>
+        <input class="contacts-page__input follow-change" type="text" name="name" id="name" placeholder="Ваше имя">
+        <input class="contacts-page__input follow-change" type="tel" name="phone" id="phone" placeholder="Ваш телефон">
+        <textarea class="contacts-page__input contacts-page__input--textarea follow-change" name="text" id="text" placeholder="Ваше сообщение..."></textarea>
         <button class="contacts-page__submit button-yellow follow-change base-button">Отправить</button>
       </form>
     </div>

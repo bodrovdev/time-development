@@ -29,5 +29,26 @@ window.addEventListener('load', () => {
     document.getElementById('map').addEventListener('mouseleave', () => {
       lenis.start();
     })
+
+    if (document.querySelector('#modal_form') !== null) {
+      document.querySelector('#modal_form').addEventListener('submit', () => {
+        console.log('Должен оставиться тут');
+        lenis.stop();
+      })
+
+      document.getElementById('modal_close').addEventListener('click', () => {
+        modal.classList.remove('modal--active');
+        lenis.start();
+      })
+
+      document.getElementById('modal').addEventListener('click', (e) => {
+        if (e.target !== e.currentTarget) {
+          return;
+        }
+        else {
+          lenis.start();
+        }
+      })
+    }
   }
 })
