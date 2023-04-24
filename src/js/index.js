@@ -267,7 +267,7 @@ window.addEventListener('load', () => {
   }
 })
 
-// Задержка появления элементов на главной странице
+// --- Задержка появления элементов на главной странице
 window.addEventListener('load', () => {
   if (document.querySelector('.index-projects') === null) {
     return;
@@ -292,7 +292,7 @@ window.addEventListener('load', () => {
   }
 })
 
-// Задержка появления элементов на странице архива новостей
+// --- Задержка появления элементов на странице архива новостей
 window.addEventListener('load', () => {
   if (document.querySelector('.press-body') === null) {
     return;
@@ -315,4 +315,30 @@ window.addEventListener('load', () => {
       item[2] ? item[2].setAttribute('data-aos-delay', 200) : console.log('');
     })
   }
+})
+
+// --- Поиск
+let search_form = document.querySelector('.is-search-form');
+let search_input = document.querySelector('.is-search-input');
+let search_button = document.querySelector('.is-search-submit');
+
+// - Создание иконки
+let search_icon = document.createElement('svg');
+search_icon.classList.add('search-icon');
+search_icon.setAttribute('width', '16');
+search_icon.setAttribute('height', '16');
+search_icon.innerHTML = '<use href="img/icon/sprite.svg#search-icon"></use>';
+
+search_button.appendChild(search_icon);
+
+// - miscellaneous
+search_form.classList.add('follow-change');
+search_input.setAttribute('placeholder', '');
+
+search_form.addEventListener('mouseover', () => {
+  search_input.classList.add('search-open');
+})
+search_form.addEventListener('mouseleave', () => {
+  search_input.classList.remove('search-open');
+  search_input.blur();
 })

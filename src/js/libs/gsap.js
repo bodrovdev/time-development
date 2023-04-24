@@ -17,13 +17,13 @@ window.addEventListener('load', () => {
   }
   else {
     let index_circles_text_tl = gsap.timeline({ paused: true });
-    index_circles_text_tl.add(gsap.to("#puzzle_middle_text", { duration: 0.5, delay: 0.5, y: 50 }));
-    index_circles_text_tl.add(gsap.to("#puzzle_right_text", { duration: 0.5, y: -50 }));
+    index_circles_text_tl.add(gsap.to("#puzzle_middle_text", { duration: 0.5, delay: -0.5, y: 50 }));
+    index_circles_text_tl.add(gsap.to("#puzzle_right_text", { duration: 0.5, delay: -0.5, y: -50 }));
 
     let index_circles_tl = gsap.timeline({ paused: true });
-    index_circles_tl.add(gsap.to("#puzzle_left", { duration: 0.5, y: -50 }));
-    index_circles_tl.add(gsap.to("#puzzle_middle", { duration: 0.5, y: 80 }));
-    index_circles_tl.add(gsap.to("#puzzle_right", { duration: 0.5, y: -150 }));
+    index_circles_tl.add(gsap.to("#puzzle_left", { duration: 0.5, delay: -0.5, y: -50 }));
+    index_circles_tl.add(gsap.to("#puzzle_middle", { duration: 0.5, delay: -0.5, y: 80 }));
+    index_circles_tl.add(gsap.to("#puzzle_right", { duration: 0.5, delay: -0.5, y: -150 }));
 
     let puzzle = document.querySelectorAll('.heading__puzzle-image');
     puzzle.forEach((item) => {
