@@ -34,7 +34,9 @@ window.addEventListener('click', (e) => {
     e.target !== burger &&
     e.target.parentElement !== burger &&
     e.target !== search_bar &&
-    e.target.parentElement !== search_bar) {
+    e.target.parentElement !== search_bar &&
+    e.target !== document.querySelector('.is-search-input') &&
+    e.target.parentElement !== document.querySelector('.is-search-input')) {
 
     mobile_menu.classList.remove('main-nav__nav-menu--mobile--active');
     burger.classList.remove('main-nav__burger--active');
@@ -73,6 +75,48 @@ window.addEventListener('load', () => {
     })
   }
 })
+
+// --- Поиск
+let search_form = document.querySelector('.is-search-form');
+let search_input = document.querySelector('.is-search-input');
+let search_button = document.querySelector('.is-search-submit');
+
+// - Создание иконки
+let search_icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+search_icon.classList.add('search-icon');
+search_icon.setAttribute('width', '16');
+search_icon.setAttribute('height', '16');
+search_icon.innerHTML = '<use href="https://cq18080.tmweb.ru/time_development/wp-content/themes/time_development/assets/img/icon/sprite.svg#search-icon"></use>';
+
+search_button.appendChild(search_icon);
+
+// - miscellaneous
+search_form.classList.add('follow-change');
+search_input.setAttribute('placeholder', '');
+
+
+if (window.innerWidth >= 1288) {
+  search_form.addEventListener('mouseover', () => {
+    search_input.classList.add('search-open');
+  })
+
+  search_form.addEventListener('mouseleave', () => {
+    if (document.activeElement !== search_input) {
+      search_input.classList.remove('search-open');
+      search_input.blur();
+    }
+  })
+
+  window.addEventListener('click', (e) => {
+    console.log(e.target);
+    console.log(e.currentTarget);
+
+    if (search_input.classList.contains('search-open') && e.target !== search_input) {
+      search_input.classList.remove('search-open');
+      search_input.blur();
+    }
+  })
+}
 
 // --- Анимация печатающегося текста на главной странице
 window.addEventListener('load', () => {
@@ -317,28 +361,35 @@ window.addEventListener('load', () => {
   }
 })
 
-// --- Поиск
-let search_form = document.querySelector('.is-search-form');
-let search_input = document.querySelector('.is-search-input');
-let search_button = document.querySelector('.is-search-submit');
+// --- Модальное окно
+window.addEventListener('load', () => {
+  if (document.querySelector('#modal_form') === null) {
+    return;
+  }
+  else {
+    let modal_form = document.getElementById('modal_form');
+    let modal = document.getElementById('modal');
+    let modal_close = document.getElementById('modal_close');
 
-// - Создание иконки
-let search_icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-search_icon.classList.add('search-icon');
-search_icon.setAttribute('width', '16');
-search_icon.setAttribute('height', '16');
-search_icon.innerHTML = '<use href="img/icon/sprite.svg#search-icon"></use>';
+    modal_form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.classList.add('modal--active');
+      lock(modal);
+    })
 
-search_button.appendChild(search_icon);
+    modal_close.addEventListener('click', () => {
+      modal.classList.remove('modal--active');
+      unlock(modal);
+    })
 
-// - miscellaneous
-search_form.classList.add('follow-change');
-search_input.setAttribute('placeholder', '');
-
-search_form.addEventListener('mouseover', () => {
-  search_input.classList.add('search-open');
-})
-search_form.addEventListener('mouseleave', () => {
-  search_input.classList.remove('search-open');
-  search_input.blur();
+    modal.addEventListener('click', (e) => {
+      if (e.target !== e.currentTarget) {
+        return;
+      }
+      else {
+        modal.classList.remove('modal--active');
+        unlock(modal);
+      }
+    })
+  }
 })

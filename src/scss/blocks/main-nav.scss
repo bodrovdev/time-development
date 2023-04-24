@@ -407,13 +407,10 @@
     margin: 0 0 0 auto !important;
 
     @include mixins.respond-to(notDesktop) {
+      width: 100%;
+
       margin: 0 !important;
     }
-  }
-
-  & label {
-    width: fit-content !important;
-    height: fit-content !important;
   }
 
   & label span {
@@ -431,13 +428,19 @@
     border-radius: 40px !important;
     outline: none !important;
 
-    font-family: var(--font-family-default);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: var(--color-black);
+    font-family: var(--font-family-default) !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    color: var(--color-black) !important;
 
     transition: width 0.3s !important;
+
+    @include mixins.respond-to(notDesktop) {
+      width: 100% !important;
+
+      padding: 5px 60px 5px 10px !important;
+    }
   }
 
   & button {
@@ -471,7 +474,7 @@
 
 .search-open {
   @include mixins.respond-to(desktopD) {
-    width: 300px !important;
+    width: 300px;
 
     transition: width 0.3s !important;
 
@@ -479,7 +482,7 @@
   }
 
   @include mixins.respond-to(desktopM) {
-    width: 200px !important;
+    width: 200px;
 
     transition: width 0.3s !important;
 
@@ -490,4 +493,23 @@
 .search-icon {
   width: 16px !important;
   height: 16px !important;
+}
+
+.page-header .main-nav .main-nav__container .main-nav__nav-menu form label {
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+.page-header .main-nav .main-nav__container .main-nav__nav-menu form label input {
+  width: 55px;
+}
+
+.page-header .main-nav .main-nav__container .main-nav__nav-menu form label .search-open {
+  @include mixins.respond-to(desktopD) {
+    width: 300px;
+  }
+
+  @include mixins.respond-to(desktopM) {
+    width: 200px;
+  }
 }

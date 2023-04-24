@@ -3,22 +3,7 @@
 })
 
 <main class="page-content contacts-page__content">
-  <style>
-    .contacts {
-      margin: 141px 0 0 0;
-    }
 
-    @media (min-width: 320px) and (max-width: 1279px) {
-      .contacts {
-        margin: 38px 0 0 0;
-      }
-
-      .contacts-page {
-        margin: 68px 0 0 0;
-      }
-    }
-  </style>
-  @@include('components/_bem/_contacts.html')
   <section class="contacts-page">
     <div class="contacts-page__container base-container">
       <figure class="contacts-page__image base-figure">
@@ -31,13 +16,15 @@
         </svg>
         <img class="contacts-page__img" src="img/image/contacts-page-image-mobile.png" width="178" height="264" alt="Декоративное изображение здания с множеством окон">
       </figure>
-      <form class="contacts-page__form" if="form">
+      <form class="contacts-page__form" id="modal_form">
         <input class="contacts-page__input" type="text" name="name" id="name" placeholder="Ваше имя">
         <input class="contacts-page__input" type="tel" name="phone" id="phone" placeholder="Ваш телефон">
         <textarea class="contacts-page__input contacts-page__input--textarea" name="text" id="text" placeholder="Ваше сообщение..."></textarea>
+        <button class="contacts-page__submit button-yellow follow-change base-button">Отправить</button>
       </form>
     </div>
   </section>
+  @@include('components/_bem/_contacts.html')
   @@include('components/_bem/_map.html')
 </main>
 

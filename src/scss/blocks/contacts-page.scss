@@ -141,4 +141,27 @@
       width: 0px;
     }
   }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 298px;
+    height: 82px;
+    background: var(--color-golden-fizz);
+    border-radius: 61px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--color-aqua-deep);
+
+    padding: 30px 80px;
+    margin: 20px 37px 0 0;
+
+    @include mixins.respond-to(notDesktop) {
+      padding: 30px 44px;
+    }
+  }
 }
