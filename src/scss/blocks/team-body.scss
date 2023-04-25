@@ -118,10 +118,9 @@
       align-items: center;
       justify-content: flex-start;
 
-      width: 608px;
-      height: 228px;
-
-      padding: 28px 0 0 0;
+      min-width: 608px;
+      min-height: 228px;
+      padding: 28px 20px 28px 20px;
     }
 
     & .team-body__item-content:not(:first-child) .team-body__item-label {
