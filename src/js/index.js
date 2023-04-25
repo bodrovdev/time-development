@@ -15,11 +15,9 @@ burger.addEventListener('click', () => {
 
   if (burger.classList.contains('main-nav__burger--active')) {
     lock(mobile_menu);
-    console.log('opa');
   }
   else {
     unlock(mobile_menu);
-    console.log('nihuya');
   }
 })
 
@@ -108,9 +106,6 @@ if (window.innerWidth >= 1288) {
   })
 
   window.addEventListener('click', (e) => {
-    console.log(e.target);
-    console.log(e.currentTarget);
-
     if (search_input.classList.contains('search-open') && e.target !== search_input) {
       search_input.classList.remove('search-open');
       search_input.blur();
