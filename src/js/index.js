@@ -84,7 +84,7 @@ let search_icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 search_icon.classList.add('search-icon');
 search_icon.setAttribute('width', '16');
 search_icon.setAttribute('height', '16');
-search_icon.innerHTML = '<use href="https://cq18080.tmweb.ru/time_development/wp-content/themes/time_development/assets/img/icon/sprite.svg#search-icon"></use>';
+search_icon.innerHTML = '<use href="wp-content/themes/time_development/assets/img/icon/sprite.svg#search-icon"></use>';
 
 search_button.appendChild(search_icon);
 

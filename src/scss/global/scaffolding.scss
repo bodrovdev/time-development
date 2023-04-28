@@ -124,9 +124,9 @@ input[type=number] {
 
 	z-index: 2999;
 
-	@media (hover: none) {
-		display: none;
-	}
+	// @media (hover: none) {
+	// 	display: none;
+	// }
 
 	@include mixins.respond-to(notDesktopFr) {
 		display: none;
