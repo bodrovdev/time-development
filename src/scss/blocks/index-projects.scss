@@ -36,7 +36,8 @@
 
       height: 278px;
 
-      padding: 91px 5% 0 5%;
+      // padding: 91px 5% 0 5%;
+      padding: 0 5%;
     }
 
     @include mixins.respond-to(tabletOnly) {
@@ -44,16 +45,17 @@
 
       height: 278px;
 
-      padding: 91px 5% 0 5%;
+      // padding: 91px 5% 0 5%;
+      padding: 0 5%;
     }
 
     &-wrapper {
       display: flex;
       flex-direction: column;
 
-      @include mixins.respond-to(notDesktopFr) {
-        display: none;
-      }
+      // @include mixins.respond-to(notDesktopFr) {
+      //   display: none;
+      // }
     }
 
     &-row p {

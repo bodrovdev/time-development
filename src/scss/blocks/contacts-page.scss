@@ -24,6 +24,20 @@
     margin: 0 78px 0 0;
 
     @include mixins.respond-to(notDesktop) {
+      // display: none;
+      padding: 0;
+      margin: 0 0 55px 0;
+
+      & .time-clocks {
+        display: none;
+      }
+
+      & .contacts-page__sign-icon {
+        display: block;
+      }
+    }
+
+    & .contacts-page__sign-icon {
       display: none;
     }
 
@@ -41,32 +55,44 @@
     }
   }
 
-  &__image--mobile {
-    position: relative;
-
-    display: none;
-
-    padding: 0;
-    margin: 0 0 55px 0;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: -44px;
-      right: -48px;
-
-      width: 96px;
-      height: 102px;
-      border: 1px solid var(--color-aqua-deep);
-      border-radius: 50%;
-
-      z-index: -1;
-    }
+  &__img {
+    width: 391px;
+    height: 391px;
+    border-radius: 50%;
 
     @include mixins.respond-to(notDesktop) {
-      display: block;
+      width: 178px;
+      height: 264px;
+      border-radius: 77px 0px 67px;
     }
   }
+
+  // &__image--mobile {
+  //   position: relative;
+
+  //   display: none;
+
+  //   padding: 0;
+  //   margin: 0 0 55px 0;
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     top: -44px;
+  //     right: -48px;
+
+  //     width: 96px;
+  //     height: 102px;
+  //     border: 1px solid var(--color-aqua-deep);
+  //     border-radius: 50%;
+
+  //     z-index: -1;
+  //   }
+
+  //   @include mixins.respond-to(notDesktop) {
+  //     display: block;
+  //   }
+  // }
 
   &__sign-icon {
     position: absolute;

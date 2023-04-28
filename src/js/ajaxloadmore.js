@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
 
                 posts_list.innerHTML += res.data.data;
 
-                window.history.replaceState('', '', baseUrl + 'page/' + (parseInt(document.querySelector('.press-body__slider-wrapper').dataset.page) + 1) + '/');
+                window.history.replaceState('', '', baseUrl + '/page/' + (parseInt(document.querySelector('.press-body__slider-wrapper').dataset.page) + 1) + '/');
 
                 document.querySelector('.press-body__slider-wrapper').dataset.page++;
 

@@ -29,6 +29,7 @@
 
     &-bottom {
       display: flex;
+      align-items: flex-end;
 
       @include mixins.respond-to(notDesktop) {
         flex-direction: column;
@@ -45,27 +46,40 @@
       margin: 0 84px 0 0;
 
       @include mixins.respond-to(notDesktop) {
-        display: none;
+        // display: none;
+
+        margin: 0 0 50px 0;
       }
 
-      &--mobile {
-        display: none;
+      // &--mobile {
+      //   display: none;
 
-        @include mixins.respond-to(notDesktop) {
-          display: block;
+      //   @include mixins.respond-to(notDesktop) {
+      //     display: block;
 
-          margin: 0 0 50px 0;
-        }
-      }
+      //     margin: 0 0 50px 0;
+      //   }
+      // }
     }
 
-    &-img--mobile {
+    &-img {
+      width: 439px;
+      height: 456px;
+
       @include mixins.respond-to(notDesktop) {
-        width: 100%;
-        max-width: 100%;
-        object-fit: cover;
+        width: 218px;
+        height: 283px;
+        border-radius: 83px 0px 105px;
       }
     }
+
+    // &-img--mobile {
+    //   @include mixins.respond-to(notDesktop) {
+    //     width: 100%;
+    //     max-width: 100%;
+    //     object-fit: cover;
+    //   }
+    // }
 
     &-graphic {
       position: absolute;

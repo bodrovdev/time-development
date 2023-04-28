@@ -482,6 +482,7 @@
     flex-direction: column;
 
     height: 100%;
+    overflow: hidden;
 
     &::after {
       content: "";
@@ -510,10 +511,13 @@
       padding: 0 0 100px 0;
 
       & .heading__puzzle-img {
-        width: 232px;
-        min-width: 232px;
+        // width: 232px;
+        // min-width: 232px;
+        width: 440px;
+        min-width: 440px;
         height: 440px;
         min-height: 440px;
+        border-radius: 50%;
       }
     }
 
@@ -537,6 +541,7 @@
         min-width: 433px;
         height: 446px;
         min-height: 446px;
+        border-radius: 50%;
 
         z-index: 1;
       }
@@ -562,10 +567,15 @@
       }
 
       & .heading__puzzle-img {
-        width: 111px;
-        min-width: 111px;
+        // width: 111px;
+        // min-width: 111px;
+        width: 286px;
+        min-width: 286px;
         height: 286px;
         min-height: 286px;
+        border-radius: 50%;
+
+        transform: translateX(-50%);
       }
     }
   }

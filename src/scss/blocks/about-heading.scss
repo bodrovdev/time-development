@@ -30,29 +30,45 @@
       margin: 0 160px 0 0;
 
       @include mixins.respond-to(notDesktop) {
-        display: none;
-      }
-
-      &--mobile {
-        display: none;
+        // display: none;
 
         margin: 0 0 41px 0;
-
-        &::after {
-          top: -27px;
-          right: -50px;
-
-          width: 78px;
-          height: 77px;
-        }
-
-        @include mixins.respond-to(notDesktop) {
-          display: block;
-        }
       }
+
+      // &--mobile {
+      //   display: none;
+
+      //   margin: 0 0 41px 0;
+
+      //   &::after {
+      //     top: -27px;
+      //     right: -50px;
+
+      //     width: 78px;
+      //     height: 77px;
+      //   }
+
+      //   @include mixins.respond-to(notDesktop) {
+      //     display: block;
+      //   }
+      // }
     }
 
     &-img {
+      width: 391px;
+      height: 407px;
+      border-radius: 50%;
+
+      @include mixins.respond-to(notDesktop) {
+        border-radius: 45px 0px;
+      }
+
+      @include mixins.respond-to(mobileOnly) {
+        width: 218px;
+        height: 283px;
+      }
+
+
       @include mixins.respond-to(tabletOnly) {
         width: 270px;
         height: auto;

@@ -131,16 +131,40 @@
       }
     }
 
+    // @include mixins.respond-to(notDesktop) {
+    //   display: none;
+    // }
+
+    // &--mobile {
+    //   display: none;
+
+    //   @include mixins.respond-to(notDesktop) {
+    //     display: block;
+    //   }
+    // }
+  }
+
+  &__img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+
     @include mixins.respond-to(notDesktop) {
-      display: none;
+      border-radius: 77px 0px 67px;
     }
+  }
 
-    &--mobile {
-      display: none;
+  @media (min-width: 320px) and (max-width: 392px) {
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+  }
 
-      @include mixins.respond-to(notDesktop) {
-        display: block;
-      }
+  @media (min-width: 393px) and (max-width: 1279px) {
+    &__img {
+      width: 322px;
+      height: 322px;
     }
   }
 

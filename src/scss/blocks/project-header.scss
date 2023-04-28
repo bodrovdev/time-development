@@ -111,21 +111,32 @@
     }
 
     @include mixins.respond-to(notDesktop) {
-      display: none;
+      // display: none;
+      margin: 0 0 29px 0;
     }
 
-    &--mobile {
-      display: none;
+    // &--mobile {
+    //   display: none;
 
-      @include mixins.respond-to(notDesktop) {
-        display: block;
+    //   @include mixins.respond-to(notDesktop) {
+    //     display: block;
 
-        margin: 0 0 29px 0;
-      }
-    }
+    //     margin: 0 0 29px 0;
+    //   }
+    // }
   }
 
   &__img {
+    width: 391px;
+    height: 391px;
+    border-radius: 50%;
+
+    @include mixins.respond-to(notDesktop) {
+      width: 146px;
+      height: 198px;
+      border-radius: 45px 0px;
+    }
+
     @include mixins.respond-to(tabletOnly) {
       width: 250px;
       height: auto;
