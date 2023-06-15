@@ -185,6 +185,8 @@
     }
 
     &-img {
+      border-radius: 50%;
+
       @include mixins.respond-to(mobileOnly) {
         width: 147px;
         height: 147px;

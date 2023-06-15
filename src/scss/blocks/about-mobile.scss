@@ -217,6 +217,15 @@
       &:last-child {
         margin: 0;
       }
+
+      & picture {
+        position: relative;
+        left: 50%;
+
+        width: fit-content !important;
+
+        transform: translateX(-50%);
+      }
     }
 
     &-image {
@@ -233,15 +242,17 @@
     }
 
     &-img {
-      position: relative;
-      left: 50%;
-
-      width: 180px;
-      height: 180px;
+      min-width: 180px;
       border-radius: 50%;
       object-fit: cover;
 
-      transform: translateX(-50%);
+      @include mixins.respond-to(mobileOnly) {
+        min-width: 50%;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        min-width: 50%;
+      }
     }
 
     &-desc {
@@ -258,6 +269,14 @@
       transform: translateX(50px);
 
       padding: 10px;
+
+      @include mixins.respond-to(mobileOnly) {
+        min-width: 50%;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        min-width: 50%;
+      }
 
       & h3 {
         font-weight: 700;

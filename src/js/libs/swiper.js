@@ -34,29 +34,29 @@ let project_single_slider = new Swiper('.single-projects__slider', {
 
 var init = false;
 
-function archiveSlider() {
-  if (window.innerWidth <= 1279) {
-    if (!init) {
-      init = true;
-      var archiveSlider = new Swiper(".press-body__slider", {
-        direction: "horizontal",
-        slidesPerView: "auto",
-        spaceBetween: 31,
-        // centeredSlides: true,
+// function archiveSlider() {
+//   if (window.innerWidth <= 1279) {
+//     if (!init) {
+//       init = true;
+//       var archiveSlider = new Swiper(".press-body__slider", {
+//         direction: "horizontal",
+//         slidesPerView: "auto",
+//         spaceBetween: 31,
+//         // centeredSlides: true,
 
-        pagination: {
-          el: ".press-body__slider-pagination",
-          clickable: true,
-        },
-      });
-    }
-  } else if (init) {
-    archiveSlider.destroy();
-    init = false;
-  }
-}
-archiveSlider();
-window.addEventListener("resize", archiveSlider);
+//         pagination: {
+//           el: ".press-body__slider-pagination",
+//           clickable: true,
+//         },
+//       });
+//     }
+//   } else if (init) {
+//     archiveSlider.destroy();
+//     init = false;
+//   }
+// }
+// archiveSlider();
+// window.addEventListener("resize", archiveSlider);
 
 let project_page_slider = new Swiper('.project-slider__slider', {
   speed: 500,

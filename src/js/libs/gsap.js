@@ -127,9 +127,9 @@ window.addEventListener('load', () => {
       window.addEventListener('scroll', () => {
         if (isInViewport(item)) {
           let team_mobile_tl = gsap.timeline({});
-          team_mobile_tl.add(gsap.to(item.children[0].children[0], { left: 0, transform: 'none', duration: 0.5, }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[0], { borderRadius: 0, width: "30%", height: "auto", minHeight: "250px", duration: 0.5 }));
-          team_mobile_tl.add(gsap.to(item.children[0].children[1], { transform: "translateX(0)", width: "70%", opacity: 1, duration: 0.5, delay: -0.5 }));
+          team_mobile_tl.add(gsap.to(item.querySelector('picture'), { left: 0, transform: 'none', duration: 0.5, }));
+          team_mobile_tl.add(gsap.to(item.querySelector('.about-mobile__team-img'), { borderRadius: 0, width: "100%", height: "100%", delay: -0.5, duration: 0.5 }));
+          team_mobile_tl.add(gsap.to(item.querySelector('.about-mobile__team-desc'), { transform: "translateX(0)", width: "100%", opacity: 1, duration: 0.5, delay: -0.5 }));
         }
       })
     })
@@ -138,21 +138,26 @@ window.addEventListener('load', () => {
 
 // --- Прелоадер
 window.addEventListener('load', () => {
-  if (document.querySelector('.preloader__wrapper') === null) {
+  if (document.querySelector('.preloader') === null) {
     return;
   }
   else {
-    let preloader_wrapper = document.querySelector('.preloader__wrapper');
-    let preloader_overlay = document.querySelector('.preloader__overlay');
-    let preloader_text_first = document.querySelector('.preloader__text-first');
-    let preloader_text_second = document.querySelector('.preloader__text-second');
+    // let preloader = document.querySelector('.preloader');
+
+    // let preloader_tl = gsap.timeline({});
+    // preloader_tl.add(gsap.to(preloader, { opacity: 0, duration: 1, ease: "power3.out", delay: 5.37 }));
+
+    // let preloader_wrapper = document.querySelector('.preloader__wrapper');
+    // let preloader_overlay = document.querySelector('.preloader__overlay');
+    // let preloader_text_first = document.querySelector('.preloader__text-first');
+    // let preloader_text_second = document.querySelector('.preloader__text-second');
 
 
-    let index_preloader_tl = gsap.timeline({});
-    index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 1, duration: 1, ease: "power3.out", }));
-    index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 }));
-    index_preloader_tl.add(gsap.to(preloader_text_second, { opacity: 1, duration: 0.5, ease: "power3.out", }));
-    index_preloader_tl.add(gsap.to(preloader_overlay, { transform: "translate(-50%, -50%) scale(0)", duration: 3, ease: "power3.out", }))
-    index_preloader_tl.add(gsap.to(preloader_wrapper, { opacity: 0, duration: 1, ease: "power3.out", delay: -0.5 }))
+    // let index_preloader_tl = gsap.timeline({});
+    // index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 1, duration: 1, ease: "power3.out", }));
+    // index_preloader_tl.add(gsap.to(preloader_text_first, { opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 }));
+    // index_preloader_tl.add(gsap.to(preloader_text_second, { opacity: 1, duration: 0.5, ease: "power3.out", }));
+    // index_preloader_tl.add(gsap.to(preloader_overlay, { transform: "translate(-50%, -50%) scale(0)", duration: 3, ease: "power3.out", }))
+    // index_preloader_tl.add(gsap.to(preloader_wrapper, { opacity: 0, duration: 1, ease: "power3.out", delay: -0.5 }))
   }
 })

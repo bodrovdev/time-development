@@ -84,7 +84,7 @@ let search_icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 search_icon.classList.add('search-icon');
 search_icon.setAttribute('width', '16');
 search_icon.setAttribute('height', '16');
-search_icon.innerHTML = '<use href="wp-content/themes/time_development/assets/img/icon/sprite.svg#search-icon"></use>';
+search_icon.innerHTML = '<use href="https://timedevelopment.ru/wp-content/themes/time_development/assets/img/icon/sprite.svg#search-icon"></use>';
 
 search_button.appendChild(search_icon);
 
@@ -140,10 +140,8 @@ window.addEventListener('load', () => {
 
 // --- Отключение неактивных элементов в слайдере
 window.addEventListener('load', () => {
-  if (document.querySelector('.index-projects__slider-slide') === null) {
-    return;
-  }
-  else {
+
+  if (document.querySelector('.index-projects__slider-slide') !== null) {
     let project_items = document.querySelectorAll('.index-projects__slider-slide');
 
     project_items.forEach((item) => {
@@ -161,6 +159,22 @@ window.addEventListener('load', () => {
           break;
       }
     })
+  }
+  else if (document.querySelector('.project-slider__slider-slide') !== null) {
+    let page_project_items = document.querySelectorAll('.project-slider__slider-slide');
+
+    page_project_items.forEach((item) => {
+      switch (item.getAttribute('data-status')) {
+        case 'disabled':
+          item.classList.add('disabled');
+          item.setAttribute('href', '');
+          break;
+      }
+    })
+  }
+
+  else {
+    return;
   }
 })
 
@@ -196,7 +210,7 @@ window.addEventListener('load', () => {
   else {
     function scrollRotate() {
       let element = document.querySelector('.about-body__top-graphic');
-      element.style.transform = `translateX(-50%) translateY(-50%) rotate(${window.pageYOffset / 2}deg)`
+      element.style.transform = `translateX(-50%) translateY(-50%) rotate(${window.pageYOffset / 3}deg)`
     }
 
     window.addEventListener('scroll', () => {
@@ -279,8 +293,7 @@ window.addEventListener('load', () => {
       Array.from(team_item_contents).forEach((content) => {
         content.classList.remove('team-body__item-content--active');
       })
-
-      team_item_contents[index].classList.add('team-body__item-content--active')
+      team_item_contents[index].classList.add('team-body__item-content--active');
     }
 
     team_items.forEach((team_item) => {
@@ -337,7 +350,7 @@ window.addEventListener('load', () => {
     return;
   }
   else {
-    let press_items_initial = Array.from(document.querySelectorAll('.press-body__slider-slide'));
+    let press_items_initial = Array.from(document.querySelectorAll('.press-body__wrapper-item'));
 
     const chunk = (arr, size) =>
       Array.from({
@@ -349,9 +362,9 @@ window.addEventListener('load', () => {
     let press_items = chunk(press_items_initial, 3);
 
     press_items.forEach((item) => {
-      item[0] ? item[0].setAttribute('data-aos-delay', 0) : console.log('');
-      item[1] ? item[1].setAttribute('data-aos-delay', 100) : console.log('');
-      item[2] ? item[2].setAttribute('data-aos-delay', 200) : console.log('');
+      item[0] ? item[0].setAttribute('data-aos-delay', 0) : item;
+      item[1] ? item[1].setAttribute('data-aos-delay', 100) : item;
+      item[2] ? item[2].setAttribute('data-aos-delay', 200) : item;
     })
   }
 })
